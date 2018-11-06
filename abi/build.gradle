@@ -1,0 +1,6 @@
+
+description 'MOAC Application Binary Interface (ABI) for working with smart contracts'
+
+dependencies {
+    compile project(':utils')
+}

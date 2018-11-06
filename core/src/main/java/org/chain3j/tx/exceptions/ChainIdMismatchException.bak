@@ -1,0 +1,27 @@
+package org.chain3j.tx.exceptions;
+
+import java.io.IOException;
+import org.chain3j.tx.ChainId;
+
+public class ChainIdMismatchException extends IOException {
+    private Integer chainId1;
+    private Integer chainId2;
+
+    public ChainIdMismatchException(Integer chainId1, Integer chainId2) {
+        this.chainId1 = chainId1;
+        this.chainId2 = chainId2;
+    }
+
+    public Integer getChainId() {
+        return this.chainId1;
+    }
+
+    public Boolean isValidChainId(Integer chainId1) {
+        if (chainId1 > ChainId.NONE){
+            return true;
+        }else{
+            return false;
+        }
+       
+    }
+}

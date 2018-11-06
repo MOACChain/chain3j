@@ -1,0 +1,6 @@
+
+description 'Moac Recursive Length Prefix (RLP) encoding for serializing objects'
+
+dependencies {
+    compile project(':utils')
+}
