@@ -67,6 +67,7 @@ public class TransactionDecoderTest {
         assertTrue(result instanceof SignedRawTransaction);
         SignedRawTransaction signedResult = (SignedRawTransaction) result;
         assertNotNull(signedResult.getSignatureData());
+        // TODO
         // Sign.SignatureData signatureData = signedResult.getSignatureData();
         // byte[] encodedTransaction = TransactionEncoder.encode(rawTransaction);
         // BigInteger key = Sign.signedMessageToKey(encodedTransaction, signatureData);

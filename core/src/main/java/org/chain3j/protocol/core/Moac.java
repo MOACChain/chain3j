@@ -35,6 +35,17 @@ import org.chain3j.protocol.core.methods.response.McUninstallFilter;
 import org.chain3j.protocol.core.methods.response.NetListening;
 import org.chain3j.protocol.core.methods.response.NetPeerCount;
 import org.chain3j.protocol.core.methods.response.NetVersion;
+import org.chain3j.protocol.core.methods.response.VnodeAddress;
+import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;//bool
+import org.chain3j.protocol.core.methods.response.VnodeIP;
+import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
+import org.chain3j.protocol.core.methods.response.VnodeScsService;//bool
+import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
+import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
+import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
 // import org.chain3j.protocol.core.methods.response.ShhAddToGroup;
 // import org.chain3j.protocol.core.methods.response.ShhHasIdentity;
 // import org.chain3j.protocol.core.methods.response.ShhMessages;
@@ -136,7 +147,7 @@ public interface Moac {
     Request<?, McBlock> mcGetUncleByBlockNumberAndIndex(
             DefaultBlockParameter defaultBlockParameter, BigInteger transactionIndex);
 
-    Request<?, McGetCompilers> mcGetCompilers();
+//     Request<?, McGetCompilers> mcGetCompilers();
 
     //     Request<?, McCompileLLL> mcCompileLLL(String sourceCode);
 
@@ -163,6 +174,26 @@ public interface Moac {
     Request<?, McSubmitWork> mcSubmitWork(String nonce, String headerPowHash, String mixDigest);
 
     Request<?, McSubmitHashrate> mcSubmitHashrate(String hashrate, String clientId);
+
+    Request<?, VnodeAddress> vnodeAddress();
+
+    Request<?, VnodeIP> vnodeIP();
+
+    Request<?, VnodeShowToPublic> vnodeShowToPublic();
+
+    Request<?, VnodeServiceCfg> vnodeServiceCfg();
+
+    Request<?, VnodeScsService> vnodeScsService();
+
+    Request<?, ScsGetDappState> getDappState(String dappAddress);
+
+    Request<?, ScsGetMicroChainList> getMicroChainList();
+
+    Request<?, ScsGetBlockNumber> getBlockNumber(String dappAddress);
+
+    Request<?, ScsGetBalance> getBalance(String dappAddress, String account);
+
+    Request<?, ScsGetNonce> getNonce(String dappAddress, String account);
 
     //     Request<?, DbPutString> dbPutString(String databaseName, String keyName, String stringToStore);
 

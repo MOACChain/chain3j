@@ -8,7 +8,8 @@ import org.chain3j.rlp.RlpString;
 import org.chain3j.utils.Numeric;
 
 /*
-type txdata struct {
+    The transaction should have the following fields:
+    type txdata struct {
     AccountNonce uint64          `json:"nonce"    gencodec:"required"`
     Price        *big.Int        `json:"gasPrice" gencodec:"required"`
     GasLimit     *big.Int        `json:"gas"      gencodec:"required"`
@@ -23,6 +24,8 @@ type txdata struct {
     V *big.Int `json:"v" gencodec:"required"`
     R *big.Int `json:"r" gencodec:"required"`
     S *big.Int `json:"s" gencodec:"required"`
+    }
+
 */
 public class TransactionDecoder {
 

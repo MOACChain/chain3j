@@ -17,7 +17,7 @@ import org.chain3j.protocol.core.methods.request.Transaction;
 import org.chain3j.protocol.core.methods.response.McSendTransaction;
 
 /**
- * JSON-RPC 2.0 factory implementation for common Parity and Geth.
+ * JSON-RPC 2.0 factory implementation for MOAC VNODE admin methods.
  */
 public class JsonRpc2_0Admin extends JsonRpc2_0Chain3j implements Admin {
 

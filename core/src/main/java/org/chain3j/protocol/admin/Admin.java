@@ -13,7 +13,7 @@ import org.chain3j.protocol.core.methods.request.Transaction;
 import org.chain3j.protocol.core.methods.response.McSendTransaction;
 
 /**
- * JSON-RPC Request object building factory for common Parity and Geth. 
+ * JSON-RPC Request object building factory for MOAC VNODE. 
  */
 public interface Admin extends Chain3j {
 

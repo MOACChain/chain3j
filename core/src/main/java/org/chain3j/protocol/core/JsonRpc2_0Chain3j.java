@@ -58,6 +58,17 @@ import org.chain3j.protocol.core.methods.response.McUninstallFilter;
 import org.chain3j.protocol.core.methods.response.NetListening;
 import org.chain3j.protocol.core.methods.response.NetPeerCount;
 import org.chain3j.protocol.core.methods.response.NetVersion;
+import org.chain3j.protocol.core.methods.response.VnodeAddress;
+import org.chain3j.protocol.core.methods.response.VnodeIP;
+import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
+import org.chain3j.protocol.core.methods.response.VnodeScsService;
+import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
+import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
+import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
+import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
 // import org.chain3j.protocol.core.methods.response.ShhAddToGroup;
 // import org.chain3j.protocol.core.methods.response.ShhHasIdentity;
 // import org.chain3j.protocol.core.methods.response.ShhMessages;
@@ -438,42 +449,6 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, McGetCompilers> mcGetCompilers() {
-        return new Request<>(
-                "mc_getCompilers",
-                Collections.<String>emptyList(),
-                chain3jService,
-                McGetCompilers.class);
-    }
-
-    //     @Override
-    //     public Request<?, McCompileLLL> mcCompileLLL(String sourceCode) {
-    //         return new Request<>(
-    //                 "mc_compileLLL",
-    //                 Arrays.asList(sourceCode),
-    //                 chain3jService,
-    //                 McCompileLLL.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, McCompileSolidity> mcCompileSolidity(String sourceCode) {
-    //         return new Request<>(
-    //                 "mc_compileSolidity",
-    //                 Arrays.asList(sourceCode),
-    //                 chain3jService,
-    //                 McCompileSolidity.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, McCompileSerpent> mcCompileSerpent(String sourceCode) {
-    //         return new Request<>(
-    //                 "mc_compileSerpent",
-    //                 Arrays.asList(sourceCode),
-    //                 chain3jService,
-    //                 McCompileSerpent.class);
-    //     }
-
-    @Override
     public Request<?, McFilter> mcNewFilter(
             org.chain3j.protocol.core.methods.request.McFilter mcFilter) {
         return new Request<>(
@@ -721,6 +696,93 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 "mc_unsubscribe",
                 LogNotification.class
         );
+    }
+
+    // Vnode services methods handling VNODE info
+    @Override
+    public Request<?, VnodeAddress> vnodeAddress() {
+        return new Request<>(
+                "vnode_address",
+                Collections.<String>emptyList(),
+                chain3jService,
+                VnodeAddress.class);
+    }
+
+    // 
+    @Override
+    public Request<?, VnodeShowToPublic> vnodeShowToPublic() {
+        return new Request<>(
+                "vnode_showToPublic",
+                Collections.<String>emptyList(),
+                chain3jService,
+                VnodeShowToPublic.class);
+    }
+
+    @Override
+    public Request<?, VnodeIP> vnodeIP() {
+        return new Request<>(
+                "vnode_vnodeIP",
+                Collections.<String>emptyList(),
+                chain3jService,
+                VnodeIP.class);
+    }
+
+    @Override
+    public Request<?, VnodeServiceCfg> vnodeServiceCfg() {
+        return new Request<>(
+                "vnode_serviceCfg",
+                Collections.<String>emptyList(),
+                chain3jService,
+                VnodeServiceCfg.class);
+    }
+
+    @Override
+    public Request<?, VnodeScsService> vnodeScsService() {
+        return new Request<>(
+                "vnode_scsService",
+                Collections.<String>emptyList(),
+                chain3jService,
+                VnodeScsService.class);
+    }
+
+    //=================================================================
+    // SCS related JSON RPC 2.0
+    //=================================================================
+    @Override
+    public Request<?, ScsGetDappState> getDappState(String scsAddress) {
+        return new Request<>(
+                "scs_getDappState",
+                Arrays.asList(scsAddress),
+                chain3jService,
+                ScsGetDappState.class);
+    }
+
+    @Override
+    public Request<?, ScsGetMicroChainList> getMicroChainList() {
+        return new Request<>(
+                "scs_getMicroChainList",
+                Collections.<String>emptyList(),
+                chain3jService,
+                ScsGetMicroChainList.class);
+    }
+
+    @Override
+    public Request<?, ScsGetBlockNumber> getBlockNumber(String mcAddress) {
+        return new Request<>(
+                "scs_getBlockNumber",
+                Arrays.asList(mcAddress),
+                chain3jService,
+                ScsGetBlockNumber.class);
+    }
+
+    @Override
+    public Request<?, ScsGetNonce> getNonce(String mcAddress, 
+    String account) {
+        return new Request<>(
+                "scs_getNonce",
+                Arrays.asList(mcAddress),
+                chain3jService,
+                ScsGetNonce.class);
     }
 
     private Map<String, Object> createLogsParams(List<String> addresses, List<String> topics) {

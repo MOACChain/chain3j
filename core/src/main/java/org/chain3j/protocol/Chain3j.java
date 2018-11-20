@@ -8,6 +8,7 @@ import org.chain3j.protocol.rx.Chain3jRx;
 
 /**
  * JSON-RPC Request object building factory.
+ * Add SCS service in addition to MOAC VNODE
  */
 public interface Chain3j extends Moac, Chain3jRx {
 

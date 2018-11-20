@@ -128,7 +128,7 @@ public class WalletSendFunds extends WalletManager {
 
     private Chain3j getMoacClient() {
         String clientAddress = console.readLine(
-                "Please confirm address of running MOAC client you wish to send "
+                "Please confirm address of running MOAC VNODE client you wish to send "
                 + "the transfer request to [" + HttpService.DEFAULT_URL + "]: ")
                 .trim();
 
