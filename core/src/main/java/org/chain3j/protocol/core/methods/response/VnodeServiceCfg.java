@@ -3,7 +3,7 @@ package org.chain3j.protocol.core.methods.response;
 import org.chain3j.protocol.core.Response;
 
 /**
- * vnode_serviceCfg
+ * vnode_serviceCfg.
  * return the VNODE service configuration as string
  * 
  */

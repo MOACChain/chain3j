@@ -60,14 +60,16 @@ import org.chain3j.protocol.core.methods.response.NetPeerCount;
 import org.chain3j.protocol.core.methods.response.NetVersion;
 import org.chain3j.protocol.core.methods.response.VnodeAddress;
 import org.chain3j.protocol.core.methods.response.VnodeIP;
-import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
 import org.chain3j.protocol.core.methods.response.VnodeScsService;
+import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
 import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
-import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
-import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
-import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
+import org.chain3j.protocol.rx.JsonRpc2_0Rx;
 import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
+import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
+import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
 import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
 // import org.chain3j.protocol.core.methods.response.ShhAddToGroup;
 // import org.chain3j.protocol.core.methods.response.ShhHasIdentity;
@@ -77,7 +79,6 @@ import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
 // import org.chain3j.protocol.core.methods.response.ShhNewIdentity;
 // import org.chain3j.protocol.core.methods.response.ShhUninstallFilter;
 // import org.chain3j.protocol.core.methods.response.ShhVersion;
-import org.chain3j.protocol.rx.JsonRpc2_0Rx;
 import org.chain3j.protocol.websocket.events.LogNotification;
 import org.chain3j.protocol.websocket.events.NewHeadsNotification;
 import org.chain3j.utils.Async;
@@ -749,10 +750,10 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     // SCS related JSON RPC 2.0
     //=================================================================
     @Override
-    public Request<?, ScsGetDappState> getDappState(String scsAddress) {
+    public Request<?, ScsGetDappState> getDappState(String mcAddress) {
         return new Request<>(
                 "scs_getDappState",
-                Arrays.asList(scsAddress),
+                Arrays.asList(mcAddress),
                 chain3jService,
                 ScsGetDappState.class);
     }
@@ -767,6 +768,24 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
+    public Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String mcAddress) {
+        return new Request<>(
+                "scs_getMicroChainInfo",
+                Arrays.asList(mcAddress),
+                chain3jService,
+                ScsGetMicroChainInfo.class);
+    }
+
+    @Override
+    public Request<?, ScsGetBalance> getBalance(String mcAddress, String account) {
+        return new Request<>(
+                "scs_getBalance",
+                Arrays.asList(mcAddress),
+                chain3jService,
+                ScsGetBalance.class);
+    }
+
+    @Override
     public Request<?, ScsGetBlockNumber> getBlockNumber(String mcAddress) {
         return new Request<>(
                 "scs_getBlockNumber",
@@ -776,8 +795,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetNonce> getNonce(String mcAddress, 
-    String account) {
+    public Request<?, ScsGetNonce> getNonce(String mcAddress, String account) {
         return new Request<>(
                 "scs_getNonce",
                 Arrays.asList(mcAddress),

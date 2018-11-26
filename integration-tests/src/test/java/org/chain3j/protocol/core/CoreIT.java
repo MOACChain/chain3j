@@ -355,11 +355,11 @@ public class CoreIT {
         assertNotNull(mcBlock.getBlock());
     }
 
-    @Test
-    public void testMcGetCompilers() throws Exception {
-        McGetCompilers mcGetCompilers = chain3j.mcGetCompilers().send();
-        assertNotNull(mcGetCompilers.getCompilers());
-    }
+    // @Test
+    // public void testMcGetCompilers() throws Exception {
+    //     McGetCompilers mcGetCompilers = chain3j.mcGetCompilers().send();
+    //     assertNotNull(mcGetCompilers.getCompilers());
+    // }
 
     // @Ignore  // The mmcod mc_compileLLL does not exist/is not available
     // @Test

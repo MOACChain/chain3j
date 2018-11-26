@@ -15,7 +15,7 @@ import org.chain3j.protocol.core.methods.response.McGetBalance;
 import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByHash;
 import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByNumber;
 import org.chain3j.protocol.core.methods.response.McGetCode;
-import org.chain3j.protocol.core.methods.response.McGetCompilers;
+// import org.chain3j.protocol.core.methods.response.McGetCompilers;
 import org.chain3j.protocol.core.methods.response.McGetStorageAt;
 import org.chain3j.protocol.core.methods.response.McGetTransactionCount;
 import org.chain3j.protocol.core.methods.response.McGetTransactionReceipt;
@@ -36,13 +36,14 @@ import org.chain3j.protocol.core.methods.response.NetListening;
 import org.chain3j.protocol.core.methods.response.NetPeerCount;
 import org.chain3j.protocol.core.methods.response.NetVersion;
 import org.chain3j.protocol.core.methods.response.VnodeAddress;
-import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;//bool
 import org.chain3j.protocol.core.methods.response.VnodeIP;
-import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
 import org.chain3j.protocol.core.methods.response.VnodeScsService;//bool
+import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
+import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;//bool
 import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
 import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
 import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
 import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
 import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
 import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
@@ -147,14 +148,6 @@ public interface Moac {
     Request<?, McBlock> mcGetUncleByBlockNumberAndIndex(
             DefaultBlockParameter defaultBlockParameter, BigInteger transactionIndex);
 
-//     Request<?, McGetCompilers> mcGetCompilers();
-
-    //     Request<?, McCompileLLL> mcCompileLLL(String sourceCode);
-
-    //     Request<?, McCompileSolidity> mcCompileSolidity(String sourceCode);
-
-    //     Request<?, McCompileSerpent> mcCompileSerpent(String sourceCode);
-
     Request<?, McFilter> mcNewFilter(org.chain3j.protocol.core.methods.request.McFilter mcFilter);
 
     Request<?, McFilter> mcNewBlockFilter();
@@ -186,6 +179,8 @@ public interface Moac {
     Request<?, VnodeScsService> vnodeScsService();
 
     Request<?, ScsGetDappState> getDappState(String dappAddress);
+
+    Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String dappAddress);
 
     Request<?, ScsGetMicroChainList> getMicroChainList();
 

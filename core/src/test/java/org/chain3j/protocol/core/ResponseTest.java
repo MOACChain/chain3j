@@ -68,7 +68,6 @@ import org.chain3j.protocol.core.methods.response.ShhVersion;
 import org.chain3j.protocol.core.methods.response.Transaction;
 import org.chain3j.protocol.core.methods.response.TransactionReceipt;
 
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNull;
