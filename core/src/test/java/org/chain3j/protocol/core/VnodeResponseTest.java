@@ -15,6 +15,11 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * VNODE Protocol Response tests.
+ * getAddress,
+ * getScsService,
+ * getServiceCfg,
+ * getShowToPublic,
+ * getVnodeIP.
  */
 public class VnodeResponseTest extends ResponseTester {
 

@@ -31,6 +31,8 @@ public abstract class Service implements Chain3jService {
             Request request, Class<T> responseType) throws IOException {
         String payload = objectMapper.writeValueAsString(request);
 
+        //Debugging use, print out the JSON string send to the server
+        System.out.print("Service.java => Send:"+payload);
         try (InputStream result = performIO(payload)) {
             if (result != null) {
                 return objectMapper.readValue(result, responseType);

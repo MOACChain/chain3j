@@ -15,7 +15,6 @@ import org.chain3j.protocol.core.methods.response.McGetBalance;
 import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByHash;
 import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByNumber;
 import org.chain3j.protocol.core.methods.response.McGetCode;
-// import org.chain3j.protocol.core.methods.response.McGetCompilers;
 import org.chain3j.protocol.core.methods.response.McGetStorageAt;
 import org.chain3j.protocol.core.methods.response.McGetTransactionCount;
 import org.chain3j.protocol.core.methods.response.McGetTransactionReceipt;
@@ -47,14 +46,6 @@ import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
 import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
 import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
 import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
-// import org.chain3j.protocol.core.methods.response.ShhAddToGroup;
-// import org.chain3j.protocol.core.methods.response.ShhHasIdentity;
-// import org.chain3j.protocol.core.methods.response.ShhMessages;
-// import org.chain3j.protocol.core.methods.response.ShhNewFilter;
-// import org.chain3j.protocol.core.methods.response.ShhNewGroup;
-// import org.chain3j.protocol.core.methods.response.ShhNewIdentity;
-// import org.chain3j.protocol.core.methods.response.ShhUninstallFilter;
-// import org.chain3j.protocol.core.methods.response.ShhVersion;
 
 /**
  * Core MOAC JSON-RPC API.
@@ -190,32 +181,6 @@ public interface Moac {
 
     Request<?, ScsGetNonce> getNonce(String dappAddress, String account);
 
-    //     Request<?, DbPutString> dbPutString(String databaseName, String keyName, String stringToStore);
+    Request<?, ScsGetTransactionReceipt> getTransactionReceipt(String dappAddress, String txhash);
 
-    //     Request<?, DbGetString> dbGetString(String databaseName, String keyName);
-
-    //     Request<?, DbPutHex> dbPutHex(String databaseName, String keyName, String dataToStore);
-
-    //     Request<?, DbGetHex> dbGetHex(String databaseName, String keyName);
-
-    //     Request<?, org.chain3j.protocol.core.methods.response.ShhPost> shhPost(
-    //             org.chain3j.protocol.core.methods.request.ShhPost shhPost);
-
-    //     Request<?, ShhVersion> shhVersion();
-
-    //     Request<?, ShhNewIdentity> shhNewIdentity();
-
-    //     Request<?, ShhHasIdentity> shhHasIdentity(String identityAddress);
-
-    //     Request<?, ShhNewGroup> shhNewGroup();
-
-    //     Request<?, ShhAddToGroup> shhAddToGroup(String identityAddress);
-
-    //     Request<?, ShhNewFilter> shhNewFilter(ShhFilter shhFilter);
-
-    //     Request<?, ShhUninstallFilter> shhUninstallFilter(BigInteger filterId);
-
-    //     Request<?, ShhMessages> shhGetFilterChanges(BigInteger filterId);
-
-    //     Request<?, ShhMessages> shhGetMessages(BigInteger filterId);
 }

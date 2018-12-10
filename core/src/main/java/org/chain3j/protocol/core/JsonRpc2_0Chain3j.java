@@ -13,13 +13,7 @@ import rx.Observable;
 
 import org.chain3j.protocol.Chain3j;
 import org.chain3j.protocol.Chain3jService;
-// import org.chain3j.protocol.core.methods.request.ShhFilter;
-// import org.chain3j.protocol.core.methods.request.ShhPost;
 import org.chain3j.protocol.core.methods.request.Transaction;
-// import org.chain3j.protocol.core.methods.response.DbGetHex;
-// import org.chain3j.protocol.core.methods.response.DbGetString;
-// import org.chain3j.protocol.core.methods.response.DbPutHex;
-// import org.chain3j.protocol.core.methods.response.DbPutString;
 import org.chain3j.protocol.core.methods.response.Chain3ClientVersion;
 import org.chain3j.protocol.core.methods.response.Chain3Sha3;
 import org.chain3j.protocol.core.methods.response.Log;
@@ -91,11 +85,12 @@ public class JsonRpc2_0Chain3j implements Chain3j {
 
     public static final int DEFAULT_BLOCK_TIME = 15 * 1000;
 
-    protected final Chain3jService chain3jService;
+    protected final Chain3jService chain3jService;// used for vnode
     private final JsonRpc2_0Rx chain3jRx;
     private final long blockTime;
     private final ScheduledExecutorService scheduledExecutorService;
 
+    // Constructors used with VNODE services
     public JsonRpc2_0Chain3j(Chain3jService chain3jService) {
         this(chain3jService, DEFAULT_BLOCK_TIME, Async.defaultExecutorService());
     }
@@ -542,133 +537,6 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 McSubmitHashrate.class);
     }
 
-    //     @Override
-    //     public Request<?, DbPutString> dbPutString(
-    //             String databaseName, String keyName, String stringToStore) {
-    //         return new Request<>(
-    //                 "db_putString",
-    //                 Arrays.asList(databaseName, keyName, stringToStore),
-    //                 chain3jService,
-    //                 DbPutString.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, DbGetString> dbGetString(String databaseName, String keyName) {
-    //         return new Request<>(
-    //                 "db_getString",
-    //                 Arrays.asList(databaseName, keyName),
-    //                 chain3jService,
-    //                 DbGetString.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, DbPutHex> dbPutHex(String databaseName, String keyName, String dataToStore) {
-    //         return new Request<>(
-    //                 "db_putHex",
-    //                 Arrays.asList(databaseName, keyName, dataToStore),
-    //                 chain3jService,
-    //                 DbPutHex.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, DbGetHex> dbGetHex(String databaseName, String keyName) {
-    //         return new Request<>(
-    //                 "db_getHex",
-    //                 Arrays.asList(databaseName, keyName),
-    //                 chain3jService,
-    //                 DbGetHex.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, org.chain3j.protocol.core.methods.response.ShhPost> shhPost(ShhPost shhPost) {
-    //         return new Request<>(
-    //                 "shh_post",
-    //                 Arrays.asList(shhPost),
-    //                 chain3jService,
-    //                 org.chain3j.protocol.core.methods.response.ShhPost.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhVersion> shhVersion() {
-    //         return new Request<>(
-    //                 "shh_version",
-    //                 Collections.<String>emptyList(),
-    //                 chain3jService,
-    //                 ShhVersion.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhNewIdentity> shhNewIdentity() {
-    //         return new Request<>(
-    //                 "shh_newIdentity",
-    //                 Collections.<String>emptyList(),
-    //                 chain3jService,
-    //                 ShhNewIdentity.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhHasIdentity> shhHasIdentity(String identityAddress) {
-    //         return new Request<>(
-    //                 "shh_hasIdentity",
-    //                 Arrays.asList(identityAddress),
-    //                 chain3jService,
-    //                 ShhHasIdentity.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhNewGroup> shhNewGroup() {
-    //         return new Request<>(
-    //                 "shh_newGroup",
-    //                 Collections.<String>emptyList(),
-    //                 chain3jService,
-    //                 ShhNewGroup.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhAddToGroup> shhAddToGroup(String identityAddress) {
-    //         return new Request<>(
-    //                 "shh_addToGroup",
-    //                 Arrays.asList(identityAddress),
-    //                 chain3jService,
-    //                 ShhAddToGroup.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhNewFilter> shhNewFilter(ShhFilter shhFilter) {
-    //         return new Request<>(
-    //                 "shh_newFilter",
-    //                 Arrays.asList(shhFilter),
-    //                 chain3jService,
-    //                 ShhNewFilter.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhUninstallFilter> shhUninstallFilter(BigInteger filterId) {
-    //         return new Request<>(
-    //                 "shh_uninstallFilter",
-    //                 Arrays.asList(Numeric.toHexStringWithPrefixSafe(filterId)),
-    //                 chain3jService,
-    //                 ShhUninstallFilter.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhMessages> shhGetFilterChanges(BigInteger filterId) {
-    //         return new Request<>(
-    //                 "shh_getFilterChanges",
-    //                 Arrays.asList(Numeric.toHexStringWithPrefixSafe(filterId)),
-    //                 chain3jService,
-    //                 ShhMessages.class);
-    //     }
-
-    //     @Override
-    //     public Request<?, ShhMessages> shhGetMessages(BigInteger filterId) {
-    //         return new Request<>(
-    //                 "shh_getMessages",
-    //                 Arrays.asList(Numeric.toHexStringWithPrefixSafe(filterId)),
-    //                 chain3jService,
-    //                 ShhMessages.class);
-    //     }
-
     @Override
     public Observable<NewHeadsNotification> newHeadsNotifications() {
         return chain3jService.subscribe(
@@ -780,7 +648,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     public Request<?, ScsGetBalance> getBalance(String mcAddress, String account) {
         return new Request<>(
                 "scs_getBalance",
-                Arrays.asList(mcAddress),
+                Arrays.asList(mcAddress, account),
                 chain3jService,
                 ScsGetBalance.class);
     }
@@ -798,9 +666,18 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     public Request<?, ScsGetNonce> getNonce(String mcAddress, String account) {
         return new Request<>(
                 "scs_getNonce",
-                Arrays.asList(mcAddress),
+                Arrays.asList(mcAddress, account),
                 chain3jService,
                 ScsGetNonce.class);
+    }
+
+    @Override
+    public Request<?, ScsGetTransactionReceipt> getTransactionReceipt(String mcAddress, String txHash) {
+        return new Request<>(
+                "scs_getTransactionReceipt",
+                Arrays.asList(mcAddress, txHash),
+                chain3jService,
+                ScsGetTransactionReceipt.class);
     }
 
     private Map<String, Object> createLogsParams(List<String> addresses, List<String> topics) {

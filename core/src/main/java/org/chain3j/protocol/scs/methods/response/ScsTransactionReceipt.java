@@ -1,15 +1,17 @@
-
-package org.chain3j.protocol.core.methods.response;
+package org.chain3j.protocol.scs.methods.response;
 
 import java.math.BigInteger;
 import java.util.List;
 
+import org.chain3j.protocol.core.methods.response.Log;
 import org.chain3j.utils.Numeric;
 
+
 /**
- * TransactionReceipt object used by {@link McGetTransactionReceipt}.
+ * TransactionReceipt object used by Scs.
+ * Should have less fields.
  */
-public class TransactionReceipt {
+public class ScsTransactionReceipt {
     private String transactionHash;
     private String transactionIndex;
     private String blockHash;
@@ -18,7 +20,7 @@ public class TransactionReceipt {
     private String gasUsed;
     private String contractAddress;
     private String root;
-    // status is availble for MOAC transactions.
+    // status is only present on Byzantium transactions onwards
     // see EIP 658 https://github.com/ethereum/EIPs/pull/658
     private String status;
     private String from;
@@ -26,10 +28,10 @@ public class TransactionReceipt {
     private List<Log> logs;
     private String logsBloom;
 
-    public TransactionReceipt() {
+    public ScsTransactionReceipt() {
     }
 
-    public TransactionReceipt(String transactionHash, String transactionIndex,
+    public ScsTransactionReceipt(String transactionHash, String transactionIndex,
                               String blockHash, String blockNumber, String cumulativeGasUsed,
                               String gasUsed, String contractAddress, String root, String status,
                               String from, String to, List<Log> logs, String logsBloom) {
@@ -181,11 +183,11 @@ public class TransactionReceipt {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof TransactionReceipt)) {
+        if (!(o instanceof ScsTransactionReceipt)) {
             return false;
         }
 
-        TransactionReceipt that = (TransactionReceipt) o;
+        ScsTransactionReceipt that = (ScsTransactionReceipt) o;
 
         if (getTransactionHash() != null
                 ? !getTransactionHash().equals(that.getTransactionHash())
@@ -265,8 +267,6 @@ public class TransactionReceipt {
                 + ", transactionIndex='" + transactionIndex + '\''
                 + ", blockHash='" + blockHash + '\''
                 + ", blockNumber='" + blockNumber + '\''
-                + ", cumulativeGasUsed='" + cumulativeGasUsed + '\''
-                + ", gasUsed='" + gasUsed + '\''
                 + ", contractAddress='" + contractAddress + '\''
                 + ", root='" + root + '\''
                 + ", status='" + status + '\''

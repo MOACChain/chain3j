@@ -44,7 +44,7 @@ public abstract class TransactionManager {
         fromAddress);
     }
 
-    // Sned the TX for MotherChain
+    // Send the TX for MotherChain
     protected TransactionReceipt executeTransaction(
             BigInteger gasPrice, BigInteger gasLimit, String to,
             String data, BigInteger value)

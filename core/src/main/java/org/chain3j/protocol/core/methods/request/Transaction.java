@@ -45,7 +45,7 @@ public class Transaction {
         //Set default values for new flags
         this.shardingFlag = "0";
         this.systemFlag = "0";
-        this.via = "0";
+        this.via = "";//default should be null or a format of empty address
 
         if (data != null) {
             this.data = Numeric.prependHexPrefix(data);

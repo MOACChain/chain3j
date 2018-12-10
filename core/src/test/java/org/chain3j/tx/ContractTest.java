@@ -120,7 +120,7 @@ public class ContractTest extends ManagedTransactionTester {
 
     @Test
     public void testIsValid() throws Exception {
-        prepareEthGetCode(TEST_CONTRACT_BINARY);
+        prepareMoacGetCode(TEST_CONTRACT_BINARY);
 
         Contract contract = deployContract(createTransactionReceipt());
         assertTrue(contract.isValid());
@@ -128,7 +128,7 @@ public class ContractTest extends ManagedTransactionTester {
 
     @Test
     public void testIsValidDifferentCode() throws Exception {
-        prepareEthGetCode(TEST_CONTRACT_BINARY + "0");
+        prepareMoacGetCode(TEST_CONTRACT_BINARY + "0");
 
         Contract contract = deployContract(createTransactionReceipt());
         assertFalse(contract.isValid());
@@ -136,7 +136,7 @@ public class ContractTest extends ManagedTransactionTester {
 
     @Test
     public void testIsValidEmptyCode() throws Exception {
-        prepareEthGetCode("");
+        prepareMoacGetCode("");
 
         Contract contract = deployContract(createTransactionReceipt());
         assertFalse(contract.isValid());
@@ -431,7 +431,7 @@ public class ContractTest extends ManagedTransactionTester {
     }
 
     @SuppressWarnings("unchecked")
-    private void prepareEthGetCode(String binary) throws IOException {
+    private void prepareMoacGetCode(String binary) throws IOException {
         McGetCode ethGetCode = new McGetCode();
         ethGetCode.setResult(Numeric.prependHexPrefix(binary));
 

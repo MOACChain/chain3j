@@ -210,6 +210,7 @@ public abstract class Contract extends ManagedTransaction {
     private List<Type> executeCall(
             Function function) throws IOException {
         String encodedFunction = FunctionEncoder.encode(function);
+        System.out.println("Execute call:");
         org.chain3j.protocol.core.methods.response.McCall mcCall = chain3j.mcCall(
                 Transaction.createMcCallTransaction(
                         transactionManager.getFromAddress(), 

@@ -35,10 +35,9 @@ public class RawTransaction {
     private String to;
     private BigInteger value;
     private String data;
-    // private Integer chainId;
     private String systemFlag;//Always 0
     private String shardingFlag;// 0 - MotherChain TX, 1 - Microchain TX
-    private String via;// Vnode address to send the TX to MicroChains
+    private String via;// Vnode address to send the TX to MicroChains, if no, leave it null
 
     protected RawTransaction(BigInteger nonce, 
             BigInteger gasPrice, 
