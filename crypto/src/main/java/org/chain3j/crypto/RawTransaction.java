@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import org.chain3j.utils.Numeric;
 
 /**
- * Transaction class used for signing MOAC transactions locally.<br>
+ * WalletDemo class used for signing MOAC transactions locally.<br>
  * For the specification, refer to p4 of the <a href="http://gavwood.com/paper.pdf">
  * yellow paper</a>.
  * To replace the RawTransaction.java in ETH
@@ -36,8 +36,10 @@ public class RawTransaction {
     private BigInteger value;
     private String data;
     // private Integer chainId;
-    private String systemFlag;//Always 0
-    private String shardingFlag;// 0 - MotherChain TX, 1 - Microchain TX
+    //private String systemFlag;//Always 0
+    private Integer systemFlag;//Edit by Shidian Wang
+   // private String shardingFlag;// 0 - MotherChain TX, 1 - Microchain TX
+   private Integer shardingFlag;//Edit by Shidian Wang
     private String via;// Vnode address to send the TX to MicroChains
 
     protected RawTransaction(BigInteger nonce, 
@@ -53,8 +55,10 @@ public class RawTransaction {
         this.gasLimit = gasLimit;
         this.to = to;
         this.value = value;
-        this.shardingFlag = shardingFlag;
-        this.via = via;
+        //this.shardingFlag = shardingFlag;
+        //this.shardingFlag = shardingFlag;
+        //this.via = via;
+        this.via="0xD814F2ac2c4cA49b33066582E4e97EBae02F2aB9";
 
         if (data != null) {
             this.data = Numeric.cleanHexPrefix(data);
@@ -62,7 +66,10 @@ public class RawTransaction {
         }
 
         // SystemFlag should always be 0
-        this.systemFlag = "";
+       // this.systemFlag = "";
+        //this.systemFlag="0";
+        this.shardingFlag = 0; //Edit by Shidian Wang
+        this.systemFlag = 0; //Edit by Shidian Wang
     }
 
     //Transfer MC only, no data 
@@ -70,8 +77,8 @@ public class RawTransaction {
     public static RawTransaction createMcTransaction(
             BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, String to,
             BigInteger value) {
-        String shardingFlag = "";
-        String via = "";
+        String shardingFlag = "0";
+        String via = "0xD814F2ac2c4cA49b33066582E4e97EBae02F2aB9"; //note:
         return new RawTransaction(nonce, gasPrice, gasLimit, to, value, "", shardingFlag, via);
 
     }
@@ -82,8 +89,8 @@ public class RawTransaction {
             BigInteger gasPrice, BigInteger gasLimit,
             String to, BigInteger value,
             String data) {
-        String shardingFlag = "";
-        String via = "";
+        String shardingFlag = "0";
+        String via = "0xD814F2ac2c4cA49b33066582E4e97EBae02F2aB9";
         return new RawTransaction(nonce, gasPrice, gasLimit, to, value, data, shardingFlag, via);
     }
 
@@ -105,8 +112,8 @@ public class RawTransaction {
             BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit, 
             BigInteger value,
             String init) {
-        String shardingFlag = "";
-        String via = "";
+        String shardingFlag = "0";
+        String via = "0xD814F2ac2c4cA49b33066582E4e97EBae02F2aB9";
         return new RawTransaction(nonce, gasPrice, gasLimit, "", value, init, shardingFlag, via);
     }
 
@@ -143,13 +150,19 @@ public class RawTransaction {
         return value;
     }
 
-    public String getShardingFlag() {
-        return  shardingFlag;
-    }
+//    public String getShardingFlag() {
+//        return  shardingFlag;
+//    }
+    public Integer getShardingFlag() {
+    return shardingFlag;
+} //test -- //Edit by Shidian Wang
 
-    public String getSystemFlag() {
-        return  systemFlag;
-    }
+//    public String getSystemFlag() {
+//        return  systemFlag;
+//    }
+    public Integer getSystemFlag() {
+    return systemFlag;
+} //test -- //Edit by Shidian Wang
 
     public String getVia() {
         return via;

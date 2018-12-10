@@ -13,9 +13,9 @@ import org.chain3j.tx.response.TransactionReceiptProcessor;
 import static org.chain3j.protocol.core.JsonRpc2_0Chain3j.DEFAULT_BLOCK_TIME;
 
 /**
- * Transaction manager abstraction for executing transactions with Moac client via
+ * WalletDemo manager abstraction for executing transactions with Moac client via
  * various mechanisms.
- * Notice the Transaction requires
+ * Notice the WalletDemo requires
  */
 public abstract class TransactionManager {
 

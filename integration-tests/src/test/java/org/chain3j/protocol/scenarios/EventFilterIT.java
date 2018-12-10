@@ -51,7 +51,7 @@ public class EventFilterIT extends Scenario {
         TransactionReceipt transactionReceipt =
                 waitForTransactionReceipt(transactionHash);
 
-        assertFalse("Transaction execution ran out of gas",
+        assertFalse("WalletDemo execution ran out of gas",
                 gas.equals(transactionReceipt.getGasUsed()));
 
         List<Log> logs = transactionReceipt.getLogs();

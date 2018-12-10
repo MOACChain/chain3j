@@ -57,7 +57,7 @@ public class WalletSendFunds extends WalletManager {
                 chain3j, destinationAddress, credentials, amountInSha);
 
         console.printf("Funds have been successfully transferred from %s to %s%n"
-                        + "Transaction hash: %s%nMined block number: %s%n",
+                        + "WalletDemo hash: %s%nMined block number: %s%n",
                 credentials.getAddress(),
                 destinationAddress,
                 transactionReceipt.getTransactionHash(),

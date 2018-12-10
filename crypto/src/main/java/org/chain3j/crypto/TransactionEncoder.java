@@ -41,7 +41,7 @@ public class TransactionEncoder {
             RawTransaction rawTransaction, Integer chainId, Credentials credentials) 
             throws CipherException {
 
-        //Check if the input chainId is the same as the Transaction, if not, return error
+        //Check if the input chainId is the same as the WalletDemo, if not, return error
         if (chainId <= 0) {
             throw new CipherException("Invalid chainId in the rawTransaction!");
         }
@@ -90,7 +90,7 @@ public class TransactionEncoder {
     public static byte[] signMessage(
             RawTransaction rawTransaction, Integer chainId, Credentials credentials) throws CipherException {
    
-        //Check if the input chainId is the same as the Transaction, if not, return error
+        //Check if the input chainId is the same as the WalletDemo, if not, return error
         if (chainId <= 0) {
             throw new CipherException("Invalid chainId in the rawTransaction!");
         }

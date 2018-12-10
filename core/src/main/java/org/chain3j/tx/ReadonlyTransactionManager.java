@@ -7,7 +7,7 @@ import org.chain3j.protocol.Chain3j;
 import org.chain3j.protocol.core.methods.response.McSendTransaction;
 
 /**
- * Transaction manager implementation for read-only operations on smart contracts.
+ * WalletDemo manager implementation for read-only operations on smart contracts.
  */
 public class ReadonlyTransactionManager extends TransactionManager {
 

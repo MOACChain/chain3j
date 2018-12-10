@@ -103,7 +103,7 @@ public class ContractTest extends ManagedTransactionTester {
     public void testContractDeployFails() throws Exception {
         thrown.expect(TransactionException.class);
         thrown.expectMessage(
-                "Transaction has failed with status: 0x0. Gas used: 1. (not-enough gas?)");
+                "WalletDemo has failed with status: 0x0. Gas used: 1. (not-enough gas?)");
         TransactionReceipt transactionReceipt = createFailedTransactionReceipt();
         deployContract(transactionReceipt);
     }
@@ -236,7 +236,7 @@ public class ContractTest extends ManagedTransactionTester {
     public void testTransactionFailed() throws Exception {
         thrown.expect(TransactionException.class);
         thrown.expectMessage(
-                "Transaction has failed with status: 0x0. Gas used: 1. (not-enough gas?)");
+                "WalletDemo has failed with status: 0x0. Gas used: 1. (not-enough gas?)");
 
         TransactionReceipt transactionReceipt = new TransactionReceipt();
         transactionReceipt.setTransactionHash(TRANSACTION_HASH);

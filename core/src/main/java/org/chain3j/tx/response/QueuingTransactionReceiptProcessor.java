@@ -13,7 +13,7 @@ import org.chain3j.protocol.exceptions.TransactionException;
 import org.chain3j.utils.Async;
 
 /**
- * Transaction receipt processor that uses a single thread to query for transaction receipts.
+ * WalletDemo receipt processor that uses a single thread to query for transaction receipts.
  *
  * <p><em>Note:</em>When initially invoked, this processor returns a transaction receipt containing
  * only the transaction hash of the submitted transaction. This is encapsulated in an

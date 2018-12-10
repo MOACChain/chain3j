@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.carrotsearch:junit-benchmarks:0.7.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.carrotsearch/junit-benchmarks/0.7.2/47678828916449646a8bbd46618f32c13b082f6/junit-benchmarks-0.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.carrotsearch/junit-benchmarks/0.7.2/d12ac45ed1ba71f80f05ebb88e31e88cd05e3de6/junit-benchmarks-0.7.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

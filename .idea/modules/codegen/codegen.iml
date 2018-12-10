@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":codegen" external.linked.project.path="$MODULE_DIR$/../../../codegen" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="org.chain3j" external.system.module.version="0.1.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../codegen/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../codegen/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../codegen">
+      <sourceFolder url="file://$MODULE_DIR$/../../../codegen/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../codegen/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../codegen/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../codegen/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../codegen/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../codegen/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="abi" />
+    <orderEntry type="module" module-name="crypto" />
+    <orderEntry type="module" module-name="tuples" />
+    <orderEntry type="module" module-name="rlp" />
+    <orderEntry type="module" module-name="utils" />
+    <orderEntry type="library" name="Gradle: com.squareup:javapoet:1.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jnr-unixsocket:0.15" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.8.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex:rxjava:1.2.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.java-websocket:Java-WebSocket:1.3.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jnr-enxio:0.14" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jnr-posix:3.0.33" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jnr-ffi:2.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jnr-constants:0.9.6" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.13.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15on:1.54" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.5" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jffi:1.2.14" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jffi:1.2.14:native" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm-commons:5.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm-analysis:5.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm-util:5.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:5.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.jnr:jnr-x86asm:1.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-core:1.10.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.objenesis:objenesis:2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: nl.jqno.equalsverifier:equalsverifier:2.1.7" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
+  </component>
+</module>

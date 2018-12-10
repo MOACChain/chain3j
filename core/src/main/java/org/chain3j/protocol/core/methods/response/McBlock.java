@@ -279,7 +279,7 @@ public class McBlock extends Response<McBlock.Block> {
             return Numeric.decodeQuantity(timestamp);
         }
 
-        public String getTimestampRaw() {
+        public String getTimestampRaw     () {
             return timestamp;
         }
 

@@ -55,7 +55,7 @@ public class TransactionDecoder {
             return new SignedRawTransaction(nonce, gasPrice, gasLimit,
                 to, value, data, shardingFlag, via, signatureData);
         } else {
-            // throw new CipherException("No signature fields in the input Transaction!");
+            // throw new CipherException("No signature fields in the input WalletDemo!");
             return RawTransaction.createTransaction(nonce,
                 gasPrice, gasLimit, to, value, data, shardingFlag, via);
         }

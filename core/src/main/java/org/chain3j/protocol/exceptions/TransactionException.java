@@ -1,7 +1,7 @@
 package org.chain3j.protocol.exceptions;
 
 /**
- * Transaction timeout exception indicates that we have breached some threshold waiting for a
+ * WalletDemo timeout exception indicates that we have breached some threshold waiting for a
  * transaction to execute.
  */
 public class TransactionException extends Exception {

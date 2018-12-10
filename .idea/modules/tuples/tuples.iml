@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":tuples" external.linked.project.path="$MODULE_DIR$/../../../tuples" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="org.chain3j" external.system.module.version="0.1.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../tuples/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../tuples/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../tuples">
+      <sourceFolder url="file://$MODULE_DIR$/../../../tuples/src/main/java" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../tuples/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../tuples/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../tuples/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-core:1.10.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.objenesis:objenesis:2.1" level="project" />
+  </component>
+</module>
