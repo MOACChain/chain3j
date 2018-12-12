@@ -10,19 +10,19 @@ import org.chain3j.abi.datatypes.Uint;
 import org.chain3j.protocol.core.methods.request.Transaction;
 
 /**
- * Mordon Testnet Configuration.
+ * MOAC Testnet Configuration.
  */
 public class TestnetConfig implements IntegrationTestConfig {
 
     @Override
     public String validBlockHash() {
-        https://testnet.etherscan.io/block/1627453
-        return "0xd67e59db999c3bd78bd4c2ba54689dba0c372ebcad09c8b9677970f37d64ca46";
+        // https://testnet.moac.io/block/1508772
+        return "0xd090b0e33e6f17a58c4ed8a851bb9b05464bb92e2d082777f59519b201c4424c";
     }
 
     @Override
     public BigInteger validBlock() {
-        // https://testnet.etherscan.io/block/71032
+        // https://testnet.moac.io/block/71032
         return BigInteger.valueOf(71032);
     }
 
@@ -38,14 +38,14 @@ public class TestnetConfig implements IntegrationTestConfig {
 
     @Override
     public String validAccount() {
-        // https://testnet.etherscan.io/address/0xCB10FBad79F5e602699fFf2Bb4919Fbd87AbC8CC
-        return "0xcb10fbad79f5e602699fff2bb4919fbd87abc8cc";
+        // https://testnet.moac.io/address/0x7312F4B8A4457a36827f185325Fd6B66a3f8BB8B
+        return "0x7312F4B8A4457a36827f185325Fd6B66a3f8BB8B";
     }
 
     @Override
     public String validContractAddress() {
         // Deployed fibonacci example
-        return "0x3c05b2564139fb55820b18b72e94b2178eaace7d";
+        return "0xf2f4eec6c2adfcf780aae828de0b25f86506ffae";
     }
 
     @Override

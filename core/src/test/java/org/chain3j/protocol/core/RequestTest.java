@@ -22,11 +22,11 @@ public class RequestTest extends RequestTester {
     }
 
     @Test
-    public void testWeb3ClientVersion() throws Exception {
+    public void testChain3ClientVersion() throws Exception {
         chain3j.chain3ClientVersion().send();
 
         verifyResult(
-                "{\"jsonrpc\":\"2.0\",\"method\":\"chain3_clientVersion\",\"params\":[],\"id\":1}");
+                "{\"jsonrpc\":\"2.0\",\"method\":\"chain3_clientVersion\",\"params\":[],\"id\":100}");
     }
 
     @Test

@@ -41,9 +41,6 @@ public class Application {
         //        "http://gateway.moac.io/testnet"));  // FIXME: Enter your http connection here;
         Chain3j chain3j = Chain3j.build(new HttpService(
                 "http://127.0.0.1:8545"));  // Use local MOAC server;
-
-        //log.info("Connected to Moac client version: "
-        //        + chain3j.chain3ClientVersion().send().getChain3ClientVersion());
         
         System.out.println("Out Connected to MOAC client version: "
                 + chain3j.chain3ClientVersion().send().getChain3ClientVersion());
