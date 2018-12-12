@@ -72,7 +72,7 @@ public class TransactionDecoderTest {
         // byte[] encodedTransaction = TransactionEncoder.encode(rawTransaction);
         // BigInteger key = Sign.signedMessageToKey(encodedTransaction, signatureData);
         // assertEquals(key, SampleKeys.PUBLIC_KEY);
-        // assertEquals(SampleKeys.ADDRESS, signedResult.getFrom());
+        assertEquals(SampleKeys.ADDRESS, signedResult.getFrom());
         // signedResult.verify(SampleKeys.ADDRESS);
         assertEquals(signedResult.getChainId(), chainId);
     }

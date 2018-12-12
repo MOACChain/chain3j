@@ -8,7 +8,7 @@ import org.chain3j.tx.ChainId;
 import org.chain3j.utils.Numeric;
 
 /**
- * Transaction request object used the below methods.
+ * WalletDemo request object used the below methods.
  * <ol>
  *     <li>mc_call</li>
  *     <li>mc_sendTransaction</li>
@@ -29,8 +29,10 @@ public class Transaction {
     private String data;
     private BigInteger nonce;  // nonce field is not present on mc_call/mc_estimateGas
     // private Integer chainId;
-    private String shardingFlag;// 0 - MotherChain TX, 1 - MicroChain TX
-    private String systemFlag;  // 0 - non-system TX, default; 
+    //private String shardingFlag;// 0 - MotherChain TX, 1 - MicroChain TX
+    private Integer shardingFlag;//Edit by Shidian Wang
+    //private String systemFlag;  // 0 - non-system TX, default;
+    private Integer systemFlag;//Edit by Shidian Wang
     //1 - system TX, internal use only, should not set
     private String via;         // 
 
@@ -43,9 +45,11 @@ public class Transaction {
         this.value = value;
 
         //Set default values for new flags
-        this.shardingFlag = "0";
-        this.systemFlag = "0";
-        this.via = "";//default should be null or a format of empty address
+        //        this.shardingFlag = "0";
+        //        this.systemFlag = "0";
+        this.shardingFlag = 0; //Edit by Shidian Wang
+        this.systemFlag = 0; //Edit by Shidian Wang
+        this.via = "0x0000000000000000000000000000000000000000";
 
         if (data != null) {
             this.data = Numeric.prependHexPrefix(data);
@@ -124,17 +128,17 @@ public class Transaction {
         return convert(nonce);
     }
 
-    public String getSystemFlag() {
+    public Integer getSystemFlag() {
         return systemFlag;
-    }
+    } 
 
     public String getVia() {
         return via;
     }
 
-    public String getShardingFlag() {
+    public Integer getShardingFlag() {
         return shardingFlag;
-    }
+    } //test -- //Edit by Shidian Wang
 
     private static String convert(BigInteger value) {
         if (value != null) {

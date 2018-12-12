@@ -12,7 +12,7 @@ public class SignedRawTransaction extends RawTransaction {
 
     public SignedRawTransaction(BigInteger nonce, BigInteger gasPrice,
             BigInteger gasLimit, String to, BigInteger value, String data,
-            String shardingFlag,
+            Integer shardingFlag,
             String via,
             Sign.SignatureData signatureData) {
         //Check

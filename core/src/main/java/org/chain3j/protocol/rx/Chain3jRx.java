@@ -11,8 +11,6 @@ import org.chain3j.protocol.core.methods.response.McBlock;
 import org.chain3j.protocol.core.methods.response.Transaction;
 import org.chain3j.protocol.websocket.events.LogNotification;
 import org.chain3j.protocol.websocket.events.NewHeadsNotification;
-import org.chain3j.protocol.websocket.events.PendingTransactionNotification;
-import org.chain3j.protocol.websocket.events.SyncingNotfication;
 
 /**
  * The Observables JSON-RPC client event API.

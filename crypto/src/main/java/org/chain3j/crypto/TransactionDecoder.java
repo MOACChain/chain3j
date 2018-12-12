@@ -32,6 +32,7 @@ public class TransactionDecoder {
     public static RawTransaction decode(String hexTransaction) throws CipherException {
         byte[] transaction = Numeric.hexStringToByteArray(hexTransaction);
         RlpList rlpList = RlpDecoder.decode(transaction);
+
         //Extract the values from the list
         RlpList values = (RlpList) rlpList.getValues().get(0);
         BigInteger nonce = ((RlpString) values.getValues().get(0)).asPositiveBigInteger();
@@ -55,12 +56,22 @@ public class TransactionDecoder {
                 Numeric.toBigInt(((RlpString) values.getValues().get(11)).getBytes()), 32);
             Sign.SignatureData signatureData = new Sign.SignatureData(v, r, s);
 
-            return new SignedRawTransaction(nonce, gasPrice, gasLimit,
-                to, value, data, shardingFlag, via, signatureData);
+            try {
+                Integer sFlag = Integer.valueOf(shardingFlag);
+                if ( sFlag >= 0){
+                    return new SignedRawTransaction(nonce, gasPrice, gasLimit,
+                    to, value, data, sFlag, via, signatureData);
+                }else{
+                    throw new CipherException("TransactionDecode: shardingFlag less than 0");
+                }
+            }catch (NumberFormatException e) {
+                throw new CipherException("TransactionDecoder: shardingFlag is not a valid Integer");
+            }
+
         } else {
-            // throw new CipherException("No signature fields in the input Transaction!");
-            return RawTransaction.createTransaction(nonce,
-                gasPrice, gasLimit, to, value, data, shardingFlag, via);
+            // return RawTransaction.createTransaction(nonce,
+            //     gasPrice, gasLimit, to, value, data, shardingFlag, via);
+            throw new CipherException("TransactionDecoder: No signature fields in the input !");
         }
     }
     

@@ -23,7 +23,7 @@ import org.chain3j.utils.Numeric;
 import static org.chain3j.utils.Assertions.verifyPrecondition;
 
 /**
- * <p>Transaction signing logic.</p>
+ * <p>WalletDemo signing logic.</p>
  *
  * <p>Adapted from the
  * <a href="https://github.com/bitcoinj/bitcoinj/blob/master/core/src/main/java/org/bitcoinj/core/ECKey.java">

@@ -32,7 +32,7 @@ public abstract class Service implements Chain3jService {
         String payload = objectMapper.writeValueAsString(request);
 
         //Debugging use, print out the JSON string send to the server
-        System.out.print("Service.java => Send:"+payload);
+        System.out.println("Service.java => Send:" + payload);
         try (InputStream result = performIO(payload)) {
             if (result != null) {
                 return objectMapper.readValue(result, responseType);

@@ -8,8 +8,6 @@ import org.junit.Test;
 import org.chain3j.protocol.Chain3j;
 import org.chain3j.protocol.RequestTester;
 import org.chain3j.protocol.core.methods.request.McFilter;
-// import org.chain3j.protocol.core.methods.request.ShhFilter;
-// import org.chain3j.protocol.core.methods.request.ShhPost;
 import org.chain3j.protocol.core.methods.request.Transaction;
 import org.chain3j.protocol.http.HttpService;
 import org.chain3j.utils.Numeric;
@@ -100,7 +98,6 @@ public class RequestTest extends RequestTester {
     @Test
     public void testMcGasPrice() throws Exception {
         chain3j.mcGasPrice().send();
-
         verifyResult("{\"jsonrpc\":\"2.0\",\"method\":\"mc_gasPrice\",\"params\":[],\"id\":1}");
     }
 

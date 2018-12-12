@@ -112,26 +112,32 @@ public class RawTransactionManager extends TransactionManager {
     public McSendTransaction signAndSend(RawTransaction rawTransaction)
             throws IOException {
 
-        byte[] signedMessage;
-
-        if (chainId > ChainId.NONE) {
-            signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
-        } else {
-            // signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
-            throw new IOException("Invalid chain id for signing the Transaction!");
-        }
-
-        String hexValue = Numeric.toHexString(signedMessage);
-        McSendTransaction mcSendTransaction = chain3j.mcSendRawTransaction(hexValue).send();
-
-        if (mcSendTransaction != null && !mcSendTransaction.hasError()) {
-            String txHashLocal = Hash.sha3(hexValue);
-            String txHashRemote = mcSendTransaction.getTransactionHash();
-            if (!txHashVerifier.verify(txHashLocal, txHashRemote)) {
-                throw new TxHashMismatchException(txHashLocal, txHashRemote);
+        try {
+            byte[] signedMessage;
+            if (chainId > ChainId.NONE) {
+                int id = chainId;
+                //signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
+                signedMessage = TransactionEncoder.signTxEIP155(rawTransaction, id, credentials);
+            } else {
+                // signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
+                throw new IOException("Invalid chain id for signing the MOAC rawTransaction!");
             }
-        }
 
-        return mcSendTransaction;
+            String hexValue = Numeric.toHexString(signedMessage);
+            McSendTransaction mcSendTransaction = chain3j.mcSendRawTransaction(hexValue).send();
+
+            if (mcSendTransaction != null && !mcSendTransaction.hasError()) {
+                String txHashLocal = Hash.sha3(hexValue);
+                String txHashRemote = mcSendTransaction.getTransactionHash();
+                if (!txHashVerifier.verify(txHashLocal, txHashRemote)) {
+                    throw new TxHashMismatchException(txHashLocal, txHashRemote);
+                }
+            }
+
+            return mcSendTransaction;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IOException("Invalid chain id for signing the WalletDemo!");
+        }
     }
 }

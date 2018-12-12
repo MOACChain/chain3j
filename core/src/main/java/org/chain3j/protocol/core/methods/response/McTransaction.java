@@ -13,14 +13,14 @@ import org.chain3j.protocol.ObjectMapperFactory;
 import org.chain3j.protocol.core.Response;
 
 /**
- * Transaction object returned by:
+ * WalletDemo object returned by:
  * <ul>
  * <li>mc_getTransactionByHash</li>
  * <li>mc_getTransactionByBlockHashAndIndex</li>
  * <li>mc_getTransactionByBlockNumberAndIndex</li>
  * </ul>
  *
- * <p>This differs slightly from the request {@link McSendTransaction} Transaction object.</p>
+ * <p>This differs slightly from the request {@link McSendTransaction} WalletDemo object.</p>
  *
  * <p>See
  * <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_gettransactionbyhash">docs</a>

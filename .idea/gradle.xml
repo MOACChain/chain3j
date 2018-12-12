@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="F:/Gradle/gradle-4.10.2" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BaseDemo" />
+            <option value="$PROJECT_DIR$/abi" />
+            <option value="$PROJECT_DIR$/codegen" />
+            <option value="$PROJECT_DIR$/console" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/crypto" />
+            <option value="$PROJECT_DIR$/integration-tests" />
+            <option value="$PROJECT_DIR$/rlp" />
+            <option value="$PROJECT_DIR$/tuples" />
+            <option value="$PROJECT_DIR$/utils" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

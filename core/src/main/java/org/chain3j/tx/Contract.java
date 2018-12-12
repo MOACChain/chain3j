@@ -219,6 +219,7 @@ public abstract class Contract extends ManagedTransaction {
                 .send();
 
         String value = mcCall.getValue();
+
         return FunctionReturnDecoder.decode(value, function.getOutputParameters());
     }
 
@@ -230,6 +231,7 @@ public abstract class Contract extends ManagedTransaction {
             return (T) values.get(0);
         } else {
             return null;
+            //return (T)"0xef5fb05b";
         }
     }
 
@@ -262,6 +264,7 @@ public abstract class Contract extends ManagedTransaction {
             Function function)
             throws IOException, TransactionException {
         return executeTransaction(function, BigInteger.ZERO);
+        // return executeTransaction(function, BigInteger.valueOf(101)); edit by Shidian Wang
     }
 
     private TransactionReceipt executeTransaction(
@@ -290,7 +293,7 @@ public abstract class Contract extends ManagedTransaction {
         if (!receipt.isStatusOK()) {
             throw new TransactionException(
                     String.format(
-                            "Transaction has failed with status: %s. "
+                            "WalletDemo has failed with status: %s. "
                                     + "Gas used: %d. (not-enough gas?)",
                             receipt.getStatus(),
                             receipt.getGasUsed()));

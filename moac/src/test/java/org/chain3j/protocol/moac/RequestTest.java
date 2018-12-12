@@ -9,7 +9,7 @@ public class RequestTest extends RequestTester {
     private Moac chain3j;
 
     @Override
-    protected void initWeb3Client(HttpService httpService) {
+    protected void initChain3Client(HttpService httpService) {
         chain3j = Moac.build(httpService);
     }
     

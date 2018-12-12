@@ -3,7 +3,7 @@ package org.chain3j.crypto;
 import org.chain3j.utils.Numeric;
 
 /**
- * Transaction utility functions.
+ * WalletDemo utility functions.
  * MOAC only allow transaction signed with chainId info
  */
 public class TransactionUtils {
