@@ -50,11 +50,12 @@ public class TransactionDecoderTest {
         byte[] signedMessage = TransactionEncoder.signTxEIP155(
                 rawTransaction, chainId, SampleKeys.CREDENTIALS);
         String hexMessage = Numeric.toHexString(signedMessage);
+
         assertEquals(hexMessage,
-                "0xf86d02808504a817c800825208947312f4b8a4457a36827f185325fd6b66"
-                + "a3f8bb8b85e8d4a5100080808081eca0c3a06405c8a8f439c83f7e2ab238e"
-                + "2f7572c95bbad78ac5a12f423ca997bae3ea0580658fc2b3698481e49d79a"
-                + "759245356f1cad063b4560e453ef5c6b3349b965");
+                "0xf88102808504a817c800825208947312f4b8a4457a36827f185325fd6b66"
+                        + "a3f8bb8b85e8d4a51000808094000000000000000000000000000000000000000081"
+                        + "eca0bdeecffc4167652762a3f0cc056d7c29e26d19ed37a5a16e7478d7ab28da775c"
+                        + "a0445adeefa1c00d82385493209a9609704f6152560a3439c4c46567bda167b095");
 
         RawTransaction result = TransactionDecoder.decode(hexMessage);
         assertNotNull(result);
@@ -67,13 +68,14 @@ public class TransactionDecoderTest {
         assertTrue(result instanceof SignedRawTransaction);
         SignedRawTransaction signedResult = (SignedRawTransaction) result;
         assertNotNull(signedResult.getSignatureData());
+
         // TODO
-        // Sign.SignatureData signatureData = signedResult.getSignatureData();
-        // byte[] encodedTransaction = TransactionEncoder.encode(rawTransaction);
-        // BigInteger key = Sign.signedMessageToKey(encodedTransaction, signatureData);
-        // assertEquals(key, SampleKeys.PUBLIC_KEY);
+        Sign.SignatureData signatureData = signedResult.getSignatureData();
+        byte[] encodedTransaction = TransactionEncoder.encode(rawTransaction);
+        BigInteger key = Sign.signedMessageToKey(encodedTransaction, signatureData);
+        assertEquals(key, SampleKeys.PUBLIC_KEY);
         assertEquals(SampleKeys.ADDRESS, signedResult.getFrom());
-        // signedResult.verify(SampleKeys.ADDRESS);
+        signedResult.verify(SampleKeys.ADDRESS);
         assertEquals(signedResult.getChainId(), chainId);
     }
 
@@ -87,8 +89,9 @@ public class TransactionDecoderTest {
         Integer chainId = 101;
         RawTransaction rawTransaction = RawTransaction.createMcTransaction(
                 nonce, gasPrice, gasLimit, to, value);
-        byte[] signedMessage = TransactionEncoder.signMessage(
+        byte[] signedMessage = TransactionEncoder.signTxEIP155(
                 rawTransaction, chainId, SampleKeys.CREDENTIALS);
+
         String hexMessage = Numeric.toHexString(signedMessage);
 
         RawTransaction result = TransactionDecoder.decode(hexMessage);
@@ -101,8 +104,8 @@ public class TransactionDecoderTest {
         assertEquals("", result.getData());
         assertTrue(result instanceof SignedRawTransaction);
         SignedRawTransaction signedResult = (SignedRawTransaction) result;
-        // assertEquals(SampleKeys.ADDRESS, signedResult.getFrom());
-        // signedResult.verify(SampleKeys.ADDRESS);
+        assertEquals(SampleKeys.ADDRESS, signedResult.getFrom());
+        signedResult.verify(SampleKeys.ADDRESS);
         assertEquals(chainId, signedResult.getChainId());
     }
 
@@ -130,6 +133,6 @@ public class TransactionDecoderTest {
         assertEquals(Integer.valueOf(100), signedResult.getChainId());
         assertEquals("0x7312f4b8a4457a36827f185325fd6b66a3f8bb8b", signedResult.getTo());
         //Should make it work after signature is set.
-        // assertEquals("0xef678007d18427e6022059dbc264f27507cd1ffc", signedResult.getFrom());
+        assertEquals("0xef678007d18427e6022059dbc264f27507cd1ffc", signedResult.getFrom());
     }
 }

@@ -3,6 +3,7 @@ package org.chain3j.tx;
 import java.io.IOException;
 import java.math.BigInteger;
 
+import org.chain3j.crypto.CipherException;
 import org.chain3j.crypto.Credentials;
 import org.chain3j.crypto.Hash;
 import org.chain3j.crypto.RawTransaction;
@@ -112,32 +113,34 @@ public class RawTransactionManager extends TransactionManager {
     public McSendTransaction signAndSend(RawTransaction rawTransaction)
             throws IOException {
 
-        try {
-            byte[] signedMessage;
-            if (chainId > ChainId.NONE) {
-                int id = chainId;
-                //signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
+        byte[] signedMessage;
+        if (this.chainId > ChainId.NONE) {
+            int id = this.chainId;
+
+            try {
+                // MOAC sign message need to use chainid
                 signedMessage = TransactionEncoder.signTxEIP155(rawTransaction, id, credentials);
-            } else {
-                // signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
-                throw new IOException("Invalid chain id for signing the MOAC rawTransaction!");
+            } catch (CipherException e) {
+                //
+                throw new IOException(e.getMessage());
             }
 
-            String hexValue = Numeric.toHexString(signedMessage);
-            McSendTransaction mcSendTransaction = chain3j.mcSendRawTransaction(hexValue).send();
-
-            if (mcSendTransaction != null && !mcSendTransaction.hasError()) {
-                String txHashLocal = Hash.sha3(hexValue);
-                String txHashRemote = mcSendTransaction.getTransactionHash();
-                if (!txHashVerifier.verify(txHashLocal, txHashRemote)) {
-                    throw new TxHashMismatchException(txHashLocal, txHashRemote);
-                }
-            }
-
-            return mcSendTransaction;
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new IOException("Invalid chain id for signing the WalletDemo!");
+        } else {
+            // signedMessage = TransactionEncoder.signMessage(rawTransaction, chainId, credentials);
+            throw new IOException("Invalid chain id for signing the MOAC rawTransaction!");
         }
+
+        String hexValue = Numeric.toHexString(signedMessage);
+        McSendTransaction mcSendTransaction = chain3j.mcSendRawTransaction(hexValue).send();
+
+        if (mcSendTransaction != null && !mcSendTransaction.hasError()) {
+            String txHashLocal = Hash.sha3(hexValue);
+            String txHashRemote = mcSendTransaction.getTransactionHash();
+            if (!txHashVerifier.verify(txHashLocal, txHashRemote)) {
+                throw new TxHashMismatchException(txHashLocal, txHashRemote);
+            }
+        }
+
+        return mcSendTransaction;
     }
 }

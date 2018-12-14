@@ -57,14 +57,22 @@ public class TransactionDecoder {
             Sign.SignatureData signatureData = new Sign.SignatureData(v, r, s);
 
             try {
-                Integer sFlag = Integer.valueOf(shardingFlag);
-                if ( sFlag >= 0){
+                if (shardingFlag.equals("0x")) {
                     return new SignedRawTransaction(nonce, gasPrice, gasLimit,
-                    to, value, data, sFlag, via, signatureData);
-                }else{
-                    throw new CipherException("TransactionDecode: shardingFlag less than 0");
+                            to, value, data, 0, via, signatureData);
+                } else {
+                    Integer sFlag = Numeric.toBigInt(shardingFlag).intValue();//Integer.valueOf(shardingFlag);
+                    if (sFlag >= 0) {
+                        return new SignedRawTransaction(nonce, gasPrice, gasLimit,
+                                to, value, data, sFlag, via, signatureData);
+                    } else {
+                        throw new CipherException("TransactionDecode: shardingFlag less than 0");
+                    }
                 }
-            }catch (NumberFormatException e) {
+
+
+
+            } catch (NumberFormatException e) {
                 throw new CipherException("TransactionDecoder: shardingFlag is not a valid Integer");
             }
 

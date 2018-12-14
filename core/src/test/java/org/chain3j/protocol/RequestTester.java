@@ -38,6 +38,7 @@ public abstract class RequestTester {
     protected void verifyResult(String expected) throws Exception {
         RequestBody requestBody = requestInterceptor.getRequestBody();
         assertNotNull(requestBody);
+        System.out.print("verifyResult=>RequestBody:" + requestBody.toString());
         assertThat(requestBody.contentType(), is(HttpService.JSON_MEDIA_TYPE));
 
         Buffer buffer = new Buffer();

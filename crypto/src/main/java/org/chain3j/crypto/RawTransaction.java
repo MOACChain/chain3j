@@ -38,8 +38,8 @@ public class RawTransaction {
     
     //private String systemFlag;//Always 0
     private Integer systemFlag;//Edit by Shidian Wang
-   // private String shardingFlag;// 0 - MotherChain TX, 1 - Microchain TX
-   private Integer shardingFlag;//Edit by Shidian Wang
+    // private String shardingFlag;// 0 - MotherChain TX, 1 - Microchain TX
+    private Integer shardingFlag;//Edit by Shidian Wang
     private String via;// Vnode address to send the TX to MicroChains
 
     protected RawTransaction(BigInteger nonce, 
@@ -58,16 +58,16 @@ public class RawTransaction {
         //this.shardingFlag = shardingFlag;
         //this.via = via;
         // use empty via address
-        this.via=via;
+        this.via = via;
 
         if (data != null) {
             this.data = Numeric.cleanHexPrefix(data);
         }
 
         // Set default to 0
-        if (shardingFlag >= 0 ){
+        if (shardingFlag >= 0) {
             this.shardingFlag = shardingFlag;
-        }else{
+        } else {
             this.shardingFlag = 0; 
         }
         // SystemFlag should always be 0
@@ -83,6 +83,7 @@ public class RawTransaction {
         return new RawTransaction(nonce, gasPrice, gasLimit, to, value, "", shardingFlag, via);
 
     }
+
     // For transaction to the MotherChain
     // Set shardingFlag and via for Global TX
     
