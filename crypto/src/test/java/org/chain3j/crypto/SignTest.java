@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 
 public class SignTest {
 
-    private static final byte[] TEST_MESSAGE = "A test message".getBytes();
+    private static final byte[] TEST_MESSAGE = "MOAC test message".getBytes();
 
     @Test
     public void testSignMessage() {
