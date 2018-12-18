@@ -165,13 +165,13 @@ public interface Moac {
 
     Request<?, VnodeShowToPublic> vnodeShowToPublic();
 
-    Request<?, VnodeServiceCfg> vnodeServiceCfg();
+    Request<?, VnodeServiceCfg> vnodeServiceCfg(); //?????
 
-    Request<?, VnodeScsService> vnodeScsService();
+    Request<?, VnodeScsService> vnodeScsService(); //是确定scs连接到vnode吗？
 
     Request<?, ScsGetDappState> getDappState(String dappAddress);
 
-    Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String dappAddress);
+    Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String dappAddress); //dapp的信息？ 还是
 
     Request<?, ScsGetMicroChainList> getMicroChainList();
 

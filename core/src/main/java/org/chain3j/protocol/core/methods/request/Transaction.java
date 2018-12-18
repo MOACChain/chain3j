@@ -44,9 +44,13 @@ public class Transaction {
         this.gasPrice = gasPrice;
         this.value = value;
 
-        //Set default values for new flags
-        //        this.shardingFlag = "0";
-        //        this.systemFlag = "0";
+        /*
+
+        Set default values for new flags
+        this.shardingFlag = "0";
+        this.systemFlag = "0";
+
+        */
         this.shardingFlag = 0; //Edit by Shidian Wang
         this.systemFlag = 0; //Edit by Shidian Wang
         this.via = "0x0000000000000000000000000000000000000000";

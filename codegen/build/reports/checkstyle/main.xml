@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.7">
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\AbiTypesGenerator.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\AbiTypesMapperGenerator.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\Console.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\FunctionWrapperGenerator.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\GenerationReporter.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\Generator.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\LogGenerationReporter.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\SolidityFunctionWrapper.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\SolidityFunctionWrapperGenerator.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\TruffleJsonFunctionWrapperGenerator.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\main\java\org\chain3j\codegen\TupleGenerator.java">
+</file>
+</checkstyle>

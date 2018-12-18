@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.7">
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\AbiTypesGeneratorTest.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\AbiTypesMapperGeneratorTest.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\ContractJsonParseTest.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\SolidityFunctionWrapperGeneratorTest.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\SolidityFunctionWrapperTest.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\TruffleJsonFunctionWrapperGeneratorTest.java">
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\codegen\src\test\java\org\chain3j\codegen\TupleGeneratorTest.java">
+</file>
+</checkstyle>

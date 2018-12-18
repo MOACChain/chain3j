@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.7">
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\BaseDemo\BaseDemoApplication.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.BaseDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="23" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="58" severity="error" message="本行字符数 135个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="74" column="44" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="74" column="45" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="81" column="24" severity="error" message="Method name &apos;LoadCredentialsFromKeystoreFile&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9_]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\BaseDemo\BaseFunctionDemo.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.BaseDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="15" severity="error" message="导入语句&apos;org.slf4j.Logger&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="16" severity="error" message="导入语句&apos;org.slf4j.LoggerFactory&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="18" severity="error" message="导入语句&apos;java.io.File&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="19" severity="error" message="导入语句&apos;java.io.IOException&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="20" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="21" severity="error" message="导入语句&apos;java.util.List&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="26" column="43" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="31" column="22" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="35" column="12" severity="error" message="WhitespaceAround: &apos;try&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="35" column="12" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="37" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="37" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="37" column="31" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="46" severity="error" message="注释应与第49行代码同样缩进8个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="49" column="12" severity="error" message="WhitespaceAround: &apos;try&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="49" column="12" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="51" severity="error" message="空 catch 块。" source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyCatchBlockCheck"/>
+<error line="51" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="51" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="51" column="31" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="58" severity="error" message="空 catch 块。" source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyCatchBlockCheck"/>
+<error line="58" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="58" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="58" column="31" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="65" severity="error" message="空 catch 块。" source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyCatchBlockCheck"/>
+<error line="65" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="65" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="65" column="31" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="74" severity="error" message="注释应与第63行代码同样缩进8个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="91" severity="error" message="注释应与第93行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="93" column="64" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="94" column="25" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="95" column="24" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="95" column="25" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="97" severity="error" message="本行字符数 122个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="100" column="42" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="100" column="43" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="100" column="50" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="100" column="51" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="103" column="65" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="106" severity="error" message="本行字符数 123个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="107" column="43" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="107" column="44" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="110" column="72" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="117" column="64" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="121" column="44" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="121" column="45" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="122" column="43" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="127" column="63" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="130" severity="error" message="注释应与第132行代码同样缩进8个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="135" column="52" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="135" column="53" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="137" severity="error" message="本行字符数 116个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\BaseContractDemo.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="4" severity="error" message="&apos;org.chain3j.crypto.Credentials&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="error" message="导入语句&apos;org.slf4j.Logger&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行应为： &apos;STATIC&apos;。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="14" severity="error" message="导入语句&apos;org.slf4j.LoggerFactory&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行应为： &apos;STATIC&apos;。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="16" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行应为： &apos;STATIC&apos;。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="21" column="30" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="22" column="29" severity="error" message="&apos;(&apos; 后不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="22" column="43" severity="error" message="&apos;)&apos; 前不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="22" column="62" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="26" column="40" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="30" column="12" severity="error" message="WhitespaceAround: &apos;try&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="30" column="12" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="31" column="27" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="31" column="28" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="36" severity="error" message="本行字符数 127个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="38" column="27" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="38" column="28" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="43" column="28" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="45" column="36" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="45" column="37" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="46" column="39" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="46" column="40" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="47" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="47" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="47" column="29" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="54" column="24" severity="error" message="Method name &apos;LoadCredentialsFromKeystoreFile&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9_]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+<error line="56" column="75" severity="error" message="&apos;+&apos; 应另起一行。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\ContractEventSample.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="4" severity="error" message="&apos;org.chain3j.crypto.Credentials&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="12" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="17" severity="error" message="注释应与第19行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="19" column="60" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="24" column="43" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="40" column="40" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="54" severity="error" message="注释应与第56行代码同样缩进12个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="62" column="24" severity="error" message="Method name &apos;LoadCredentialsFromKeystoreFile&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9_]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\GreetContract\GreeterContract.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo.GreetContract&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="11" severity="error" message="不应使用 &apos;.*&apos; 形式的导入 - org.chain3j.protocol.core.methods.response.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="16" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="17" severity="error" message="导入语句&apos;java.util.Arrays&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="18" severity="error" message="导入语句&apos;java.util.Collections&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="25" column="6" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="37" column="77" severity="error" message="Parameter name &apos;_greeting&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="39" column="6" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="40" column="33" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="44" column="12" severity="error" message="WhitespaceAround: &apos;try&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="44" column="12" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="47" severity="error" message="注释应与第46, 48行代码同样缩进20, 8个缩进符，而不是12个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="48" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="48" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="48" column="15" severity="error" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="48" column="41" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="50" column="9" severity="error" message="第 9 个字符 &apos;}&apos;应该与当前多代码块的下一部分 （if/else-if/else, do/while 或 try/catch/finally）位于同一行。" source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+<error line="51" column="14" severity="error" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="51" column="27" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="52" column="51" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="52" column="52" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="57" severity="error" message="&apos;method def modifier&apos; 缩进了8个缩进符，应为4个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="57" column="46" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="61" severity="error" message="&apos;object def rcurly&apos; 缩进了16个缩进符，应为以下缩进之一：20, 24, 28。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="63" column="9" severity="error" message="第 9 个字符 &apos;{&apos; 应位于前一行。" source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="65" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="65" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="72" column="66" severity="error" message="Parameter name &apos;_greeting&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="72" column="76" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="73" column="42" severity="error" message="&apos;(&apos; 后不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\GreetContract\MyContract.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo.GreetContract&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="9" severity="error" message="&apos;org.chain3j.abi.FunctionEncoder&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="16" severity="error" message="导入语句&apos;org.slf4j.Logger&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="17" severity="error" message="导入语句&apos;org.slf4j.LoggerFactory&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="18" severity="error" message="导入语句&apos;java.util.Arrays&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="19" severity="error" message="导入语句&apos;java.util.concurrent.Future&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="22" severity="error" message="&apos;org.chain3j.crypto.Credentials&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="22" severity="error" message="导入语句&apos;org.chain3j.crypto.Credentials&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="23" severity="error" message="导入语句&apos;org.chain3j.crypto.RawTransaction&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="24" severity="error" message="导入语句&apos;org.chain3j.crypto.TransactionEncoder&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="25" severity="error" message="导入语句&apos;org.chain3j.crypto.WalletUtils&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="26" severity="error" message="导入语句&apos;org.chain3j.protocol.Chain3j&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="27" severity="error" message="导入语句&apos;org.chain3j.protocol.core.DefaultBlockParameter&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="28" severity="error" message="导入语句&apos;org.chain3j.protocol.core.methods.response.McGetBalance&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="29" severity="error" message="导入语句&apos;org.chain3j.protocol.core.methods.response.McGetTransactionCount&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="30" severity="error" message="导入语句&apos;org.chain3j.protocol.http.HttpService&apos; 字典顺序错误。应在&apos;org.chain3j.tx.gas.StaticGasProvider&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="32" severity="error" message="导入语句&apos;org.chain3j.tx.gas.DefaultGasProvider&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="33" severity="error" message="导入语句&apos;org.chain3j.tx.gas.ContractGasProvider&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="35" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="36" severity="error" message="导入语句&apos;org.chain3j.tx.Contract&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="37" severity="error" message="导入语句&apos;org.chain3j.abi.datatypes.Function&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="38" severity="error" message="导入语句&apos;org.chain3j.protocol.core.RemoteCall&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="40" severity="error" message="导入语句&apos;org.chain3j.abi.datatypes.Type&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="41" severity="error" message="导入语句&apos;org.chain3j.abi.datatypes.Utf8String&apos; 字典顺序错误。应在&apos;org.chain3j.utils.Numeric&apos;之前。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="56" severity="error" message="注释应与第58行代码同样缩进8个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="64" severity="error" message="注释应与第66行代码同样缩进8个缩进符，而不是16个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="67" severity="error" message="本行字符数 126个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="70" column="11" severity="error" message="WhitespaceAround: &apos;if&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="70" column="12" severity="error" message="&apos;(&apos; 后不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="70" column="28" severity="error" message="WhitespaceAround: &apos;==&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="70" column="30" severity="error" message="WhitespaceAround: &apos;==&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="70" column="34" severity="error" message="&apos;)&apos; 前不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="70" column="36" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="70" column="37" severity="error" message="WhitespaceAround: &apos;{&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="76" column="12" severity="error" message="WhitespaceAround: &apos;try&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="76" column="12" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="77" column="45" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="77" column="46" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="78" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="78" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="78" column="29" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="94" severity="error" message="注释应与第97行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="97" column="24" severity="error" message="Method name &apos;LoadCredentialsFromKeystoreFile&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9_]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+<error line="100" column="26" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\MyContract.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="4" severity="error" message="&apos;org.chain3j.abi.TypeReference&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="17" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="18" severity="error" message="导入语句&apos;java.util.Arrays&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="21" severity="error" message="本行字符数 229个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="22" severity="error" message="本行字符数 310个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="24" column="33" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="31" severity="error" message="本行字符数 136个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="33" severity="error" message="注释应与第35行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="35" severity="error" message="本行字符数 134个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="39" severity="error" message="本行字符数 150个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="41" severity="error" message="注释应与第43行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="43" severity="error" message="本行字符数 148个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="57" severity="error" message="注释应与第59行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="69" severity="error" message="注释应与第59行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\SimpleDemo.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="14" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="15" severity="error" message="导入语句&apos;java.util.concurrent.ExecutionException&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="22" column="29" severity="error" message="&apos;(&apos; 后不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="22" column="43" severity="error" message="&apos;)&apos; 前不应有空格。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
+<error line="22" column="62" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="26" column="40" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="33" column="23" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="33" column="24" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="34" column="48" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="34" column="49" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="35" severity="error" message="本行字符数 153个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="48" column="24" severity="error" message="Method name &apos;LoadCredentialsFromKeystoreFile&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9_]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+<error line="50" column="75" severity="error" message="&apos;+&apos; 应另起一行。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.OperatorWrapCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\SimpleStorage.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="9" severity="error" message="&apos;org.chain3j.abi.TypeReference&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="20" severity="error" message="本行字符数 426个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="22" severity="error" message="本行字符数 135个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="26" severity="error" message="本行字符数 149个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="31" severity="error" message="本行字符数 115个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="32" severity="error" message="&apos;method def&apos; 子元素缩进了10个缩进符，应为8个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="33" severity="error" message="注释应与第32行代码同样缩进10个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="36" column="50" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="43" severity="error" message="本行字符数 176个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="44" severity="error" message="本行字符数 113个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="47" severity="error" message="本行字符数 173个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="48" severity="error" message="本行字符数 122个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="50" severity="error" message="注释应与第52行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="52" severity="error" message="本行字符数 146个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="56" severity="error" message="本行字符数 160个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\ContractDemo\TokenERC20.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.ContractDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="6" severity="error" message="不应使用 &apos;.*&apos; 形式的导入 - org.chain3j.abi.datatypes.* 。" source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="18" severity="error" message="导入语句&apos;rx.Observable&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="19" severity="error" message="导入语句&apos;rx.functions.Func1&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="21" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="22" severity="error" message="导入语句&apos;java.util.ArrayList&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="23" severity="error" message="导入语句&apos;java.util.Arrays&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="24" severity="error" message="导入语句&apos;java.util.Collections&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="25" severity="error" message="导入语句&apos;java.util.List&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="29" severity="error" message="本行字符数 4,539个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="56" severity="error" message="本行字符数 157个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="57" severity="error" message="&apos;; 前应有空行。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="60" severity="error" message="本行字符数 119个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="61" severity="error" message="&apos;; 前应有空行。" source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="63" severity="error" message="本行字符数 134个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="67" severity="error" message="本行字符数 148个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="78" column="58" severity="error" message="Parameter name &apos;_spender&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="78" column="79" severity="error" message="Parameter name &apos;_value&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="94" column="63" severity="error" message="Parameter name &apos;_from&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="94" column="77" severity="error" message="Parameter name &apos;_to&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="94" column="93" severity="error" message="Parameter name &apos;_value&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="111" column="59" severity="error" message="Parameter name &apos;_value&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="126" column="59" severity="error" message="Parameter name &apos;_from&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="126" column="77" severity="error" message="Parameter name &apos;_value&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="142" column="59" severity="error" message="Parameter name &apos;_to&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="142" column="75" severity="error" message="Parameter name &apos;_value&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="151" severity="error" message="本行字符数 113个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="151" column="65" severity="error" message="Parameter name &apos;_spender&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="151" column="86" severity="error" message="Parameter name &apos;_value&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="151" column="101" severity="error" message="Parameter name &apos;_extraData&apos; must match pattern &apos;^[a-z]([a-zA-Z0-9]*)?$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ParameterNameCheck"/>
+<error line="169" severity="error" message="本行字符数 197个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="170" severity="error" message="本行字符数 117个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="173" severity="error" message="本行字符数 120个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="176" severity="error" message="本行字符数 211个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="177" severity="error" message="本行字符数 117个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="180" severity="error" message="本行字符数 127个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="184" severity="error" message="本行字符数 111个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="212" severity="error" message="本行字符数 136个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="245" severity="error" message="本行字符数 128个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="251" severity="error" message="本行字符数 143个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="255" severity="error" message="本行字符数 157个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\WalletDemo\WalletDemo.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.WalletDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="4" severity="error" message="&apos;org.chain3j.crypto.CipherException&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="7" severity="error" message="导入语句&apos;org.slf4j.Logger&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="error" message="导入语句&apos;org.slf4j.LoggerFactory&apos;位置错误。应位于 &apos;THIRD_PARTY_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="error" message="导入语句&apos;java.io.File&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="11" severity="error" message="导入语句&apos;java.io.IOException&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="12" severity="error" message="导入语句&apos;java.math.BigInteger&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="error" message="导入语句&apos;java.security.InvalidAlgorithmParameterException&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="14" severity="error" message="导入语句&apos;java.security.NoSuchAlgorithmException&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="15" severity="error" message="导入语句&apos;java.security.NoSuchProviderException&apos;位置错误。应位于 &apos;STANDARD_JAVA_PACKAGE&apos; 组，此行不应导入。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="19" column="31" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="19" column="32" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="20" column="34" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="20" column="35" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="22" column="43" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="27" column="22" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="29" column="12" severity="error" message="WhitespaceAround: &apos;try&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="29" column="12" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="30" severity="error" message="&apos;try&apos; 子元素缩进了11个缩进符，应为12个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="31" severity="error" message="空 catch 块。" source="com.puppycrawl.tools.checkstyle.checks.blocks.EmptyCatchBlockCheck"/>
+<error line="31" column="10" severity="error" message="WhitespaceAround: &apos;catch&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="31" column="10" severity="error" message="WhitespaceAround: &apos;}&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="31" column="29" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="37" severity="error" message="本行字符数 158个，最多：110个。" source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="38" column="30" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="38" column="31" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="39" column="30" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="39" column="31" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="40" column="24" severity="error" message="WhitespaceAround: &apos;=&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="40" column="25" severity="error" message="WhitespaceAround: &apos;=&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="43" column="44" severity="error" message="WhitespaceAround: &apos;+&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="43" column="45" severity="error" message="WhitespaceAround: &apos;+&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="E:\work\MOAC\MoacWin\Chain3j-devlop\chain3j\BaseDemo\src\main\java\Demo\WalletDemo\WalletFuntionalDemo.java">
+<error line="1" column="9" severity="error" message="Package name &apos;Demo.WalletDemo&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="4" severity="error" message="&apos;org.slf4j.Logger&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="11" column="43" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="16" column="22" severity="error" message="WhitespaceAround: &apos;{&apos; is not preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="17" column="6" severity="error" message="第 6 个字符 &apos;}&apos; 应位于新行。" source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
+</file>
+</checkstyle>

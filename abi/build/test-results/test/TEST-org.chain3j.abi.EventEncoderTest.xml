@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.chain3j.abi.EventEncoderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-15T21:24:54" hostname="DESKTOP-76MCRLL" time="0.279">
+  <properties/>
+  <testcase name="testBuildEventSignature" classname="org.chain3j.abi.EventEncoderTest" time="0.279"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

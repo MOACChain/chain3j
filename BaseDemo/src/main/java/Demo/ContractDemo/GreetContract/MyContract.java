@@ -96,7 +96,7 @@ public class MyContract {
     //testnet chain
     public Credentials LoadCredentialsFromKeystoreFile(String password) throws Exception {
         return WalletUtils.loadCredentials(
-                password, "E:\\work\\MOAC\\Moac core\\win\\vnode\\dev\\keystore"
+                password, "E:\\work\\MOAC\\Moaccore\\win\\vnode\\dev\\keystore"
                         +"/UTC--2018-12-01T03-07-20.204507100Z--1bc165d9015229c99b9f984a9104b57da5bf39b0");
 
     }

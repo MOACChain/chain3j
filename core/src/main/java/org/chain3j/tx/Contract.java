@@ -79,6 +79,15 @@ public abstract class Contract extends ManagedTransaction {
                 gasProvider);
     }
 
+    //Edit by Shidian Wang -- ChainId problem, solution #1
+    //another solution of ChainId problem, Plz view "ChainId" file and "RawTransactionManager" file
+
+    protected Contract(String contractBinary, String contractAddress,
+                       Chain3j chain3j, Credentials credentials,
+                       ContractGasProvider gasProvider, byte chainId){
+        this(contractBinary,contractAddress,chain3j,new RawTransactionManager(chain3j,credentials,chainId),gasProvider);
+    }
+
     @Deprecated
     protected Contract(String contractBinary, String contractAddress,
                        Chain3j chain3j, TransactionManager transactionManager,
@@ -95,6 +104,13 @@ public abstract class Contract extends ManagedTransaction {
                 gasPrice, gasLimit);
     }
 
+    //Edit by Shidian Wang -- May not need these
+//    protected Contract(String contractBinary, String contractAddress,
+//                       Chain3j chain3j, Credentials credentials,
+//                       BigInteger gasPrice, BigInteger gasLimit, byte chainId) {
+//        this(contractBinary, contractAddress, chain3j, new RawTransactionManager(chain3j,credentials, chainId),gasPrice,gasLimit);
+//    }
+
     @Deprecated
     protected Contract(String contractAddress,
                        Chain3j chain3j, TransactionManager transactionManager,
@@ -109,6 +125,15 @@ public abstract class Contract extends ManagedTransaction {
         this("", contractAddress, chain3j, new RawTransactionManager(chain3j, credentials),
                 gasPrice, gasLimit);
     }
+
+    //Edit by Shidian Wang -- May not need these
+//    protected Contract(String contractAddress,
+//                       Chain3j chain3j, Credentials credentials,
+//                       BigInteger gasPrice, BigInteger gasLimit, byte chainId) {
+//        this("", contractAddress, chain3j, new RawTransactionManager(chain3j, credentials, chainId),
+//                gasPrice, gasLimit);
+//    }
+
 
     public void setContractAddress(String contractAddress) {
         this.contractAddress = contractAddress;

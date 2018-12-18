@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.chain3j.abi.TypeDecoderTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2018-12-15T21:24:55" hostname="DESKTOP-76MCRLL" time="0.026">
+  <properties/>
+  <testcase name="testAddress" classname="org.chain3j.abi.TypeDecoderTest" time="0.0"/>
+  <testcase name="testBoolDecodeGivenOffset" classname="org.chain3j.abi.TypeDecoderTest" time="0.0"/>
+  <testcase name="testStaticArray" classname="org.chain3j.abi.TypeDecoderTest" time="0.003"/>
+  <testcase name="testStaticBytes" classname="org.chain3j.abi.TypeDecoderTest" time="0.006"/>
+  <testcase name="testIntDecode" classname="org.chain3j.abi.TypeDecoderTest" time="0.004"/>
+  <testcase name="testEmptyStaticArray" classname="org.chain3j.abi.TypeDecoderTest" time="0.001"/>
+  <testcase name="testUtf8String" classname="org.chain3j.abi.TypeDecoderTest" time="0.0"/>
+  <testcase name="testDynamicArray" classname="org.chain3j.abi.TypeDecoderTest" time="0.003"/>
+  <testcase name="testDynamicBytes" classname="org.chain3j.abi.TypeDecoderTest" time="0.003"/>
+  <testcase name="testUintDecode" classname="org.chain3j.abi.TypeDecoderTest" time="0.002"/>
+  <testcase name="testBoolDecode" classname="org.chain3j.abi.TypeDecoderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

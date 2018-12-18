@@ -19,7 +19,7 @@ The demo in ContractDemo includes a sol sample file and ContractEentSample.java,
 - [Console document](https://github.com/DavidRicardoWilde/chain3j-Win-Demo/blob/master/Document/Console.md)
 - [Demo description](https://github.com/DavidRicardoWilde/chain3j-Win-Demo/blob/master/Document/Demo.md)
 
-# Geting start
+# Getting started
 ## Moac Chain
 Download [the last version](https://github.com/MOACChain/moac-core).
 <p>Create a node and a wallet for testing</p>
@@ -47,8 +47,19 @@ It is a library for you to develop a Java or Android application
 **[Chain3j Document](http://www.baidu.com)**
 
 ## Wallet
+View the [website](wallet.maco.io) on your browser.
+
+You can add a new wallet or create a contract and deploy it. 
 
 ## Contract
+You can deploy your contract on "Wallet".
+
+**Step #1** Copy the [contract sample](https://github.com/DavidRicardoWilde/chain3j-Win-Demo/blob/master/BaseDemo/src/main/java/Demo/ContractDemo/greeting.sol)
+and pasted it on contract page of "Wallet".
+
+**Step #2** Unlock your account. The click the "deploy" button.
+
+**Step #3** You can call the function in contract on "Wallet", or using your Java or Android application.
 
 ## Demo
 - [BaseDemo](https://github.com/DavidRicardoWilde/chain3j-Win-Demo/blob/master/BaseDemo/src/main/java/Demo/BaseDemo/BaseDemoApplication.java)

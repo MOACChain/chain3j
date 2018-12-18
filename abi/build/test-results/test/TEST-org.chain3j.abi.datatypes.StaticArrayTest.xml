@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.chain3j.abi.datatypes.StaticArrayTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-12-15T21:24:54" hostname="DESKTOP-76MCRLL" time="0.02">
+  <properties/>
+  <testcase name="throwsIfSizeDoesntMatchType" classname="org.chain3j.abi.datatypes.StaticArrayTest" time="0.015"/>
+  <testcase name="canBeInstantiatedWithSizeMatchingType" classname="org.chain3j.abi.datatypes.StaticArrayTest" time="0.0"/>
+  <testcase name="canBeInstantiatedWithLessThan32Elements" classname="org.chain3j.abi.datatypes.StaticArrayTest" time="0.001"/>
+  <testcase name="throwsIfSizeIsAboveMaxOf32" classname="org.chain3j.abi.datatypes.StaticArrayTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

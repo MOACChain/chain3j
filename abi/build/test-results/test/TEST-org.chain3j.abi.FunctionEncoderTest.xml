@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.chain3j.abi.FunctionEncoderTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2018-12-15T21:24:55" hostname="DESKTOP-76MCRLL" time="0.102">
+  <properties/>
+  <testcase name="testEncodeConstructorEmpty" classname="org.chain3j.abi.FunctionEncoderTest" time="0.002"/>
+  <testcase name="testEncodeConstructorString" classname="org.chain3j.abi.FunctionEncoderTest" time="0.023"/>
+  <testcase name="testFunctionSimpleEncode" classname="org.chain3j.abi.FunctionEncoderTest" time="0.029"/>
+  <testcase name="testBuildEmptyMethodSignature" classname="org.chain3j.abi.FunctionEncoderTest" time="0.001"/>
+  <testcase name="testFunctionMDynamicArrayEncode1" classname="org.chain3j.abi.FunctionEncoderTest" time="0.025"/>
+  <testcase name="testFunctionMDynamicArrayEncode2" classname="org.chain3j.abi.FunctionEncoderTest" time="0.011"/>
+  <testcase name="testEncodeConstructorUint" classname="org.chain3j.abi.FunctionEncoderTest" time="0.002"/>
+  <testcase name="testBuildMethodId" classname="org.chain3j.abi.FunctionEncoderTest" time="0.002"/>
+  <testcase name="testBuildMessageSignature" classname="org.chain3j.abi.FunctionEncoderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

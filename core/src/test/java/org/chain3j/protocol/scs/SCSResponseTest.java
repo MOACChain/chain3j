@@ -85,6 +85,13 @@ public class SCSResponseTest extends ResponseTester {
                         + "  \"result\": \"0x234c8a3397aab58\"\n"
                         + "}"
         );
+//        buildResponse(
+//                "{\n"
+//                        + "  \"id\":100,\n"
+//                        + "  \"jsonrpc\": \"2.0\",\n"
+//                        + "  \"result\": \"0x234c8a3397aab58\"\n"
+//                        + "}"
+//        );
 
         ScsGetBalance scsGetBalance = deserialiseResponse(ScsGetBalance.class);
         assertThat(scsGetBalance.getBalance(), equalTo(BigInteger.valueOf(158972490234375000L)));

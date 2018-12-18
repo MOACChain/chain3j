@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.chain3j.abi.FunctionReturnDecoderTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2018-12-15T21:24:55" hostname="DESKTOP-76MCRLL" time="0.09">
+  <properties/>
+  <testcase name="testDecodeIndexedUint256Value" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.013"/>
+  <testcase name="testMultipleResultFunctionDecode" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.005"/>
+  <testcase name="testFunctionEmptyStringResultDecode" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.002"/>
+  <testcase name="testDecodeIndexedDynamicArrayValue" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.007"/>
+  <testcase name="testDecodeIndexedBytes16Value" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.006"/>
+  <testcase name="testDecodeMultipleStringValues" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.019"/>
+  <testcase name="testSimpleFunctionDecode" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.002"/>
+  <testcase name="testDecodeIndexedStringValue" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.007"/>
+  <testcase name="testVoidResultFunctionDecode" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.002"/>
+  <testcase name="testDecodeIndexedBytes32Value" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.001"/>
+  <testcase name="testDecodeStaticArrayValue" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.011"/>
+  <testcase name="testEmptyResultFunctionDecode" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.002"/>
+  <testcase name="testDecodeIndexedDynamicBytesValue" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.002"/>
+  <testcase name="testSimpleFunctionStringResultDecode" classname="org.chain3j.abi.FunctionReturnDecoderTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

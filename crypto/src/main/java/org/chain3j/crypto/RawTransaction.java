@@ -39,7 +39,7 @@ public class RawTransaction {
     //private String systemFlag;//Always 0
     private Integer systemFlag;//Edit by Shidian Wang
    // private String shardingFlag;// 0 - MotherChain TX, 1 - Microchain TX
-   private Integer shardingFlag;//Edit by Shidian Wang
+    private Integer shardingFlag;//Edit by Shidian Wang
     private String via;// Vnode address to send the TX to MicroChains
 
     protected RawTransaction(BigInteger nonce, 

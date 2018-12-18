@@ -42,7 +42,8 @@ public class TransactionDecoder {
         String to = ((RlpString) values.getValues().get(4)).asString();
         BigInteger value = ((RlpString) values.getValues().get(5)).asPositiveBigInteger();
         String data = ((RlpString) values.getValues().get(6)).asString();
-        String shardingFlag = ((RlpString) values.getValues().get(7)).asString();
+        //String shardingFlag = ((RlpString) values.getValues().get(7)).asString();
+        BigInteger shardingFlag = ((RlpString) values.getValues().get(7)).asPositiveBigInteger();
         String via = ((RlpString) values.getValues().get(8)).asString();
 
         // With no signature data, the size of values is 9
@@ -57,7 +58,8 @@ public class TransactionDecoder {
             Sign.SignatureData signatureData = new Sign.SignatureData(v, r, s);
 
             try {
-                Integer sFlag = Integer.valueOf(shardingFlag);
+                Integer sFlag = Integer.valueOf(shardingFlag.intValue());
+                //Integer sFlag = 0;
                 if ( sFlag >= 0){
                     return new SignedRawTransaction(nonce, gasPrice, gasLimit,
                     to, value, data, sFlag, via, signatureData);
@@ -69,9 +71,9 @@ public class TransactionDecoder {
             }
 
         } else {
-            // return RawTransaction.createTransaction(nonce,
-            //     gasPrice, gasLimit, to, value, data, shardingFlag, via);
-            throw new CipherException("TransactionDecoder: No signature fields in the input !");
+             return RawTransaction.createTransaction(nonce,
+                 gasPrice, gasLimit, to, value, data, shardingFlag.intValue(), via);
+            //throw new CipherException("TransactionDecoder: No signature fields in the input !");
         }
     }
     

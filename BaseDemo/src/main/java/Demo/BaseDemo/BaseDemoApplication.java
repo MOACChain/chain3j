@@ -63,8 +63,8 @@ public class BaseDemoApplication {
 
 
         // Build the Raw TX
-        BigInteger sendValue = BigInteger.valueOf(1000000000000L);
-        String des = "0xE9937C5FA6e7823e7D3611511b4A731814df71fB";
+        BigInteger sendValue = BigInteger.valueOf(10000L);
+        String des = "0xbad2089a141f4df43343fe0a3e3b672a955bbb6c";
         RawTransaction rawTx  = createTX(srcNonce, des, sendValue);
 
         // Sign the TX with Credential
@@ -80,9 +80,8 @@ public class BaseDemoApplication {
 
     public Credentials LoadCredentialsFromKeystoreFile(String password) throws Exception {
         return WalletUtils.loadCredentials(
-                password, "C:/Users/david/AppData/Roaming/MoacNode/devnet/keystore"
-                        + "/UTC--2018-11-14T16-59-28."
-                        + "398731300Z--533ef68e791d49154d0979c8851fde5455c345cf");
+                password, "E:\\work\\MOAC\\Moaccore\\win-dev\\win\\vnode\\dev\\keystore"
+                        + "/UTC--2018-12-15T00-10-58.219943800Z--a7538a630066212597b1ac5bcd69828896ec7b09");
 
     }
 

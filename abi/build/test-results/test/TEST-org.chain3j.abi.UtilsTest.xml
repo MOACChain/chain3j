@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.chain3j.abi.UtilsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-12-15T21:24:55" hostname="DESKTOP-76MCRLL" time="0.008">
+  <properties/>
+  <testcase name="testTypeMapEmpty" classname="org.chain3j.abi.UtilsTest" time="0.0"/>
+  <testcase name="testTypeMap" classname="org.chain3j.abi.UtilsTest" time="0.0"/>
+  <testcase name="testGetTypeName" classname="org.chain3j.abi.UtilsTest" time="0.004"/>
+  <testcase name="testTypeMapNested" classname="org.chain3j.abi.UtilsTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
