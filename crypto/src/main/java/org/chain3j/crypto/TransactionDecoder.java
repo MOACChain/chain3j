@@ -77,9 +77,25 @@ public class TransactionDecoder {
             }
 
         } else {
-            // return RawTransaction.createTransaction(nonce,
-            //     gasPrice, gasLimit, to, value, data, shardingFlag, via);
-            throw new CipherException("TransactionDecoder: No signature fields in the input !");
+             // Return a decoded
+            try {
+                if (shardingFlag.equals("0x")) {
+                    return RawTransaction.createTransaction(nonce,
+                            gasPrice, gasLimit, to, value, data, 0, via);
+                } else {
+                    Integer sFlag = Numeric.toBigInt(shardingFlag).intValue();//Integer.valueOf(shardingFlag);
+                    if (sFlag >= 0) {
+                        return RawTransaction.createTransaction(nonce,
+                                gasPrice, gasLimit, to, value, data, sFlag, via);
+                    } else {
+                        throw new CipherException("TransactionDecode: shardingFlag less than 0");
+                    }
+                }
+
+            } catch (NumberFormatException e) {
+                throw new CipherException("TransactionDecoder: shardingFlag is not a valid Integer");
+            }
+
         }
     }
     
