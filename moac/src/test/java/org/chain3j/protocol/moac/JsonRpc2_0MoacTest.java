@@ -61,7 +61,7 @@ public class JsonRpc2_0MoacTest {
         moac.newPendingTransactionsNotifications();
 
         verify(webSocketClient).send(matches(
-                "\\{\"jsonrpc\":\"2.0\",\"method\":\"eth_subscribe\",\"params\":"
+                "\\{\"jsonrpc\":\"2.0\",\"method\":\"mc_subscribe\",\"params\":"
                         + "\\[\"newPendingTransactions\"],\"id\":[0-9]{1,}}"));
     }
 
@@ -70,7 +70,7 @@ public class JsonRpc2_0MoacTest {
         moac.syncingStatusNotifications();
 
         verify(webSocketClient).send(matches(
-                "\\{\"jsonrpc\":\"2.0\",\"method\":\"eth_subscribe\","
+                "\\{\"jsonrpc\":\"2.0\",\"method\":\"mc_subscribe\","
                         + "\"params\":\\[\"syncing\"],\"id\":[0-9]{1,}}"));
     }
 

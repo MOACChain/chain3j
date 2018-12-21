@@ -16,20 +16,21 @@ import static org.junit.Assert.assertThat;
 // The test requires chainId input
 public class TransactionEncoderTest {
 
-    public static final Integer chainId = 100;
+    public static final Integer chainId = 101;
     
     @Test
-    public void testSignMessage() {
+    public void testSignEIP155Transaction() {
 
         try {
-            byte[] signedMessage = TransactionEncoder.signMessage(
+            byte[] signedTx = TransactionEncoder.signTxEIP155(
                 createEip155RawTransaction(), chainId, SampleKeys.CREDENTIALS);
-            String hexMessage = Numeric.toHexString(signedMessage);
+            String hexMessage = Numeric.toHexString(signedTx);
             assertThat(hexMessage,
-                        is("0xf86d02808504a817c800825208947312f4b8a4457a36827f185325fd6b66a3f8bb8b"
-                                + "85e8d4a51000808080"
-                                + "81eba06e2dfaf7f433f9ebf64467cf39f51bf4868d1a9df9eeea59e7d0e3adfa9e"
-                                + "071ea04bb6d82b980c07ab5a3199392d1cf24d520ebcb4901dc4fefcd18b7464cbc39f"));
+                        is("0xf88111808504a817c8008203e894d814f2ac2c4ca49b33066582e4e97ebae02f2ab9"
+                                + "85e8d4a510008080"
+                                + "94000000000000000000000000000000000000000081e"
+                                + "ea04e136a288094eca1988f5dfdf66256133b6782140d61448092d390c70c358cc4"
+                                + "a0792ee8ba12381c1c998cc408c34fdcfd0f099fb7c63c955b0fa1bb446c38ba09"));
         } catch (CipherException ie) {
             ie.printStackTrace();
         } 
@@ -50,7 +51,7 @@ public class TransactionEncoderTest {
         List<RlpType> rlpStrings = TransactionEncoder.asRlpValues(
                 createContractTransaction(), null);
         assertThat(rlpStrings.size(), is(9));
-        // 4th position is to
+        // 4th position is to null
         assertThat(rlpStrings.get(4), is(RlpString.create("")));
     }
 
@@ -58,29 +59,33 @@ public class TransactionEncoderTest {
     public void testEip155Encode() {
         byte[] encodedTransaction = TransactionEncoder.encode(createEip155RawTransaction(), (byte)100);
         assertThat(Numeric.toHexString(encodedTransaction),
-                is("0xec02808504a817c80082520894"
-                    + "7312f4b8a4457a36827f185325fd6b66a3f8bb8b85e8d4a51000808080648080"));
+                is("0xf84011808504a817c8008203e894d814f2ac2c4ca49b33066582e4e"
+                    + "97ebae02f2ab985e8d4a510008080940000000000000000000000000000000000000000648080"));
     }
 
-    // All 
-    // @Test
-    // public void testEip155Transaction(Integer chainId) {
-    //     // https://github.com/ethereum/EIPs/issues/155
-    //     Credentials credentials = Credentials.create(
-    //             "a392604efc2fad9c0b3da43b5f698a2e3f270f170d859912be0d54742275c5f6");
-    //     try {
-    //         assertThat(TransactionEncoder.signMessage(
-    //                     createEip155RawTransaction(), chainId, credentials),
-    //                     is(Numeric.hexStringToByteArray(
-    //                     "0xf86c098504a817c800825208943535353535353535353535353535353535353535880"
-    //                             + "de0b6b3a76400008025a028ef61340bd939bc2195fe537567866003e1a15d"
-    //                             + "3c71ff63e1590620aa636276a067cbe9d8997f761aecb703304b3800ccf55"
-    //                             + "5c9f3dc64214b297fb1966a3b6d83")));
-    //     } catch (CipherException ie) {
-    //         ie.printStackTrace();
-    //     } 
 
-    // }
+    @Test
+    public void testEip155Transaction() {
+        // https://github.com/ethereum/EIPs/issues/155
+        Integer chainId = 100;
+        Credentials credentials = Credentials.create(
+                "c75a5f85ef779dcf95c651612efb3c3b9a6dfafb1bb5375905454d9fc8be8a6b");
+
+        try {
+            assertThat(TransactionEncoder.signTxEIP155(
+                    createEip155RawTransaction(), chainId, credentials),
+                    is(Numeric.hexStringToByteArray(
+                            "0xf88111808504a817c8008203e894d814f2ac2c4ca49b33066"
+                             + "582e4e97ebae02f2ab985e8d4a5100080809400000000000"
+                             + "0000000000000000000000000000081eba0a2e181eb2a4cf"
+                             + "ab7c2e057ce4715b517293f3902256fb56b4b7d8c36dab95"
+                             + "a4fa02e39e861f97c7a579bd14d4f5152ba2d35f3f948df3"
+                             + "3fe527e8a16d866ec2bcd")));
+        } catch (CipherException ie) {
+            ie.printStackTrace();
+        }
+
+    }
 
     private static RawTransaction createMcTransaction() {
         return RawTransaction.createMcTransaction(
@@ -97,8 +102,8 @@ public class TransactionEncoderTest {
 
     static RawTransaction createEip155RawTransaction() {
         return RawTransaction.createMcTransaction(
-                BigInteger.valueOf(2), BigInteger.valueOf(20000000000L),
-                BigInteger.valueOf(21000), "0x7312f4b8a4457a36827f185325fd6b66a3f8bb8b",
+                BigInteger.valueOf(17), BigInteger.valueOf(20000000000L),
+                BigInteger.valueOf(1000), "0xD814F2ac2c4cA49b33066582E4e97EBae02F2aB9",
                 BigInteger.valueOf(1000000000000L));
     }
 }

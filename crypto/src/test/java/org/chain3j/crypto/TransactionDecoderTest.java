@@ -47,6 +47,8 @@ public class TransactionDecoderTest {
         //Only create the mc transfer
         RawTransaction rawTransaction = RawTransaction.createMcTransaction(
                 nonce, gasPrice, gasLimit, to, value);
+
+
         byte[] signedMessage = TransactionEncoder.signTxEIP155(
                 rawTransaction, chainId, SampleKeys.CREDENTIALS);
         String hexMessage = Numeric.toHexString(signedMessage);
@@ -69,10 +71,12 @@ public class TransactionDecoderTest {
         SignedRawTransaction signedResult = (SignedRawTransaction) result;
         assertNotNull(signedResult.getSignatureData());
 
-        // TODO
+        // For EIP155, need to encode the rawTransaction with chainId
+        // and signed with chainId.
         Sign.SignatureData signatureData = signedResult.getSignatureData();
-        byte[] encodedTransaction = TransactionEncoder.encode(rawTransaction);
-        BigInteger key = Sign.signedMessageToKey(encodedTransaction, signatureData);
+        byte[] encodedTransaction = TransactionEncoder.encode(rawTransaction, chainId.byteValue());
+
+        BigInteger key = Sign.signedEIP155MessageToKey(chainId, encodedTransaction, signatureData);
         assertEquals(key, SampleKeys.PUBLIC_KEY);
         assertEquals(SampleKeys.ADDRESS, signedResult.getFrom());
         signedResult.verify(SampleKeys.ADDRESS);

@@ -37,6 +37,16 @@ public class TransactionEncoder {
 
     // All MOAC RawTransaction requires the chainId in the signature
 
+    // Create Eip155 Signature by adding an empty signature
+    // in the rawTransaction and do the HASH.
+    // Input: Transaction with info with shardingFlag, systemFlag and via
+    //
+    // 1. RLP encoded the transaction with chainID as signature V field, empty R and S;
+    // 2. Used keccak256 HASH the RLP encoded transaction;
+    // 3. Signed the hash with private key and generated the new signature;
+    // 4. Replaced the signature fields with new signature V, R and S;
+    // 5. RLP encoded the transaction with signature.
+
     public static byte[] signTxEIP155(
             RawTransaction rawTransaction, Integer chainId, Credentials credentials) 
             throws CipherException {
@@ -47,13 +57,15 @@ public class TransactionEncoder {
         }
 
         byte id = chainId.byteValue();
+
         // Add chainId in the transaction object
         byte[] encodedTransaction = encode(rawTransaction, id);
 
         //The SignatureData process will hash the input encodedTransaction
         // and sign with private key
+        // Note by default need to use the hash before sign
         Sign.SignatureData signatureData = Sign.signMessage(
-                encodedTransaction, credentials.getEcKeyPair());
+                encodedTransaction, credentials.getEcKeyPair(), true);
 
         //int encodeV = signatureData.getV() + 8 + id * 2;
         byte v = (byte) (signatureData.getV() + (id << 1) + 8);
@@ -84,9 +96,8 @@ public class TransactionEncoder {
                 v, signatureData.getR(), signatureData.getS());
     }
 
-    // Create Eip155 Signature by adding an empty signature
-    // in the rawTransaction and do the HASH.
-    //
+
+
     public static byte[] signMessage(
             RawTransaction rawTransaction, Integer chainId, Credentials credentials) throws CipherException {
    

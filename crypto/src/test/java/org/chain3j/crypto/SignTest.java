@@ -19,13 +19,19 @@ public class SignTest {
     public void testSignMessage() {
         Sign.SignatureData signatureData = Sign.signMessage(TEST_MESSAGE, SampleKeys.KEY_PAIR);
 
+        //Debug use only
+        //String r = Numeric.toHexString(signatureData.getR());
+        //String s = Numeric.toHexString(signatureData.getS());
+        //System.out.println(r);
+        //System.out.println(s);
         Sign.SignatureData expected = new Sign.SignatureData(
-                (byte) 27,
+                (byte) 28,
                 Numeric.hexStringToByteArray(
-                        "0x9631f6d21dec448a213585a4a41a28ef3d4337548aa34734478b563036163786"),
+                        "0x17db5523013824f4fd974fca0629ea8dfc8aab51586983a1b7774ef187a58010"),
                 Numeric.hexStringToByteArray(
-                        "0x2ff816ee6bbb82719e983ecd8a33a4b45d32a4b58377ef1381163d75eedc900b")
+                        "0x266577e7602673786bedd99e122bd297bbae555015805924904a3769de904850")
         );
+
 
         assertThat(signatureData, is(expected));
     }
@@ -34,6 +40,14 @@ public class SignTest {
     public void testSignedMessageToKey() throws SignatureException {
         Sign.SignatureData signatureData = Sign.signMessage(TEST_MESSAGE, SampleKeys.KEY_PAIR);
         BigInteger key = Sign.signedMessageToKey(TEST_MESSAGE, signatureData);
+        assertThat(key, equalTo(SampleKeys.PUBLIC_KEY));
+    }
+
+    @Test
+    public void testSignedEIP155MessageToKey() throws SignatureException {
+        int chainId = 100;
+        Sign.SignatureData signatureData = Sign.signEIP155Message(chainId, TEST_MESSAGE, SampleKeys.KEY_PAIR);
+        BigInteger key = Sign.signedEIP155MessageToKey(chainId, TEST_MESSAGE, signatureData);
         assertThat(key, equalTo(SampleKeys.PUBLIC_KEY));
     }
 

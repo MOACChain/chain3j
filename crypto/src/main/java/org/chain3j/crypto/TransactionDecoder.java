@@ -77,7 +77,7 @@ public class TransactionDecoder {
             }
 
         } else {
-             // Return a decoded
+            // Return a decoded Transaction
             try {
                 if (shardingFlag.equals("0x")) {
                     return RawTransaction.createTransaction(nonce,

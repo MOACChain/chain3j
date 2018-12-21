@@ -19,16 +19,19 @@ public class ECRecoverTest {
     @Test
     public void testRecoverAddressFromSignature() {
         //CHECKSTYLE:OFF
-        String signature = "0x2c6401216c9031b9a6fb8cbfccab4fcec6c951cdf40e2320108d1856eb532250576865fbcd452bcdc4c57321b619ed7a9cfd38bd973c3e1e0243ac2777fe9d5b1b";
+        //The signature of signed message
+        String signature = "0x17db5523013824f4fd974fca0629ea8dfc8aab51586983a1b777"
+            + "4ef187a58010266577e7602673786bedd99e122bd297bbae555015805924904a3769de9048501b";
         //CHECKSTYLE:ON
-        String address = "0x31b26e43651e9371c88af3d36c14cfd938baf4fd";
-        String message = "v0G9u7huK4mJb2K1";
-                
-        String prefix = PERSONAL_MESSAGE_PREFIX + message.length();
-        byte[] msgHash = Hash.sha3((prefix + message).getBytes());
+        //Address of the signed KeyPair
+        String address = "0xef678007d18427e6022059dbc264f27507cd1ffc";
+        String message = "MOAC test message";
+
+        byte[] msgHash = Hash.sha3((message).getBytes());
 
         byte[] signatureBytes = Numeric.hexStringToByteArray(signature);
         byte v = signatureBytes[64];
+        System.out.println(v);
         if (v < 27) { 
             v += 27; 
         }
@@ -47,10 +50,10 @@ public class ECRecoverTest {
                     (byte) i, 
                     new ECDSASignature(new BigInteger(1, sd.getR()), new BigInteger(1, sd.getS())), 
                     msgHash);
-               
+
             if (publicKey != null) {
-                addressRecovered = "0x" + Keys.getAddress(publicKey); 
-                
+                addressRecovered = "0x" + Keys.getAddress(publicKey);
+                //System.out.println("addressRecovered:"+ addressRecovered);
                 if (addressRecovered.equals(address)) {
                     match = true;
                     break;
