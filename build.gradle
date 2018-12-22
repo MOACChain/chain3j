@@ -166,11 +166,11 @@ configure(subprojects.findAll { it.name != 'integration-tests' }) {
                     name 'chain3j'
                     packaging 'jar'
                     description project.description
-                    url 'https://github.com/mdranger/chain3j'
+                    url 'https://github.com/MOACChain/chain3j'
 
                     scm {
-                        connection 'scm:git:https://github.com/mdranger/chain3j.git'
-                        url 'https://github.com/mdranger/chain3j.git'
+                        connection 'scm:git:https://github.com/MOACChain/chain3j.git'
+                        url 'https://github.com/MOACChain/chain3j.git'
                     }
 
                     licenses {
@@ -182,9 +182,9 @@ configure(subprojects.findAll { it.name != 'integration-tests' }) {
 
                     developers {
                         developer {
-                            id 'conor10'
-                            name 'Conor Svensson'
-                            email 'conor10@gmail.com'
+                            id 'mdranger'
+                            name 'zhengpeng li'
+                            email 'lizhengpeng@jingtum.com'
                         }
                     }
                 }
@@ -208,9 +208,9 @@ configure(subprojects.findAll { it.name != 'integration-tests' }) {
             desc = project.description
             userOrg = 'chain3j'
             licenses = ['Apache-2.0']
-            issueTrackerUrl = 'https://github.com/mdranger/chain3j/issues'
-            vcsUrl = 'https://github.com/mdranger/chain3j.git'
-            websiteUrl = 'https://github.com/mdranger/chain3j'
+            issueTrackerUrl = 'https://github.com/MOACChain/chain3j/issues'
+            vcsUrl = 'https://github.com/MOACChain/chain3j.git'
+            websiteUrl = 'https://github.com/MOACChain/chain3j'
             publicDownloadNumbers = true
         }
     }

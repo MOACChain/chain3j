@@ -6,8 +6,7 @@ import java.util.List;
 import org.chain3j.utils.Numeric;
 
 /**
- * <p>Log object used by {@link McLog}, {@link McGetTransactionReceipt}
- * and {@link ScsGetTransactionReceipt} .</p>
+ * <p>Log object used by {@link McLog}, {@link McGetTransactionReceipt}</p>
  * <p>It's not clear in the
  * <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_newfilter">docs</a>
  * If only a list of hashes are returned for filters created with mc_newBlockFilter or
