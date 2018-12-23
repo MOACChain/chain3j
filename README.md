@@ -77,8 +77,8 @@ Java 8:
 .. code-block:: xml
 
    <dependency>
-     <groupId>org.chain3j</groupId>
-     <artifactId>core</artifactId>
+     <groupId>io.github.moacchain</groupId>
+     <artifactId>chain3j</artifactId>
      <version>0.1.0</version>
    </dependency>
 
@@ -87,8 +87,8 @@ Android:
 .. code-block:: xml
 
    <dependency>
-     <groupId>org.chain3j</groupId>
-     <artifactId>core</artifactId>
+     <groupId>io.github.moacchain</groupId>
+     <artifactId>chain3j</artifactId>
      <version>0.1.0-android</version>
    </dependency>
 
@@ -100,13 +100,13 @@ Java 8:
 
 .. code-block:: groovy
 
-   compile ('org.chain3j:core:0.1.0')
+   compile ('io.github.moacchain:chain3j:0.1.0')
 
 Android:
 
 .. code-block:: groovy
 
-   compile ('org.chain3j:core:0.1.0-android')
+   compile ('io.github.moacchain:chain3j:0.1.0-android')
 
 
 Start a client
@@ -117,11 +117,11 @@ _:
 
 .. code-block:: bash
 
-   $ ./moac --rpcapi personal,mc,net,chain3 --rpc --testnet
+   $ ./moac --rpcapi "personal,mc,net,chain3" --rpc --testnet
 
 .. code-block:: java
 
-   Chain3j chain3 = Chain3j.build(new HttpService("http://gateway.moac.io"));
+   Chain3j chain3 = Chain3j.build(new HttpService("http://gateway.moac.io/testnet"));
 
 For further information refer to
 
