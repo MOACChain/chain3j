@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/abi/abi.iml" filepath="$PROJECT_DIR$/.idea/modules/abi/abi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base.iml" filepath="$PROJECT_DIR$/.idea/modules/base.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/codegen/codegen.iml" filepath="$PROJECT_DIR$/.idea/modules/codegen/codegen.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/console/console.iml" filepath="$PROJECT_DIR$/.idea/modules/console/console.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/crypto/crypto.iml" filepath="$PROJECT_DIR$/.idea/modules/crypto/crypto.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/integration-tests/integration-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/integration-tests/integration-tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rlp/rlp.iml" filepath="$PROJECT_DIR$/.idea/modules/rlp/rlp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tuples/tuples.iml" filepath="$PROJECT_DIR$/.idea/modules/tuples/tuples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/utils.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/utils.iml" />
     </modules>
   </component>
 </project>

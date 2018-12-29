@@ -2,8 +2,7 @@
 ### Java template
 *.class
 core/build/resources/main/chain3j-version.properties
-.idea/workspace.xml
-pom.xml
+.idea/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
