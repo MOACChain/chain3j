@@ -1,6 +1,3 @@
-.. To build this file locally ensure docutils Python package is installed and run:
-   $ rst2html.py README.rst README.html
-
 chain3j: Chain3 Java MOAC Ðapp API
 ==================================
 
@@ -54,7 +51,7 @@ demonstrates a number of core features of MOAC with chain3j, including:
 
 - Connecting to a node on the MOAC network
 - Loading an MOAC keystore file
-- Sending Moac from one address to another
+- Sending MOAC from one address to another
 - Deploying a smart contract to the network
 - Reading a value from the deployed smart contract
 - Updating a value in the deployed smart contract
@@ -122,9 +119,6 @@ _:
 .. code-block:: java
 
    Chain3j chain3 = Chain3j.build(new HttpService("http://gateway.moac.io/testnet"));
-
-For further information refer to
-
 
 
 Start sending requests
