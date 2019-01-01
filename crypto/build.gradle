@@ -1,5 +1,5 @@
 
-description 'chain3j Moac crypto library'
+description 'chain3j MOAC crypto library'
 
 dependencies {
     compile project(':rlp'),

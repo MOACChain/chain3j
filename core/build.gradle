@@ -1,6 +1,6 @@
 import java.text.SimpleDateFormat
 
-description 'chain3j is a lightweight Java library for integration with Moac clients'
+description 'chain3j is a lightweight Java library for integration with MOAC blockchain'
 
 dependencies {
     compile project(':abi'),
