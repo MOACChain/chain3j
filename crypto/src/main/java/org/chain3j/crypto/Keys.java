@@ -10,7 +10,6 @@ import java.security.Security;
 import java.security.spec.ECGenParameterSpec;
 import java.util.Arrays;
 
-// import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.spongycastle.jce.provider.BouncyCastleProvider;
 
 import org.chain3j.utils.Numeric;

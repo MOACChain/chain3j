@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//import org.bouncycastle.util.encoders.Hex;
 import org.spongycastle.util.encoders.Hex;
 import org.junit.Test;
 import org.junit.runner.RunWith;
