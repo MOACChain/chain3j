@@ -64,7 +64,7 @@ Getting started
 Typically your application should depend on release versions of chain3j, but you may also use snapshot dependencies
 for early access to features and fixes, refer to the  `Snapshot Dependencies`_ section.
 
-Add the relevant dependency to your project:
+| Add the relevant dependency to your project:
 
 Maven
 -----
@@ -73,10 +73,20 @@ Java 8:
 
 .. code-block:: xml
 
-<dependency>
+   <dependency>
      <groupId>io.github.moacchain</groupId>
-     <artifactId>core</artifactId>
+     <artifactId>chain3j</artifactId>
      <version>0.1.0</version>
+   </dependency>
+
+Android:
+
+.. code-block:: xml
+
+   <dependency>
+     <groupId>io.github.moacchain</groupId>
+     <artifactId>chain3j</artifactId>
+     <version>0.1.0-android</version>
    </dependency>
 
 
@@ -87,9 +97,13 @@ Java 8:
 
 .. code-block:: groovy
 
-   compile ('io.github.moacchain:core:0.1.0')
+   compile ('io.github.moacchain:chain3j:0.1.0')
 
+Android:
 
+.. code-block:: groovy
+
+   compile ('io.github.moacchain:chain3j:0.1.0-android')
 
 
 Start a client
