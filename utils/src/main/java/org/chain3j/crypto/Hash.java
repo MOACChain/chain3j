@@ -4,7 +4,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import org.bouncycastle.jcajce.provider.digest.Keccak;
+// import org.bouncycastle.jcajce.provider.digest.Keccak;
+import org.spongycastle.jcajce.provider.digest.Keccak;
 
 import org.chain3j.utils.Numeric;
 
