@@ -21,6 +21,10 @@ public class KeysTest {
     private static final byte[] ENCODED;
 
     static {
+        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+    }
+
+    static {
         byte[] privateKey = Numeric.hexStringToByteArray(SampleKeys.PRIVATE_KEY_STRING);
         byte[] publicKey = Numeric.hexStringToByteArray(SampleKeys.PUBLIC_KEY_STRING);
         ENCODED = Arrays.copyOf(privateKey, privateKey.length + publicKey.length);

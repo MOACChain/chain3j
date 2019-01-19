@@ -10,7 +10,8 @@ import java.security.Security;
 import java.security.spec.ECGenParameterSpec;
 import java.util.Arrays;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+// import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.spongycastle.jce.provider.BouncyCastleProvider;
 
 import org.chain3j.utils.Numeric;
 import org.chain3j.utils.Strings;
@@ -31,11 +32,16 @@ public class Keys {
     static final int PUBLIC_KEY_LENGTH_IN_HEX = PUBLIC_KEY_SIZE << 1;
     public static final int PRIVATE_KEY_LENGTH_IN_HEX = PRIVATE_KEY_SIZE << 1;
 
+    // static {
+    //     if (Security.getProvider(BouncyCastleProvider.PROVIDER_NAME) == null) {
+    //         Security.addProvider(new BouncyCastleProvider());
+    //     }
+    // }
+
     static {
-        if (Security.getProvider(BouncyCastleProvider.PROVIDER_NAME) == null) {
-            Security.addProvider(new BouncyCastleProvider());
-        }
-    }
+        //        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+                Security.addProvider(new BouncyCastleProvider());
+            }
 
     private Keys() { }
 
