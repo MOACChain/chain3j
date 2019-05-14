@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 
+import com.sun.org.apache.xerces.internal.xs.StringList;
+import org.chain3j.protocol.scs.methods.response.*;
+import org.chain3j.utils.Collection;
 import rx.Observable;
 
 import org.chain3j.protocol.Chain3j;
@@ -55,13 +58,6 @@ import org.chain3j.protocol.core.methods.response.VnodeScsService;
 import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
 import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;
 import org.chain3j.protocol.rx.JsonRpc2_0Rx;
-import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
-import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
-import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
-import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
-import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
 // import org.chain3j.protocol.core.methods.response.ShhAddToGroup;
 // import org.chain3j.protocol.core.methods.response.ShhHasIdentity;
 // import org.chain3j.protocol.core.methods.response.ShhMessages;
@@ -614,6 +610,23 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     //=================================================================
     // SCS related JSON RPC 2.0
     //=================================================================
+//    @Override
+//    public Request<?, ScsDirectCall> directCall(String){
+//        return new Request<>(
+//                "scs_directCall",
+//                ,
+//                ScsDirectCall.class);
+//    }
+
+    @Override
+    public Request<?, ScsGetBlock> getBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter){
+        return new Request<>(
+                "scs_getBlock",
+                Arrays.asList(microChainAddress, defaultBlockParameter.getValue()),
+                chain3jService,
+                ScsGetBlock.class);
+    }
+
     @Override
     public Request<?, ScsGetDappState> getDappState(String mcAddress) {
         return new Request<>(
@@ -630,6 +643,16 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 Collections.<String>emptyList(),
                 chain3jService,
                 ScsGetMicroChainList.class);
+    }
+
+    @Override
+    public Request<?,ScsGetSCSId> getSCSId(){
+        return new Request<>(
+                "scs_getSCSId",
+                Collections.emptyList(),
+                chain3jService,
+                ScsGetSCSId.class
+        );
     }
 
     @Override

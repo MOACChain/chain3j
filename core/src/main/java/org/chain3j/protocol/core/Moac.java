@@ -2,50 +2,8 @@ package org.chain3j.protocol.core;
 
 import java.math.BigInteger;
 
-import org.chain3j.protocol.core.methods.response.Chain3ClientVersion;
-import org.chain3j.protocol.core.methods.response.Chain3Sha3;
-import org.chain3j.protocol.core.methods.response.McAccounts;
-import org.chain3j.protocol.core.methods.response.McBlock;
-import org.chain3j.protocol.core.methods.response.McBlockNumber;
-import org.chain3j.protocol.core.methods.response.McCoinbase;
-import org.chain3j.protocol.core.methods.response.McEstimateGas;
-import org.chain3j.protocol.core.methods.response.McFilter;
-import org.chain3j.protocol.core.methods.response.McGasPrice;
-import org.chain3j.protocol.core.methods.response.McGetBalance;
-import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByHash;
-import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByNumber;
-import org.chain3j.protocol.core.methods.response.McGetCode;
-import org.chain3j.protocol.core.methods.response.McGetStorageAt;
-import org.chain3j.protocol.core.methods.response.McGetTransactionCount;
-import org.chain3j.protocol.core.methods.response.McGetTransactionReceipt;
-import org.chain3j.protocol.core.methods.response.McGetUncleCountByBlockHash;
-import org.chain3j.protocol.core.methods.response.McGetUncleCountByBlockNumber;
-import org.chain3j.protocol.core.methods.response.McGetWork;
-import org.chain3j.protocol.core.methods.response.McHashrate;
-import org.chain3j.protocol.core.methods.response.McLog;
-import org.chain3j.protocol.core.methods.response.McMining;
-import org.chain3j.protocol.core.methods.response.McProtocolVersion;
-import org.chain3j.protocol.core.methods.response.McSign;
-import org.chain3j.protocol.core.methods.response.McSubmitHashrate;
-import org.chain3j.protocol.core.methods.response.McSubmitWork;
-import org.chain3j.protocol.core.methods.response.McSyncing;
-import org.chain3j.protocol.core.methods.response.McTransaction;
-import org.chain3j.protocol.core.methods.response.McUninstallFilter;
-import org.chain3j.protocol.core.methods.response.NetListening;
-import org.chain3j.protocol.core.methods.response.NetPeerCount;
-import org.chain3j.protocol.core.methods.response.NetVersion;
-import org.chain3j.protocol.core.methods.response.VnodeAddress;
-import org.chain3j.protocol.core.methods.response.VnodeIP;
-import org.chain3j.protocol.core.methods.response.VnodeScsService;//bool
-import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
-import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;//bool
-import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
-import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
-import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
-import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
-import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
+import org.chain3j.protocol.core.methods.response.*;
+import org.chain3j.protocol.scs.methods.response.*;
 
 /**
  * Core MOAC JSON-RPC API.
@@ -168,6 +126,17 @@ public interface Moac {
     Request<?, VnodeServiceCfg> vnodeServiceCfg(); //?????
 
     Request<?, VnodeScsService> vnodeScsService(); //是确定scs连接到vnode吗？
+
+    //scs
+    //Request<?, ScsDirectCall> directCall(org.chain3j.protocol.core.methods.request.Transaction transaction);//parameters类型存在疑问
+
+    Request<?, ScsGetBlock> getBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter);
+
+//    Request<?, ScsGetMicroChainInfo> getmicroChainInfo(String scsAddress);
+
+//    Request<?,ScsGetReceiptByHash> getReceiptByHash(String miccroAddress, String transactionHash);
+
+    Request<?,ScsGetSCSId> getSCSId();
 
     Request<?, ScsGetDappState> getDappState(String dappAddress);
 
