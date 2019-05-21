@@ -12,9 +12,10 @@ import org.chain3j.protocol.core.Response;
 import java.io.IOException;
 import java.util.List;
 
-public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.Result> {
+public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Result> {
+
     @Override
-    @JsonDeserialize(using = ScsGetReceiptByNonce.ResponseDeserialiser.class)
+    @JsonDeserialize(using = ScsGetTransactionByHash.ResponseDeserialiser.class)
     public void setResult(Result result){
         super.setResult(result);
     }
@@ -77,11 +78,11 @@ public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.Result> 
             if (this == o){
                 return true;
             }
-            if (!(o instanceof Result)){
+            if (!(o instanceof ScsGetReceiptByHash.Result)){
                 return false;
             }
 
-            Result result = (Result) o;
+            ScsGetReceiptByHash.Result result = (ScsGetReceiptByHash.Result) o;
 
             if (getLogs() != null
                     ? !getLogs().equals(result.getLogs())

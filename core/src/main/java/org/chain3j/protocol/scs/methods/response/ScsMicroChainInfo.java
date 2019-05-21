@@ -53,6 +53,7 @@ public class ScsMicroChainInfo extends Response<ScsMicroChainInfo.ChainInfo> {
     // bondLimit, Unit in Sha, 1 MOAC = 1E+18 Sha   
     // A list of SCSIDs in the MicroChain, this only includes the most recent active SCSs, 
     // monitors won't be included??
+
     public static class ChainInfo {
         private String balance; 
         private String blockReward;

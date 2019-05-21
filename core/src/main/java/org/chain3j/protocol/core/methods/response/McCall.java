@@ -6,7 +6,7 @@ import org.chain3j.protocol.core.Response;
  * mc_call.
  */
 public class McCall extends Response<String> {
-    public String getValue() {
+    public String blockList() {
         return getResult();
     }
 }

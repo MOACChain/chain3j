@@ -128,28 +128,43 @@ public interface Moac {
     Request<?, VnodeScsService> vnodeScsService(); //是确定scs连接到vnode吗？
 
     //scs
-    //Request<?, ScsDirectCall> directCall(org.chain3j.protocol.core.methods.request.Transaction transaction);//parameters类型存在疑问
-
-    Request<?, ScsGetBlock> getBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter);
-
-//    Request<?, ScsGetMicroChainInfo> getmicroChainInfo(String scsAddress);
-
-//    Request<?,ScsGetReceiptByHash> getReceiptByHash(String miccroAddress, String transactionHash);
-
-    Request<?,ScsGetSCSId> getSCSId();
-
-    Request<?, ScsGetDappState> getDappState(String dappAddress);
-
-    Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String dappAddress); //dapp的信息？ 还是
-
-    Request<?, ScsGetMicroChainList> getMicroChainList();
-
-    Request<?, ScsGetBlockNumber> getBlockNumber(String dappAddress);
+    Request<?, ScsDirectCall> directCall(org.chain3j.protocol.core.methods.request.Transaction transaction);
 
     Request<?, ScsGetBalance> getBalance(String dappAddress, String account);
 
+    Request<?, ScsGetBlock> getBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter);
+
+    Request<?, ScsGetBlockList> getBlockList(String address, BigInteger startBlock, BigInteger endBlock);
+
+    Request<?, ScsGetBlockNumber> getBlockNumber(String dappAddress);
+
+    Request<?, ScsGetDappState> getDappState(String dappAddress);
+
+    Request<?, ScsGetMicroChainList> getMicroChainList();
+
+    Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String dappAddress);
+
     Request<?, ScsGetNonce> getNonce(String dappAddress, String account);
+
+    Request<?,ScsGetSCSId> getSCSId();
+
+    Request<?,ScsGetReceiptByHash> getReceiptByHash(String microAddress, String transactionHash);
+
+    Request<?, ScsGetReceiptByNonce> getReceiptByNonce(String microAddress, String checkedAddress, Integer nonce);
+
+    Request<?, ScsGetTransactionByHash> getTransactionByHash(String address, String txhash);
+
+    Request<?, ScsGetTransactionByNonce> getTransactionByNonce(String address, String checkedAddress, Integer nonce);
+
+    Request<?, ScsGetExchangeByAddress> getExchangeByAddress(String address, String checkAddress, BigInteger depositRecords,
+                                                             BigInteger depositRecordsNumber, BigInteger depositingRecords,
+                                                             BigInteger depositingRecordsNumber, BigInteger withdrawRecords,
+                                                             BigInteger withdrawRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber);
+
+    Request<?, ScsGetExchangeInfo> getExchangeInfo(String address, BigInteger depositingRecords,
+                                                   BigInteger depositingRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber);
 
     Request<?, ScsGetTransactionReceipt> getTransactionReceipt(String dappAddress, String txhash);
 
+    Request<?,ScsGetTxpool>gettxpool(String address); //
 }

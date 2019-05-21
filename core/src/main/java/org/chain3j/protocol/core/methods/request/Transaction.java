@@ -51,8 +51,8 @@ public class Transaction {
         this.systemFlag = "0";
 
         */
-        this.shardingFlag = 0; //Edit by Shidian Wang
-        this.systemFlag = 0; //Edit by Shidian Wang
+        this.shardingFlag = 0;
+        this.systemFlag = 0;
         this.via = "0x0000000000000000000000000000000000000000";
 
         if (data != null) {

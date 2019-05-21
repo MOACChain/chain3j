@@ -9,12 +9,19 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.chain3j.abi.datatypes.Bool;
 import org.chain3j.protocol.ObjectMapperFactory;
 import org.chain3j.protocol.core.Response;
+import org.chain3j.utils.Numeric;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.util.List;
 
 public class ScsGetBlock extends Response<ScsGetBlock.Block> {
-//    @Override
-//    @JsonDeserialize(using = ScsGetBlock.);
+    @Override
+    @JsonDeserialize(using = ScsGetBlock.ResponseDeserialiser.class)
+    public void setResult(Block result) {
+        super.setResult(result);
+    }
+
     public Block getBlock() {
         return getResult();
     }
@@ -22,15 +29,21 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
     public static class Block{
         private String extraData;
         private String hash;
+        private String miner;
         private String number;
         private String parentHash;
         private String receiptsRoot;
         private String stateRoot;
         private String timestamp;
-        private String transactions;
+        private List<String> transactions;
+        private String transactionsRoot;
 
-        public String getExtraData() {
+        public String getExtraDataRaw() {
             return extraData;
+        }
+
+        public BigInteger getExtraData(){
+            return Numeric.decodeQuantity(extraData);
         }
 
         public void setExtraData(String extraData) {
@@ -45,8 +58,12 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
             this.hash = hash;
         }
 
-        public String getNumber() {
+        public String getNumberRaw() {
             return number;
+        }
+
+        public BigInteger getNumber(){
+            return Numeric.decodeQuantity(number);
         }
 
         public void setNumber(String number) {
@@ -85,11 +102,11 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
             this.timestamp = timestamp;
         }
 
-        public String getTransactions() {
+        public List<String> getTransactions() {
             return transactions;
         }
 
-        public void setTransactions(String transactions) {
+        public void setTransactions(List<String> transactions) {
             this.transactions = transactions;
         }
 
@@ -101,15 +118,22 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
             this.transactionsRoot = transactionsRoot;
         }
 
-        private String transactionsRoot;
 
-        public Block(){
+        public String getMiner() {
+            return miner;
+        }
+
+        public void setMiner(String miner) {
+            this.miner = miner;
+        }
+
+        public Block() {
 
         }
 
         public Block(String extraData, String hash, String number, String parentHash,
                      String receiptsRoot, String stateRoot, String timestamp,
-                     String transactions, String transactionsRoot){
+                     List<String> transactions, String transactionsRoot){
             this.extraData = extraData;
             this.hash = hash;
             this.number = number;
@@ -120,22 +144,85 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
             this.transactions = transactions;
             this.transactionsRoot = transactionsRoot;
         }
+
+        @Override
+        public boolean equals(Object o){
+            if (this == o){
+                return true;
+            }
+            if (!(o instanceof Block)){
+                return false;
+            }
+
+            Block block = (Block)o;
+
+            if (getExtraDataRaw() != null
+                ? !getExtraDataRaw().equals(block.getExtraDataRaw())
+                : block.getExtraDataRaw() != null){
+                return false;
+            }
+            if (getHash() != null
+                ? !getHash().equals(block.getHash())
+                : block.getHash() != null){
+                return false;
+            }
+            if (getMiner() != null
+                ? !getMiner().equals(block.getMiner())
+                : block.getMiner() != null){
+                return false;
+            }
+            if (getNumberRaw() != null
+                ? !getNumberRaw().equals(block.getNumberRaw())
+                : block.getNumberRaw() != null){
+                return false;
+            }
+            if (getParentHash() != null
+                ? !getParentHash().equals(block.getParentHash())
+                : block.getParentHash() != null){
+                return false;
+            }
+            if (getReceiptsRoot() != null
+                ? !getReceiptsRoot().equals(block.getReceiptsRoot())
+                : block.getReceiptsRoot() != null){
+                return false;
+            }
+            if (getStateRoot() != null
+                ? !getStateRoot().equals(block.getStateRoot())
+                : block.getStateRoot() != null){
+                return false;
+            }
+            if (getTimestamp() != null
+                ? !getTimestamp().equals(block.getTimestamp())
+                : block.getTimestamp() != null){
+                return false;
+            }
+            if (getTransactionsRoot() != null
+                ? !getTransactionsRoot().equals(block.getTransactionsRoot())
+                : block.getTransactionsRoot() != null){
+                return false;
+            }
+
+            return getTransactions() != null
+                    ? getTransactions().equals(block.getTransactions()) : block.getTransactions() == null;
+
+        }
     }
 
-
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetBlock.Block> {
+    public static class ResponseDeserialiser extends JsonDeserializer<Block> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public ScsGetBlock.Block deserialize(
+        public Block deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, ScsGetBlock.Block.class);
+                return objectReader.readValue(jsonParser, Block.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }
         }
     }
+
+
 }

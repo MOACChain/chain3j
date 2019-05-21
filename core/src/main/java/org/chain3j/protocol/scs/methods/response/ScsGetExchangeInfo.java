@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 
-public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Exchange> {
+public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
     @Override
     @JsonDeserialize(using = ScsGetExchangeByAddress.ResponseDeserialiser.class)
     public void setResult(Exchange result) {

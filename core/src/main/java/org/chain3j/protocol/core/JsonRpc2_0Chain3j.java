@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 
 import com.sun.org.apache.xerces.internal.xs.StringList;
+import org.chain3j.abi.datatypes.Array;
 import org.chain3j.protocol.scs.methods.response.*;
 import org.chain3j.utils.Collection;
 import rx.Observable;
@@ -610,13 +611,14 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     //=================================================================
     // SCS related JSON RPC 2.0
     //=================================================================
-//    @Override
-//    public Request<?, ScsDirectCall> directCall(String){
-//        return new Request<>(
-//                "scs_directCall",
-//                ,
-//                ScsDirectCall.class);
-//    }
+    @Override
+    public Request<?, ScsDirectCall> directCall(Transaction transaction){
+        return new Request<>(
+                "scs_directCall",
+                Arrays.asList(transaction),
+                chain3jService,
+                ScsDirectCall.class);
+    } //parameters类型存在疑问 //不确定是不是可以用Transaction 或者文档又缺少信息
 
     @Override
     public Request<?, ScsGetBlock> getBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter){
@@ -625,7 +627,17 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 Arrays.asList(microChainAddress, defaultBlockParameter.getValue()),
                 chain3jService,
                 ScsGetBlock.class);
-    }
+    } //和blocklist 缺少的miner 或者 getblockList中多了个miner
+
+    @Override
+    public Request<?, ScsGetBlockList> getBlockList(String address, BigInteger startBlock, BigInteger endBlock){
+        return new Request<>(
+                "scs_getBlockList",
+                Arrays.asList(address,startBlock,endBlock),
+                chain3jService,
+                ScsGetBlockList.class
+        );
+    } //同上
 
     @Override
     public Request<?, ScsGetDappState> getDappState(String mcAddress) {
@@ -654,6 +666,83 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 ScsGetSCSId.class
         );
     }
+
+    @Override
+    public Request<?, ScsGetReceiptByHash> getReceiptByHash(String microAddress, String transactionHash){
+        return new Request<>(
+                "scs_getReceiptByHash",
+                Arrays.asList(microAddress,transactionHash),
+                chain3jService,
+                ScsGetReceiptByHash.class
+        );
+    }
+
+    @Override
+    public Request<?, ScsGetReceiptByNonce> getReceiptByNonce(String microAddress, String transactionHah, Integer nonce){
+        return new Request<>(
+                "scs_getReceiptByNonce",
+                Arrays.asList(microAddress,transactionHah,nonce),
+                chain3jService,
+                ScsGetReceiptByNonce.class
+        );
+    }
+
+    @Override
+    public Request<?, ScsGetTransactionByHash> getTransactionByHash(String address, String txhash){
+        return new Request<>(
+                "scs_getTransactionByHash",
+                Arrays.asList(address, txhash),
+                chain3jService,
+                ScsGetTransactionByHash.class
+        );
+    }
+
+    @Override
+    public Request<?, ScsGetTransactionByNonce> getTransactionByNonce(String address, String checkedAddress, Integer nonce){
+        return new Request<>(
+                "scs_getTransactionByNonce",
+                Arrays.asList(address, checkedAddress, nonce),
+                chain3jService,
+                ScsGetTransactionByNonce.class
+        );
+    }
+
+    @Override
+    public Request<?, ScsGetExchangeByAddress> getExchangeByAddress(String address, String checkAddress, BigInteger depositRecords,
+                                                                    BigInteger depositRecordsNumber, BigInteger depositingRecords,
+                                                                    BigInteger depositingRecordsNumber, BigInteger withdrawRecords,
+                                                                    BigInteger withdrawRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber){
+        return new Request<>(
+            "scs_getExchangeByAddress",
+            Arrays.asList(address,checkAddress,depositRecords,depositRecordsNumber,depositingRecords,depositingRecordsNumber,
+                    withdrawRecords,withdrawRecordsNumber,withdrawingRecords,withdrawingRecordsNumber),
+                chain3jService,
+                ScsGetExchangeByAddress.class
+        );
+    }
+
+    @Override
+    public Request<?, ScsGetExchangeInfo> getExchangeInfo(String address, BigInteger depositingRecords,
+                                                   BigInteger depositingRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber){
+        return new Request<>(
+                "scs_getExchangeInfo",
+                Arrays.asList(address,depositingRecords,depositingRecordsNumber,withdrawingRecords,withdrawingRecordsNumber),
+                chain3jService,
+                ScsGetExchangeInfo.class
+        );
+    }
+
+    @Override
+    public Request<?,ScsGetTxpool>gettxpool(String address){
+        return new Request<>(
+                "scs_getTxpool",
+                Arrays.asList(address),
+                chain3jService,
+                ScsGetTxpool.class
+        );
+    }
+
+    //------------------------------------------------------------------------
 
     @Override
     public Request<?, ScsGetMicroChainInfo> getMicroChainInfo(String mcAddress) {

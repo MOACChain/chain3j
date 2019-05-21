@@ -67,7 +67,7 @@ public class McBlock extends Response<McBlock.Block> {
         private String timestamp;
         private List<TransactionResult> transactions;
         private List<String> uncles;
-        private List<String> sealFields;
+        private List<String> sealFields;//22
 
         public Block() {
         }
