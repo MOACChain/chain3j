@@ -52,14 +52,30 @@ public class SCSResponseTest extends ResponseTester {
                 "  \"result\": {\n" +
                 "    \"contractAddress\": \"0x0a674edac2ccd47ae2a3197ea3163aa81087fbd1\",\n" +
                 "    \"failed\": false,\n" +
-                "    \"logs\": [],\n" +
+                "    \"logs\": [\n" +
+                "      {\n" +
+                "        \"address\": \"0x2328537bc943ab1a89fe94a4b562ee7a7b013634\",\n" +
+                "        \"topics\": [\n" +
+                "          \"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\",\n" +
+                "          \"0x000000000000000000000000a8863fc8ce3816411378685223c03daae9770ebb\",\n" +
+                "          \"0x0000000000000000000000007312f4b8a4457a36827f185325fd6b66a3f8bb8b\"\n" +
+                "        ],\n" +
+                "        \"data\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQ=\",\n" +
+                "        \"blockNumber\": 0,\n" +
+                "        \"transactionHash\": \"0x67bfaa5a704e77a31d5e7eb866f8c662fa8313a7882d13d0d23e377cd66d2a69\",\n" +
+                "        \"transactionIndex\": 0,\n" +
+                "        \"blockHash\": \"0x78f092ca81a891ad6c467caa2881d00d8e19c8925ddfd71d793294fbfc5f15fe\",\n" +
+                "        \"logIndex\": 0,\n" +
+                "        \"removed\": false\n" +
+                "      }\n" +
+                "    ],\n" +
                 "    \"logsBloom\": \"0x00000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000008000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000800000000000080000000000000000000000000002000000000000000000000000000000000000080100002000000000000000000000000000000000000000000000000000000000000000000000000000\",\n" +
                 "    \"status\": \"0x1\",\n" +
                 "    \"transactionHash\": \"0x67bfaa5a704e77a31d5e7eb866f8c662fa8313a7882d13d0d23e377cd66d2a69\"\n" +
                 "  }\n" +
                 "}");
-        ScsGetReceiptByNonce receiptByHash = deserialiseResponse(ScsGetReceiptByNonce.class);
-        assertThat(receiptByHash.getResult().getContractAddress(),equalTo("0x0a674edac2ccd47ae2a3197ea3163aa81087fbd1"));
+        ScsGetReceiptByHash receiptByHash = deserialiseResponse(ScsGetReceiptByHash.class);
+        assertThat(receiptByHash.getReceiptByHash().getContractAddress(),equalTo("0x0a674edac2ccd47ae2a3197ea3163aa81087fbd1"));
     }
 
     @Test

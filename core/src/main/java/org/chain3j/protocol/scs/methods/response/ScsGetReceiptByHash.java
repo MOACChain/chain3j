@@ -14,19 +14,19 @@ import org.chain3j.tx.Contract;
 import java.io.IOException;
 import java.util.List;
 
-public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
+public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.ReceiptByHash> {
     @Override
     @JsonDeserialize(using = ScsGetReceiptByHash.ResponseDeserialiser.class)
-    public void setResult(Result result){
+    public void setResult(ReceiptByHash result){
         super.setResult(result);
     }
 
-    public Result getResult(){
+    public ReceiptByHash getReceiptByHash(){
         return getResult();
     }
 
-    public static class Result{
-        private List<Logs> logsList; //should be change
+    public static class ReceiptByHash{
+        private List<Logs> logsList;
         private String logsBloom;
         private String status;
         private String transactionHash;
@@ -81,11 +81,11 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
             this.failed = failed;
         }
 
-        public Result(){
+        public ReceiptByHash(){
 
         }
 
-        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash,
+        public ReceiptByHash(List<Logs> logsList, String logsBloom, String status, String transactionHash,
                       String contractAddress, boolean failed){
             this.logsList = logsList;
             this.logsBloom = logsBloom;
@@ -95,38 +95,38 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
             this.failed = failed;
         }
 
-        @Override
-        public boolean equals(Object o){
-            if (this == o){
-                return true;
-            }
-            if (!(o instanceof Result)){
-                return false;
-            }
-
-            Result result = (Result) o;
-
-            if (getLogsBloom() != null
-                ? !getLogsBloom().equals(result.getLogsBloom())
-                : result.getLogsBloom() != null){
-                return false;
-            }
-
-            return getTransactionHash() != null
-                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
-        }
+//        @Override
+//        public boolean equals(Object o){
+//            if (this == o){
+//                return true;
+//            }
+//            if (!(o instanceof ReceiptByHash)){
+//                return false;
+//            }
+//
+//            ReceiptByHash result = (ReceiptByHash) o;
+//
+//            if (getLogsBloom() != null
+//                ? !getLogsBloom().equals(result.getLogsBloom())
+//                : result.getLogsBloom() != null){
+//                return false;
+//            }
+//
+//            return getTransactionHash() != null
+//                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
+//        }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetReceiptByHash.Result> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetReceiptByHash.ReceiptByHash> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public ScsGetReceiptByHash.Result deserialize(
+        public ScsGetReceiptByHash.ReceiptByHash deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, ScsGetReceiptByHash.Result.class);
+                return objectReader.readValue(jsonParser, ScsGetReceiptByHash.ReceiptByHash.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }

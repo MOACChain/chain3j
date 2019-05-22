@@ -15,7 +15,7 @@ public class Logs {
     private String transactionIndex;
     private String blockHash;
     private String logIndex;
-    private Boolean removed;
+    private boolean removed;
 
     public Logs(){}
 
