@@ -12,18 +12,18 @@ import org.chain3j.protocol.core.Response;
 import java.io.IOException;
 import java.util.List;
 
-public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.Result> {
+public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.ReceiptByNonce> {
     @Override
     @JsonDeserialize(using = ScsGetReceiptByNonce.ResponseDeserialiser.class)
-    public void setResult(Result result){
+    public void setResult(ReceiptByNonce result){
         super.setResult(result);
     }
 
-    public Result getResult(){
+    public ReceiptByNonce getResult(){
         return getResult();
     }
 
-    public static class Result{
+    public static class ReceiptByNonce{
         public List<Logs> getLogs() {
             return logsList;
         }
@@ -87,11 +87,11 @@ public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.Result> 
         private String contractAddress;
         private boolean failed;
 
-        public Result(){
+        public ReceiptByNonce(){
 
         }
 
-        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash,
+        public ReceiptByNonce(List<Logs> logsList, String logsBloom, String status, String transactionHash,
                       String contractAddress, boolean failed){
             this.logsList = logsList;
             this.logsBloom = logsBloom;
@@ -101,43 +101,43 @@ public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.Result> 
             this.failed = failed;
         }
 
-        @Override
-        public boolean equals(Object o){
-            if (this == o){
-                return true;
-            }
-            if (!(o instanceof Result)){
-                return false;
-            }
-
-            Result result = (Result) o;
-
-            if (getLogs() != null
-                    ? !getLogs().equals(result.getLogs())
-                    : result.getLogs() != null){
-                return false;
-            }
-            if (getLogsBloom() != null
-                    ? !getLogsBloom().equals(result.getLogsBloom())
-                    : result.getLogsBloom() != null){
-                return false;
-            }
-
-            return getTransactionHash() != null
-                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
-        }
+//        @Override
+//        public boolean equals(Object o){
+//            if (this == o){
+//                return true;
+//            }
+//            if (!(o instanceof ReceiptByNonce)){
+//                return false;
+//            }
+//
+//            ReceiptByNonce result = (ReceiptByNonce) o;
+//
+//            if (getLogs() != null
+//                    ? !getLogs().equals(result.getLogs())
+//                    : result.getLogs() != null){
+//                return false;
+//            }
+//            if (getLogsBloom() != null
+//                    ? !getLogsBloom().equals(result.getLogsBloom())
+//                    : result.getLogsBloom() != null){
+//                return false;
+//            }
+//
+//            return getTransactionHash() != null
+//                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
+//        }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetReceiptByNonce.Result> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetReceiptByNonce.ReceiptByNonce> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public ScsGetReceiptByNonce.Result deserialize(
+        public ScsGetReceiptByNonce.ReceiptByNonce deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, ScsGetReceiptByNonce.Result.class);
+                return objectReader.readValue(jsonParser, ScsGetReceiptByNonce.ReceiptByNonce.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }

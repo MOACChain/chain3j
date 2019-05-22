@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1980d71c-a837-4767-8625-980b69eeff78" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/Logs.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/Logs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash$ResponseDeserialiser.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash$ResponseDeserialiser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash$Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/out/production/classes/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/out/test/classes/org/chain3j/protocol/scs/SCSResponseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/out/test/classes/org/chain3j/protocol/scs/SCSResponseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByNonce.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByNonce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByNonce.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByNonce.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -57,103 +52,57 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/core/JsonRpc2_0Chain3j.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-465">
-                  <caret line="792" column="42" selection-start-line="792" selection-start-column="42" selection-end-line="792" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="387">
-                  <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
-                  <folding>
-                    <element signature="e#7793#8151#0" />
-                    <element signature="e#8157#8531#0" />
-                    <element signature="e#8537#9294#0" />
-                    <element signature="e#9300#9769#0" />
-                    <element signature="e#9775#10517#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="22" selection-start-line="22" selection-end-line="22" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#898#899#0" expanded="true" />
-                    <element signature="e#932#933#0" expanded="true" />
-                    <element signature="e#1250#1251#0" expanded="true" />
-                    <element signature="e#1289#1290#0" expanded="true" />
-                    <element signature="e#1345#1346#0" expanded="true" />
-                    <element signature="e#1393#1394#0" expanded="true" />
-                    <element signature="e#1433#1434#0" expanded="true" />
-                    <element signature="e#1473#1474#0" expanded="true" />
-                    <element signature="e#1527#1528#0" expanded="true" />
-                    <element signature="e#1577#1578#0" expanded="true" />
-                    <element signature="e#1614#1615#0" expanded="true" />
-                    <element signature="e#1651#1652#0" expanded="true" />
-                    <element signature="e#1699#1700#0" expanded="true" />
-                    <element signature="e#1743#1744#0" expanded="true" />
-                    <element signature="e#1789#1790#0" expanded="true" />
-                    <element signature="e#1835#1836#0" expanded="true" />
-                    <element signature="e#1901#1902#0" expanded="true" />
-                    <element signature="e#1963#1964#0" expanded="true" />
-                    <element signature="e#2009#2010#0" expanded="true" />
-                    <element signature="e#2055#2056#0" expanded="true" />
-                    <element signature="e#2121#2122#0" expanded="true" />
-                    <element signature="e#2183#2184#0" expanded="true" />
-                    <element signature="e#2220#2221#0" expanded="true" />
-                    <element signature="e#2257#2258#0" expanded="true" />
-                    <element signature="e#2306#2307#0" expanded="true" />
-                    <element signature="e#2350#2351#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetBlockList.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/core/JsonRpc2_0Chain3j.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-465">
+              <caret line="792" column="42" selection-start-line="792" selection-start-column="42" selection-end-line="792" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="721">
+              <caret line="77" column="124" selection-start-line="77" selection-start-column="124" selection-end-line="77" selection-end-column="124" />
+              <folding>
+                <element signature="e#7793#8151#0" />
+                <element signature="e#8157#8531#0" />
+                <element signature="e#8537#9294#0" />
+                <element signature="e#9300#9769#0" />
+                <element signature="e#9775#10517#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -224,12 +173,12 @@
         <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetBlockList.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetExchangeInfo.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetExchangeByAddress.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByNonce.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByHash.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByNonce.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java" />
       </list>
     </option>
   </component>
@@ -586,17 +535,11 @@
       <workItem from="1557772894695" duration="59653000" />
       <workItem from="1558114632660" duration="25492000" />
       <workItem from="1558191697028" duration="4501000" />
-      <workItem from="1558314241400" duration="35975000" />
+      <workItem from="1558314241400" duration="36681000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SCSResponseTest_testGetReceiptByHash - 2019.05.21 at 23h 01m 39s.xml">
-      <configuration name="SCSResponseTest.testGetReceiptByHash" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SCSResponseTest_testGetReceiptByHash - 2019.05.21 at 23h 03m 37s.xml">
-      <configuration name="SCSResponseTest.testGetReceiptByHash" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SCSResponseTest_testGetReceiptByHash - 2019.05.21 at 23h 06m 22s.xml">
       <configuration name="SCSResponseTest.testGetReceiptByHash" configurationId="JUnit" />
     </history-entry>
@@ -621,15 +564,21 @@
     <history-entry file="SCSResponseTest_testGetReceiptByHash - 2019.05.21 at 23h 40m 00s.xml">
       <configuration name="SCSResponseTest.testGetReceiptByHash" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SCSResponseTest_testGetReceiptByHash - 2019.05.21 at 23h 40m 54s.xml">
+      <configuration name="SCSResponseTest.testGetReceiptByHash" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SCSResponseTest_testGetReceiptByHash - 2019.05.21 at 23h 46m 58s.xml">
+      <configuration name="SCSResponseTest.testGetReceiptByHash" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125621000" />
+    <option name="totallyTimeSpent" value="126327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12112788" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12112788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -637,7 +586,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32944608" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.40072992" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.40072992" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39941692" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -1101,81 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByNonce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Result#0;class#ScsGetReceiptByNonce#0" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1485#1486#0" expanded="true" />
-            <element signature="e#1541#1542#0" expanded="true" />
-            <element signature="e#1589#1590#0" expanded="true" />
-            <element signature="e#1635#1636#0" expanded="true" />
-            <element signature="e#1681#1682#0" expanded="true" />
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#1809#1810#0" expanded="true" />
-            <element signature="e#1846#1847#0" expanded="true" />
-            <element signature="e#1883#1884#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-            <element signature="e#1976#1977#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByNonce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Result#0;class#ScsGetTransactionByNonce#0" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-            <element signature="e#1552#1553#0" expanded="true" />
-            <element signature="e#1600#1601#0" expanded="true" />
-            <element signature="e#1646#1647#0" expanded="true" />
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1758#1759#0" expanded="true" />
-            <element signature="e#1820#1821#0" expanded="true" />
-            <element signature="e#1857#1858#0" expanded="true" />
-            <element signature="e#1894#1895#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#1987#1988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Result#0;class#ScsGetTransactionByHash#0" />
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1456#1457#0" expanded="true" />
-            <element signature="e#1495#1496#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1599#1600#0" expanded="true" />
-            <element signature="e#1645#1646#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1819#1820#0" expanded="true" />
-            <element signature="e#1856#1857#0" expanded="true" />
-            <element signature="e#1893#1894#0" expanded="true" />
-            <element signature="e#1942#1943#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-858">
@@ -1228,10 +1102,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetBlockList.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1245,10 +1119,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/Logs.java">
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="721">
+          <caret line="77" column="124" selection-start-line="77" selection-start-column="124" selection-end-line="77" selection-end-column="124" />
+          <folding>
+            <element signature="e#7793#8151#0" />
+            <element signature="e#8157#8531#0" />
+            <element signature="e#8537#9294#0" />
+            <element signature="e#9300#9769#0" />
+            <element signature="e#9775#10517#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByNonce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="962">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+            <element signature="e#1541#1542#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1747#1748#0" expanded="true" />
+            <element signature="e#1809#1810#0" expanded="true" />
+            <element signature="e#1846#1847#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByHash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="104" column="10" lean-forward="true" selection-start-line="104" selection-start-column="10" selection-end-line="128" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
+            <element signature="e#1456#1457#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#1645#1646#0" expanded="true" />
+            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#1757#1758#0" expanded="true" />
+            <element signature="e#1819#1820#0" expanded="true" />
+            <element signature="e#1856#1857#0" expanded="true" />
+            <element signature="e#1893#1894#0" expanded="true" />
+            <element signature="e#1942#1943#0" expanded="true" />
+            <element signature="e#1986#1987#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetTransactionByNonce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1248#1249#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+            <element signature="e#1692#1693#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+            <element signature="e#1894#1895#0" expanded="true" />
+            <element signature="e#1943#1944#0" expanded="true" />
+            <element signature="e#1987#1988#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetBlockList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1257,50 +1217,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/org/chain3j/protocol/scs/methods/response/ScsGetReceiptByHash.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="795">
+          <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#1250#1251#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#1433#1434#0" expanded="true" />
-            <element signature="e#1473#1474#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
-            <element signature="e#1614#1615#0" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#1699#1700#0" expanded="true" />
-            <element signature="e#1743#1744#0" expanded="true" />
-            <element signature="e#1789#1790#0" expanded="true" />
-            <element signature="e#1835#1836#0" expanded="true" />
-            <element signature="e#1901#1902#0" expanded="true" />
-            <element signature="e#1963#1964#0" expanded="true" />
-            <element signature="e#2009#2010#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2121#2122#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2220#2221#0" expanded="true" />
-            <element signature="e#2257#2258#0" expanded="true" />
-            <element signature="e#2306#2307#0" expanded="true" />
-            <element signature="e#2350#2351#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/org/chain3j/protocol/scs/SCSResponseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
-          <folding>
-            <element signature="e#7793#8151#0" />
-            <element signature="e#8157#8531#0" />
-            <element signature="e#8537#9294#0" />
-            <element signature="e#9300#9769#0" />
-            <element signature="e#9775#10517#0" />
           </folding>
         </state>
       </provider>

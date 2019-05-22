@@ -12,19 +12,19 @@ import org.chain3j.protocol.core.Response;
 import java.io.IOException;
 import java.util.List;
 
-public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Result> {
+public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.TransactionByHash> {
 
     @Override
     @JsonDeserialize(using = ScsGetTransactionByHash.ResponseDeserialiser.class)
-    public void setResult(Result result){
+    public void setResult(TransactionByHash result){
         super.setResult(result);
     }
 
-    public Result getResult(){
+    public TransactionByHash getResult(){
         return getResult();
     }
 
-    public static class Result{
+    public static class TransactionByHash{
         public List<Logs> getLogs() {
             return logsList;
         }
@@ -88,11 +88,11 @@ public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Re
         private String contractAddress;
         private boolean failed;
 
-        public Result(){
+        public TransactionByHash(){
 
         }
 
-        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash,
+        public TransactionByHash(List<Logs> logsList, String logsBloom, String status, String transactionHash,
                       String contractAddress, boolean failed){
             this.logsList = logsList;
             this.logsBloom = logsBloom;
@@ -102,43 +102,43 @@ public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Re
             this.failed = failed;
         }
 
-        @Override
-        public boolean equals(Object o){
-            if (this == o){
-                return true;
-            }
-            if (!(o instanceof Result)){
-                return false;
-            }
-
-            Result result = (Result) o;
-
-            if (getLogs() != null
-                    ? !getLogs().equals(result.getLogs())
-                    : result.getLogs() != null){
-                return false;
-            }
-            if (getLogsBloom() != null
-                    ? !getLogsBloom().equals(result.getLogsBloom())
-                    : result.getLogsBloom() != null){
-                return false;
-            }
-
-            return getTransactionHash() != null
-                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
-        }
+//        @Override
+//        public boolean equals(Object o){
+//            if (this == o){
+//                return true;
+//            }
+//            if (!(o instanceof TransactionByHash)){
+//                return false;
+//            }
+//
+//            TransactionByHash result = (TransactionByHash) o;
+//
+//            if (getLogs() != null
+//                    ? !getLogs().equals(result.getLogs())
+//                    : result.getLogs() != null){
+//                return false;
+//            }
+//            if (getLogsBloom() != null
+//                    ? !getLogsBloom().equals(result.getLogsBloom())
+//                    : result.getLogsBloom() != null){
+//                return false;
+//            }
+//
+//            return getTransactionHash() != null
+//                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
+//        }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetTransactionByHash.Result> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetTransactionByHash.TransactionByHash> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public ScsGetTransactionByHash.Result deserialize(
+        public ScsGetTransactionByHash.TransactionByHash deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, ScsGetTransactionByHash.Result.class);
+                return objectReader.readValue(jsonParser, ScsGetTransactionByHash.TransactionByHash.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }

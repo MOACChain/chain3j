@@ -26,19 +26,19 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.ReceiptBy
     }
 
     public static class ReceiptByHash{
-        private List<Logs> logsList;
+        private List<Logs> logs;
         private String logsBloom;
         private String status;
         private String transactionHash;
         private String contractAddress;
         private boolean failed;
 
-        public List<Logs> getLogsList() {
-            return logsList;
+        public List<Logs> getLogs() {
+            return logs;
         }
 
-        public void setLogsList(List<Logs> logsList) {
-            this.logsList = logsList;
+        public void setLogsList(List<Logs> logs) {
+            this.logs = logs;
         }
 
         public String getLogsBloom() {
@@ -85,9 +85,9 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.ReceiptBy
 
         }
 
-        public ReceiptByHash(List<Logs> logsList, String logsBloom, String status, String transactionHash,
+        public ReceiptByHash(List<Logs> logs, String logsBloom, String status, String transactionHash,
                       String contractAddress, boolean failed){
-            this.logsList = logsList;
+            this.logs = logs;
             this.logsBloom = logsBloom;
             this.status = status;
             this.transactionHash = transactionHash;
