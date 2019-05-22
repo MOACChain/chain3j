@@ -26,94 +26,94 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
     }
 
     public static class Exchange{
-        private String depositRecordCount;
-        private List<Object> depositRecords;
-        private String depositingRecordCount;
-        private List<Object> depositingRecords;
-        private String withdrawRecordCount;
-        private List<Object> withdrawRecords;
-        private String withdrawingRecordCount;
-        private List<Object> withdrawingRecords;
+        private int depositRecordCount;
+        private List<ExchangeDetail.DepositRecord> depositRecords;
+        private int depositingRecordCount;
+        private List<ExchangeDetail.DepositingRecord> depositingRecords;
+        private int withdrawRecordCount;
+        private List<ExchangeDetail.WithdrawRecord> withdrawRecords;
+        private int withdrawingRecordCount;
+        private List<ExchangeDetail.WithdrawingRecord> withdrawingRecords;
         private String microChain;
         private String sender;
 
-        public String getDepositRecordCountRaw() {
+        public int getDepositRecordCount() {
             return depositRecordCount;
         }
 
-        public BigInteger getDepositRecordCount(){
-            return Numeric.decodeQuantity(depositRecordCount);
-        }
+//        public BigInteger getDepositRecordCount(){
+//            return Numeric.decodeQuantity(depositRecordCount);
+//        }
 
-        public void setDepositRecordCount(String depositRecordCount) {
+        public void setDepositRecordCount(int depositRecordCount) {
             this.depositRecordCount = depositRecordCount;
         }
 
-        public List<Object> getDepositRecords() {
+        public List<ExchangeDetail.DepositRecord> getDepositRecords() {
             return depositRecords;
         }
 
-        public void setDepositRecords(List<Object> depositRecords) {
+        public void setDepositRecords(List<ExchangeDetail.DepositRecord> depositRecords) {
             this.depositRecords = depositRecords;
         }
 
-        public String getDepositingRecordCountRaw() {
+        public int getDepositingRecordCountRaw() {
             return depositingRecordCount;
         }
 
-        public BigInteger getDepositingRecordCount(){
-            return Numeric.decodeQuantity(depositingRecordCount);
-        }
+//        public BigInteger getDepositingRecordCount(){
+//            return Numeric.decodeQuantity(depositingRecordCount);
+//        }
 
-        public void setDepositingRecordCount(String depositingRecordCount) {
+        public void setDepositingRecordCount(int depositingRecordCount) {
             this.depositingRecordCount = depositingRecordCount;
         }
 
-        public List<Object> getDepositingRecords() {
+        public List<ExchangeDetail.DepositingRecord> getDepositingRecords() {
             return depositingRecords;
         }
 
-        public void setDepositingRecords(List<Object> depositingRecords) {
+        public void setDepositingRecords(List<ExchangeDetail.DepositingRecord> depositingRecords) {
             this.depositingRecords = depositingRecords;
         }
 
-        public String getWithdrawRecordCountRaw() {
+        public int getWithdrawRecordCountRaw() {
             return withdrawRecordCount;
         }
 
-        public BigInteger getWithdrawRecordCount(){
-            return Numeric.decodeQuantity(withdrawRecordCount);
-        }
+//        public BigInteger getWithdrawRecordCount(){
+//            return Numeric.decodeQuantity(withdrawRecordCount);
+//        }
 
-        public void setWithdrawRecordCount(String withdrawRecordCount) {
+        public void setWithdrawRecordCount(int withdrawRecordCount) {
             this.withdrawRecordCount = withdrawRecordCount;
         }
 
-        public List<Object> getWithdrawRecords() {
+        public List<ExchangeDetail.WithdrawRecord> getWithdrawRecords() {
             return withdrawRecords;
         }
 
-        public void setWithdrawRecords(List<Object> withdrawRecords) {
+        public void setWithdrawRecords(List<ExchangeDetail.WithdrawRecord> withdrawRecords) {
             this.withdrawRecords = withdrawRecords;
         }
 
-        public String getWithdrawingRecordCountRaw() {
+        public int getWithdrawingRecordCountRaw() {
             return withdrawingRecordCount;
         }
 
-        public BigInteger getWithdrwawingRecordCount(){
-            return Numeric.decodeQuantity(withdrawingRecordCount);
-        }
+//        public BigInteger getWithdrwawingRecordCount(){
+//            return Numeric.decodeQuantity(withdrawingRecordCount);
+//        }
 
-        public void setWithdrawingRecordCount(String withdrawingRecordCount) {
+        public void setWithdrawingRecordCount(int withdrawingRecordCount) {
             this.withdrawingRecordCount = withdrawingRecordCount;
         }
 
-        public List<Object> getWithdrawingRecords() {
+        public List<ExchangeDetail.WithdrawingRecord> getWithdrawingRecords() {
             return withdrawingRecords;
         }
 
-        public void setWithdrawingRecords(List<Object> withdrawingRecords) {
+        public void setWithdrawingRecords(List<ExchangeDetail.WithdrawingRecord> withdrawingRecords) {
             this.withdrawingRecords = withdrawingRecords;
         }
 

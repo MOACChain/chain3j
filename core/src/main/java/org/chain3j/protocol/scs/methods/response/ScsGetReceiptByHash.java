@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.chain3j.protocol.ObjectMapperFactory;
 import org.chain3j.protocol.core.Response;
 import org.chain3j.protocol.core.methods.response.McBlock;
+import org.chain3j.tx.Contract;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,11 +26,18 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
     }
 
     public static class Result{
-        public List<Logs> getLogs() {
+        private List<Logs> logsList; //should be change
+        private String logsBloom;
+        private String status;
+        private String transactionHash;
+        private String contractAddress;
+        private boolean failed;
+
+        public List<Logs> getLogsList() {
             return logsList;
         }
 
-        public void setLogs(List<Logs> logsList) {
+        public void setLogsList(List<Logs> logsList) {
             this.logsList = logsList;
         }
 
@@ -57,20 +65,34 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
             this.transactionHash = transactionHash;
         }
 
-        private List<Logs> logsList; //should be change
-        private String logsBloom;
-        private String status;
-        private String transactionHash;
+        public String getContractAddress() {
+            return contractAddress;
+        }
+
+        public void setContractAddress(String contractAddress) {
+            this.contractAddress = contractAddress;
+        }
+
+        public boolean isFailed() {
+            return failed;
+        }
+
+        public void setFailed(boolean failed) {
+            this.failed = failed;
+        }
 
         public Result(){
 
         }
 
-        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash){
+        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash,
+                      String contractAddress, boolean failed){
             this.logsList = logsList;
             this.logsBloom = logsBloom;
             this.status = status;
             this.transactionHash = transactionHash;
+            this.contractAddress = contractAddress;
+            this.failed = failed;
         }
 
         @Override
@@ -84,11 +106,6 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
 
             Result result = (Result) o;
 
-            if (getLogs() != null
-                ? !getLogs().equals(result.getLogs())
-                : result.getLogs() != null){
-                return false;
-            }
             if (getLogsBloom() != null
                 ? !getLogsBloom().equals(result.getLogsBloom())
                 : result.getLogsBloom() != null){
@@ -100,16 +117,16 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.Result> {
         }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<Result> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetReceiptByHash.Result> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public Result deserialize(
+        public ScsGetReceiptByHash.Result deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, Result.class);
+                return objectReader.readValue(jsonParser, ScsGetReceiptByHash.Result.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }

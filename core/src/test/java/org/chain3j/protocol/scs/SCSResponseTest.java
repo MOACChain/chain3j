@@ -2,16 +2,12 @@ package org.chain3j.protocol.scs;
 
 import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.List;
 
+import org.chain3j.protocol.scs.methods.response.*;
 import org.junit.Test;
 
 import org.chain3j.protocol.ResponseTester;
-import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
-import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
-import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
-import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
-import org.chain3j.protocol.scs.methods.response.ScsMicroChainInfo;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -29,6 +25,84 @@ import static org.junit.Assert.assertTrue;
  * setDappAbi
  */
 public class SCSResponseTest extends ResponseTester {
+    @Test
+    public void testGetExchangeInfo(){
+        buildResponse("{\n" +
+                "  \"jsonrpc\": \"2.0\",\n" +
+                "  \"id\": 100,\n" +
+                "  \"result\": {\n" +
+                "    \"DepositingRecordCount\": 0,\n" +
+                "    \"DepositingRecords\": null,\n" +
+                "    \"WithdrawingRecordCount\": 0,\n" +
+                "    \"WithdrawingRecords\": null,\n" +
+                "    \"microchain\": \"0x2e4694875de2a7da9c3186a176c52760d58694e4\",\n" +
+                "    \"scsid\": \"0x50c15fafb95968132d1a6ee3617e99cca1fcf059\"\n" +
+                "  }\n" +
+                "}");
+        ScsGetExchangeInfo exchangeInfo = deserialiseResponse(ScsGetExchangeInfo.class);
+//        assertThat(exchangeInfo.getExchange().getDepositingRecords(),equalTo(null));
+        assertThat(exchangeInfo.getExchange().getDepositingRecordCount(),equalTo(0));
+    }
+
+    @Test
+    public void testGetReceiptByHash(){
+        buildResponse("{\n" +
+                "  \"id\": 101,\n" +
+                "  \"jsonrpc\": \"2.0\",\n" +
+                "  \"result\": {\n" +
+                "    \"contractAddress\": \"0x0a674edac2ccd47ae2a3197ea3163aa81087fbd1\",\n" +
+                "    \"failed\": false,\n" +
+                "    \"logs\": [],\n" +
+                "    \"logsBloom\": \"0x00000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000000008000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000800000000000080000000000000000000000000002000000000000000000000000000000000000080100002000000000000000000000000000000000000000000000000000000000000000000000000000\",\n" +
+                "    \"status\": \"0x1\",\n" +
+                "    \"transactionHash\": \"0x67bfaa5a704e77a31d5e7eb866f8c662fa8313a7882d13d0d23e377cd66d2a69\"\n" +
+                "  }\n" +
+                "}");
+        ScsGetReceiptByNonce receiptByHash = deserialiseResponse(ScsGetReceiptByNonce.class);
+        assertThat(receiptByHash.getResult().getContractAddress(),equalTo("0x0a674edac2ccd47ae2a3197ea3163aa81087fbd1"));
+    }
+
+    @Test
+    public void testGetSCSId(){
+        buildResponse("{\n" +
+                "  \"id\":101,\n" +
+                "  \"jsonrpc\": \"2.0\",\n" +
+                "  \"result\": \"0x9d711986ccc8c89db2dfaf0894acadeb5a383ee8\"\n" +
+                "}");
+        ScsGetSCSId scsId = deserialiseResponse(ScsGetSCSId.class);
+        assertThat(scsId.getSCSId(),equalTo("0x9d711986ccc8c89db2dfaf0894acadeb5a383ee8"));
+    }
+
+    @Test
+    public void testGetBlockList(){
+        buildResponse("{\"jsonrpc\":\"2.0\",\"id\":101,\"result\":{\"blockList\":[{\"extraData\":\"0x\",\"hash\":\"0x56075838e0fffe6576add14783b957239d4f3c57989bc3a7b7728a3b57eb305a\",\"miner\":\"0xecd1e094ee13d0b47b72f5c940c17bd0c7630326\",\"number\":\"0x370\",\"parentHash\":\"0x56352a3a8bd0901608041115817204cbce943606e406d233d7d0359f449bd4c2\",\"receiptsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\"stateRoot\":\"0xde741a2f6b4a3c865e8f6fc9ba11eadaa1fa04c61d660bcdf0fa1195029699f6\",\"timestamp\":\"0x5bfb7c1c\",\"transactions\":[],\"transactionsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\"},{\"extraData\":\"0x\",\"hash\":\"0xbc3f5791ec039cba99c37310a4f30a68030dd2ab79efb47d23fd9ac5343f54e5\",\"miner\":\"0xecd1e094ee13d0b47b72f5c940c17bd0c7630326\",\"number\":\"0x371\",\"parentHash\":\"0x56075838e0fffe6576add14783b957239d4f3c57989bc3a7b7728a3b57eb305a\",\"receiptsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\"stateRoot\":\"0xde741a2f6b4a3c865e8f6fc9ba11eadaa1fa04c61d660bcdf0fa1195029699f6\",\"timestamp\":\"0x5bfb7c3a\",\"transactions\":[],\"transactionsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\"},{\"extraData\":\"0x\",\"hash\":\"0x601be17c47cb4684053457d1d5f70a6dbeb853b27cda08d160555f857f2da33b\",\"miner\":\"0xecd1e094ee13d0b47b72f5c940c17bd0c7630326\",\"number\":\"0x372\",\"parentHash\":\"0xbc3f5791ec039cba99c37310a4f30a68030dd2ab79efb47d23fd9ac5343f54e5\",\"receiptsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\"stateRoot\":\"0xde741a2f6b4a3c865e8f6fc9ba11eadaa1fa04c61d660bcdf0fa1195029699f6\",\"timestamp\":\"0x5bfb7c58\",\"transactions\":[],\"transactionsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\"},{\"extraData\":\"0x\",\"hash\":\"0x8a0bea649bcdbd2b525690ff485e56d5a83443e9013fcdccd1a0adee56ba4092\",\"miner\":\"0xecd1e094ee13d0b47b72f5c940c17bd0c7630326\",\"number\":\"0x373\",\"parentHash\":\"0x601be17c47cb4684053457d1d5f70a6dbeb853b27cda08d160555f857f2da33b\",\"receiptsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\"stateRoot\":\"0xde741a2f6b4a3c865e8f6fc9ba11eadaa1fa04c61d660bcdf0fa1195029699f6\",\"timestamp\":\"0x5bfb7c76\",\"transactions\":[],\"transactionsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\"}],\"endBlk\":\"0x373\",\"microchainAddress\":\"0x7D0CbA876cB9Da5fa310A54d29F4687f5dd93fD7\",\"startBlk\":\"0x370\"}}");
+        ScsGetBlockList blockList =  deserialiseResponse(ScsGetBlockList.class);
+        assertThat(blockList.getBlockList().getMicrochainAddress(),equalTo("0x7D0CbA876cB9Da5fa310A54d29F4687f5dd93fD7"));
+        List<ScsGetBlock.Block> blocks = blockList.getBlockList().getBlockList();
+        assertThat(blocks.get(0).getExtraDataRaw(),equalTo("0x"));
+    }
+
+    @Test
+    public void testGetBlock(){
+        buildResponse("{\"jsonrpc\":\"2.0\",\"id\":101,\"result\":{\"extraData\":\"0x\",\"hash\":\"0xc80cbe08bc266b1236f22a8d0b310faae3135961dbef6ad8b6ad4e8cd9537309\",\"number\":\"0x1\",\"parentHash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"receiptsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\"stateRoot\":\"0x1a065207da60d8e7a44db2f3b5ed9d3e81052a3059e4108c84701d0bf6a62292\",\"timestamp\":\"0x0\",\"transactions\":[],\"transactionsRoot\":\"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\"}}");
+        ScsGetBlock getBlock = deserialiseResponse(ScsGetBlock.class);
+        assertThat(getBlock.getBlock().getHash(),equalTo("0xc80cbe08bc266b1236f22a8d0b310faae3135961dbef6ad8b6ad4e8cd9537309"));
+        assertThat(getBlock.getBlock().getExtraDataRaw(),equalTo("0x"));
+        assertThat(getBlock.getBlock().getHash(),equalTo("0xc80cbe08bc266b1236f22a8d0b310faae3135961dbef6ad8b6ad4e8cd9537309"));
+        assertThat(getBlock.getBlock().getTimestamp(),equalTo("0x0"));
+        assertThat(getBlock.getBlock().getTransactions().isEmpty(),equalTo(true));
+    }
+
+    @Test
+    public void testDirectCall(){
+        buildResponse("{\n" +
+                "  \"id\":101,\n" +
+                "  \"jsonrpc\": \"2.0\",\n" +
+                "  \"result\": \"0x\"\n" +
+                "}");
+        ScsDirectCall directCall = deserialiseResponse(ScsDirectCall.class);
+        assertThat(directCall.directCall(),equalTo("0x"));
+    }
 
     @Test
     public void testGetDappState() {

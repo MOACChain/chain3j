@@ -618,7 +618,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 Arrays.asList(transaction),
                 chain3jService,
                 ScsDirectCall.class);
-    } //parameters类型存在疑问 //不确定是不是可以用Transaction 或者文档又缺少信息
+    }
 
     @Override
     public Request<?, ScsGetBlock> getBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter){
@@ -627,7 +627,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 Arrays.asList(microChainAddress, defaultBlockParameter.getValue()),
                 chain3jService,
                 ScsGetBlock.class);
-    } //和blocklist 缺少的miner 或者 getblockList中多了个miner
+    }
 
     @Override
     public Request<?, ScsGetBlockList> getBlockList(String address, BigInteger startBlock, BigInteger endBlock){
@@ -637,7 +637,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 chain3jService,
                 ScsGetBlockList.class
         );
-    } //同上
+    } //测试没通过
 
     @Override
     public Request<?, ScsGetDappState> getDappState(String mcAddress) {
@@ -675,7 +675,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 chain3jService,
                 ScsGetReceiptByHash.class
         );
-    }
+    }//文档有更新
 
     @Override
     public Request<?, ScsGetReceiptByNonce> getReceiptByNonce(String microAddress, String transactionHah, Integer nonce){
@@ -730,7 +730,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
                 chain3jService,
                 ScsGetExchangeInfo.class
         );
-    }
+    }//有问题
 
     @Override
     public Request<?,ScsGetTxpool>gettxpool(String address){

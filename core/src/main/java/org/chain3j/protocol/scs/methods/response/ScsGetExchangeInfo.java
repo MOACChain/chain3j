@@ -16,85 +16,54 @@ import java.util.List;
 
 public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
     @Override
-    @JsonDeserialize(using = ScsGetExchangeByAddress.ResponseDeserialiser.class)
+    @JsonDeserialize(using = ScsGetExchangeInfo.ResponseDeserialiser.class)
     public void setResult(Exchange result) {
         super.setResult(result);
     }
 
-    public Exchange getBlock() {
+    public Exchange getExchange() {
         return getResult();
     }
 
     public static class Exchange{
-        private String depositRecordCount;
-        private List<Object> depositRecords;
-        private String depositingRecordCount;
-        private List<Object> depositingRecords;
-        private String withdrawRecordCount;
-        private List<Object> withdrawRecords;
+        private int depositingRecordCount;
+        private List<ExchangeDetail.DepositingRecord> depositingRecords;
         private String withdrawingRecordCount;
-        private List<Object> withdrawingRecords;
-        private String microChain;
-        private String sender;
+        private List<ExchangeDetail.WithdrawingRecord> withdrawingRecords;
+        private String microchain;
+        private String scsid;
 
-        public String getDepositRecordCountRaw() {
-            return depositRecordCount;
+        public Exchange(){}
+
+        public Exchange(int depositingRecordCount, List<ExchangeDetail.DepositingRecord> depositingRecords,
+                        String withdrawingRecordCount, List<ExchangeDetail.WithdrawingRecord> withdrawingRecords,
+                        String microchain, String scsid){
+            this.depositingRecordCount = depositingRecordCount;
+            this.depositingRecords = depositingRecords;
+            this.withdrawingRecordCount = withdrawingRecordCount;
+            this.withdrawingRecords = withdrawingRecords;
+            this.microchain = microchain;
+            this.scsid = scsid;
         }
 
-        public BigInteger getDepositRecordCount(){
-            return Numeric.decodeQuantity(depositRecordCount);
-        }
+//        public String getDepositingRecordCountRaw() {
+//            return depositingRecordCount;
+//        }
 
-        public void setDepositRecordCount(String depositRecordCount) {
-            this.depositRecordCount = depositRecordCount;
-        }
-
-        public List<Object> getDepositRecords() {
-            return depositRecords;
-        }
-
-        public void setDepositRecords(List<Object> depositRecords) {
-            this.depositRecords = depositRecords;
-        }
-
-        public String getDepositingRecordCountRaw() {
+        public int getDepositingRecordCount(){
             return depositingRecordCount;
         }
 
-        public BigInteger getDepositingRecordCount(){
-            return Numeric.decodeQuantity(depositingRecordCount);
-        }
-
-        public void setDepositingRecordCount(String depositingRecordCount) {
+        public void setDepositingRecordCount(int depositingRecordCount) {
             this.depositingRecordCount = depositingRecordCount;
         }
 
-        public List<Object> getDepositingRecords() {
+        public List<ExchangeDetail.DepositingRecord> getDepositingRecords() {
             return depositingRecords;
         }
 
-        public void setDepositingRecords(List<Object> depositingRecords) {
+        public void setDepositingRecords(List<ExchangeDetail.DepositingRecord> depositingRecords) {
             this.depositingRecords = depositingRecords;
-        }
-
-        public String getWithdrawRecordCountRaw() {
-            return withdrawRecordCount;
-        }
-
-        public BigInteger getWithdrawRecordCount(){
-            return Numeric.decodeQuantity(withdrawRecordCount);
-        }
-
-        public void setWithdrawRecordCount(String withdrawRecordCount) {
-            this.withdrawRecordCount = withdrawRecordCount;
-        }
-
-        public List<Object> getWithdrawRecords() {
-            return withdrawRecords;
-        }
-
-        public void setWithdrawRecords(List<Object> withdrawRecords) {
-            this.withdrawRecords = withdrawRecords;
         }
 
         public String getWithdrawingRecordCountRaw() {
@@ -109,41 +78,41 @@ public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
             this.withdrawingRecordCount = withdrawingRecordCount;
         }
 
-        public List<Object> getWithdrawingRecords() {
+        public List<ExchangeDetail.WithdrawingRecord> getWithdrawingRecords() {
             return withdrawingRecords;
         }
 
-        public void setWithdrawingRecords(List<Object> withdrawingRecords) {
+        public void setWithdrawingRecords(List<ExchangeDetail.WithdrawingRecord> withdrawingRecords) {
             this.withdrawingRecords = withdrawingRecords;
         }
 
-        public String getMicroChain() {
-            return microChain;
+        public String getMicrochain() {
+            return microchain;
         }
 
-        public void setMicroChain(String microChain) {
-            this.microChain = microChain;
+        public void setMicroChain(String microchain) {
+            this.microchain = microchain;
         }
 
-        public String getSender() {
-            return sender;
+        public String getScsid() {
+            return scsid;
         }
 
-        public void setSender(String sender) {
-            this.sender = sender;
+        public void setScsid(String scsid) {
+            this.scsid = scsid;
         }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<Exchange> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetExchangeInfo.Exchange> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public Exchange deserialize(
+        public ScsGetExchangeInfo.Exchange deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, Exchange.class);
+                return objectReader.readValue(jsonParser, ScsGetExchangeInfo.Exchange.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }

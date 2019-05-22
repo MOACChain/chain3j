@@ -12,4 +12,8 @@ public class ScsGetBlockNumber extends Response<String> {
     public BigInteger getBlockNumber() {
         return Numeric.decodeQuantity(getResult());
     }
+
+    public String getBlockNumberRaw(){
+        return getResult();
+    }
 }

@@ -49,6 +49,30 @@ public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Re
             this.status = status;
         }
 
+        public List<Logs> getLogsList() {
+            return logsList;
+        }
+
+        public void setLogsList(List<Logs> logsList) {
+            this.logsList = logsList;
+        }
+
+        public String getContractAddress() {
+            return contractAddress;
+        }
+
+        public void setContractAddress(String contractAddress) {
+            this.contractAddress = contractAddress;
+        }
+
+        public boolean isFailed() {
+            return failed;
+        }
+
+        public void setFailed(boolean failed) {
+            this.failed = failed;
+        }
+
         public String getTransactionHash() {
             return transactionHash;
         }
@@ -61,16 +85,21 @@ public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Re
         private String logsBloom;
         private String status;
         private String transactionHash;
+        private String contractAddress;
+        private boolean failed;
 
         public Result(){
 
         }
 
-        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash){
+        public Result(List<Logs> logsList, String logsBloom, String status, String transactionHash,
+                      String contractAddress, boolean failed){
             this.logsList = logsList;
             this.logsBloom = logsBloom;
             this.status = status;
             this.transactionHash = transactionHash;
+            this.contractAddress = contractAddress;
+            this.failed = failed;
         }
 
         @Override
@@ -78,11 +107,11 @@ public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Re
             if (this == o){
                 return true;
             }
-            if (!(o instanceof ScsGetReceiptByHash.Result)){
+            if (!(o instanceof Result)){
                 return false;
             }
 
-            ScsGetReceiptByHash.Result result = (ScsGetReceiptByHash.Result) o;
+            Result result = (Result) o;
 
             if (getLogs() != null
                     ? !getLogs().equals(result.getLogs())
@@ -100,16 +129,16 @@ public class ScsGetTransactionByHash extends Response<ScsGetTransactionByHash.Re
         }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<Result> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetTransactionByHash.Result> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public Result deserialize(
+        public ScsGetTransactionByHash.Result deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, Result.class);
+                return objectReader.readValue(jsonParser, ScsGetTransactionByHash.Result.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }

@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
-
     @Override
     @JsonDeserialize(using = ScsGetBlockList.ResponseDeserialiser.class)
     public void setResult(BlockList result){
@@ -29,41 +28,41 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
     }
 
     public static class BlockList{
-        private List<ScsGetBlock.Block> block;
-        private String endBlock;
-        private String startBlock;
+        private List<ScsGetBlock.Block> blockList;
+        private String endBlk;
+        private String startBlk;
         private String microchainAddress;
 
-        public List<ScsGetBlock.Block> getBlock() {
-            return block;
+        public List<ScsGetBlock.Block> getBlockList() {
+            return blockList;
         }
 
-        public void setBlock(List<ScsGetBlock.Block> block) {
-            this.block = block;
+        public void setBlockList(List<ScsGetBlock.Block> blockList) {
+            this.blockList = blockList;
         }
 
-        public String getEndBlockRaw() {
-            return endBlock;
+        public String getEndBlkRaw() {
+            return endBlk;
         }
 
-        public BigInteger getEndBlock(){
-            return Numeric.decodeQuantity(endBlock);
+        public BigInteger getEndBlk(){
+            return Numeric.decodeQuantity(endBlk);
         }
 
-        public void setEndBlock(String endBlock) {
-            this.endBlock = endBlock;
+        public void setEndBlk(String endBlk) {
+            this.endBlk = endBlk;
         }
 
-        public String getStartBlockRaw() {
-            return startBlock;
+        public String getStartBlkRaw() {
+            return startBlk;
         }
 
-        public BigInteger getStartBlock(){
-            return Numeric.decodeQuantity(endBlock);
+        public BigInteger getStartBlk(){
+            return Numeric.decodeQuantity(startBlk);
         }
 
-        public void setStartBlock(String startBlock) {
-            this.startBlock = startBlock;
+        public void setStartBlk(String startBlk) {
+            this.startBlk = startBlk;
         }
 
         public String getMicrochainAddress() {
@@ -76,11 +75,11 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
 
         public BlockList(){}
 
-        public BlockList(List<ScsGetBlock.Block> block, String startBlock, String endBlock,
+        public BlockList(List<ScsGetBlock.Block> blockList, String startBlk, String endBlk,
                          String microchainAddress){
-            this.block = block;
-            this.startBlock = startBlock;
-            this.endBlock = endBlock;
+            this.blockList = blockList;
+            this.startBlk = startBlk;
+            this.endBlk = endBlk;
             this.microchainAddress = microchainAddress;
         }
 
@@ -95,14 +94,14 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
 
             BlockList blockList = (BlockList) o;
 
-            if (getEndBlockRaw() != null
-                ? !getEndBlockRaw().equals(blockList.getEndBlockRaw())
-                : blockList.getEndBlockRaw() != null){
+            if (getEndBlkRaw() != null
+                ? !getEndBlkRaw().equals(blockList.getEndBlkRaw())
+                : blockList.getEndBlkRaw() != null){
                 return false;
             }
-            if (getStartBlockRaw() != null
-                ? !getStartBlockRaw().equals(blockList.getStartBlockRaw())
-                : blockList.getStartBlock() != null){
+            if (getStartBlkRaw() != null
+                ? !getStartBlkRaw().equals(blockList.getStartBlkRaw())
+                : blockList.getStartBlk() != null){
                 return false;
             }
             if (getMicrochainAddress() != null
@@ -111,7 +110,7 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
                 return false;
             }
 
-            return getBlock() != null ? getBlock().equals(blockList.getBlock()) : blockList.getBlock() != null;
+            return getBlockList() != null ? getBlockList().equals(blockList.getBlockList()) : blockList.getBlockList() != null;
         }
 
     }
@@ -122,16 +121,16 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
 
 
 
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetBlockList> {
+    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetBlockList.BlockList> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
         @Override
-        public ScsGetBlockList deserialize(
+        public ScsGetBlockList.BlockList deserialize(
                 JsonParser jsonParser,
                 DeserializationContext deserializationContext) throws IOException {
             if (jsonParser.getCurrentToken() != JsonToken.VALUE_NULL) {
-                return objectReader.readValue(jsonParser, ScsGetBlockList.class);
+                return objectReader.readValue(jsonParser, ScsGetBlockList.BlockList.class);
             } else {
                 return null;  // null is wrapped by Optional in above getter
             }
