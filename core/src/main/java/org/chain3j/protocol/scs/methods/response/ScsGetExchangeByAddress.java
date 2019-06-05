@@ -6,13 +6,10 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.io.IOException;
+import java.util.List;
 import org.chain3j.protocol.ObjectMapperFactory;
 import org.chain3j.protocol.core.Response;
-import org.chain3j.utils.Numeric;
-
-import java.io.IOException;
-import java.math.BigInteger;
-import java.util.List;
 
 public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Exchange> {
     @Override
@@ -25,7 +22,7 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
         return getResult();
     }
 
-    public static class Exchange{
+    public static class Exchange {
         private int depositRecordCount;
         private List<ExchangeDetail.DepositRecord> depositRecords;
         private int depositingRecordCount;
@@ -40,10 +37,6 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
         public int getDepositRecordCount() {
             return depositRecordCount;
         }
-
-//        public BigInteger getDepositRecordCount(){
-//            return Numeric.decodeQuantity(depositRecordCount);
-//        }
 
         public void setDepositRecordCount(int depositRecordCount) {
             this.depositRecordCount = depositRecordCount;
@@ -61,10 +54,6 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
             return depositingRecordCount;
         }
 
-//        public BigInteger getDepositingRecordCount(){
-//            return Numeric.decodeQuantity(depositingRecordCount);
-//        }
-
         public void setDepositingRecordCount(int depositingRecordCount) {
             this.depositingRecordCount = depositingRecordCount;
         }
@@ -80,10 +69,6 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
         public int getWithdrawRecordCountRaw() {
             return withdrawRecordCount;
         }
-
-//        public BigInteger getWithdrawRecordCount(){
-//            return Numeric.decodeQuantity(withdrawRecordCount);
-//        }
 
         public void setWithdrawRecordCount(int withdrawRecordCount) {
             this.withdrawRecordCount = withdrawRecordCount;
@@ -101,10 +86,6 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
             return withdrawingRecordCount;
         }
 
-//        public BigInteger getWithdrwawingRecordCount(){
-//            return Numeric.decodeQuantity(withdrawingRecordCount);
-//        }
-
         public void setWithdrawingRecordCount(int withdrawingRecordCount) {
             this.withdrawingRecordCount = withdrawingRecordCount;
         }
@@ -113,7 +94,8 @@ public class ScsGetExchangeByAddress extends Response<ScsGetExchangeByAddress.Ex
             return withdrawingRecords;
         }
 
-        public void setWithdrawingRecords(List<ExchangeDetail.WithdrawingRecord> withdrawingRecords) {
+        public void setWithdrawingRecords(
+            List<ExchangeDetail.WithdrawingRecord> withdrawingRecords) {
             this.withdrawingRecords = withdrawingRecords;
         }
 

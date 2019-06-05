@@ -1,11 +1,10 @@
 package org.chain3j.protocol.scs.methods.response;
 
+import java.math.BigInteger;
 import org.chain3j.utils.Numeric;
 
-import java.math.BigInteger;
-
 public class ExchangeDetail {
-    public static class DepositRecord{
+    public static class DepositRecord {
         private String depositAmt;
         private String depositTime;
 
@@ -13,7 +12,7 @@ public class ExchangeDetail {
             return depositAmt;
         }
 
-        public BigInteger getDepositAmt(){
+        public BigInteger getDepositAmt() {
             return Numeric.decodeQuantity(depositAmt);
         }
 
@@ -30,7 +29,7 @@ public class ExchangeDetail {
         }
     }
 
-    public static class DepositingRecord{
+    public static class DepositingRecord {
         private String depositingAmt;
         private String depositingTime;
 
@@ -38,7 +37,7 @@ public class ExchangeDetail {
             return depositingAmt;
         }
 
-        public BigInteger getDepositingAmt(){
+        public BigInteger getDepositingAmt() {
             return Numeric.decodeQuantity(depositingAmt);
         }
 
@@ -55,7 +54,7 @@ public class ExchangeDetail {
         }
     }
 
-    public static class WithdrawRecord{
+    public static class WithdrawRecord {
         private String withdrawAmt;
         private String withdrawTime;
 
@@ -63,7 +62,7 @@ public class ExchangeDetail {
             return withdrawAmt;
         }
 
-        public BigInteger getWithdrawAmt(){
+        public BigInteger getWithdrawAmt() {
             return Numeric.decodeQuantity(withdrawAmt);
         }
 
@@ -80,7 +79,7 @@ public class ExchangeDetail {
         }
     }
 
-    public static class WithdrawingRecord{
+    public static class WithdrawingRecord {
         private String withdrawingAmt;
         private String withdrawingTime;
 
@@ -88,7 +87,7 @@ public class ExchangeDetail {
             return withdrawingAmt;
         }
 
-        public BigInteger getWithdrawingAmt(){
+        public BigInteger getWithdrawingAmt() {
             return Numeric.decodeQuantity(withdrawingAmt);
         }
 

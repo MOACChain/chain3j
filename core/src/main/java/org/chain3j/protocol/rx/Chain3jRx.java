@@ -1,9 +1,6 @@
 package org.chain3j.protocol.rx;
 
 import java.util.List;
-
-import rx.Observable;
-
 import org.chain3j.protocol.core.DefaultBlockParameter;
 import org.chain3j.protocol.core.methods.request.McFilter;
 import org.chain3j.protocol.core.methods.response.Log;
@@ -11,6 +8,7 @@ import org.chain3j.protocol.core.methods.response.McBlock;
 import org.chain3j.protocol.core.methods.response.Transaction;
 import org.chain3j.protocol.websocket.events.LogNotification;
 import org.chain3j.protocol.websocket.events.NewHeadsNotification;
+import rx.Observable;
 
 /**
  * The Observables JSON-RPC client event API.

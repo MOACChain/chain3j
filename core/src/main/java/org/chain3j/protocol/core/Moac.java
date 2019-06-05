@@ -1,7 +1,6 @@
 package org.chain3j.protocol.core;
 
 import java.math.BigInteger;
-
 import org.chain3j.protocol.core.methods.response.Chain3ClientVersion;
 import org.chain3j.protocol.core.methods.response.Chain3Sha3;
 import org.chain3j.protocol.core.methods.response.McAccounts;
@@ -36,10 +35,27 @@ import org.chain3j.protocol.core.methods.response.NetPeerCount;
 import org.chain3j.protocol.core.methods.response.NetVersion;
 import org.chain3j.protocol.core.methods.response.VnodeAddress;
 import org.chain3j.protocol.core.methods.response.VnodeIP;
-import org.chain3j.protocol.core.methods.response.VnodeScsService;//bool
+import org.chain3j.protocol.core.methods.response.VnodeScsService;
 import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
-import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;//bool
-import org.chain3j.protocol.scs.methods.response.*;
+import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;
+import org.chain3j.protocol.scs.methods.response.ScsDirectCall;
+import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlock;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockList;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
+import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
+import org.chain3j.protocol.scs.methods.response.ScsGetExchangeByAddress;
+import org.chain3j.protocol.scs.methods.response.ScsGetExchangeInfo;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
+import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetReceiptByHash;
+import org.chain3j.protocol.scs.methods.response.ScsGetReceiptByNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetSCSId;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionByHash;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionByNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
+import org.chain3j.protocol.scs.methods.response.ScsGetTxpool;
 
 /**
  * Core MOAC JSON-RPC API.
@@ -165,13 +181,16 @@ public interface Moac {
 
     //scs
 
-    Request<?, ScsDirectCall> scsDirectCall(org.chain3j.protocol.core.methods.request.Transaction transaction);
+    Request<?, ScsDirectCall> scsDirectCall(
+        org.chain3j.protocol.core.methods.request.Transaction transaction);
 
     Request<?, ScsGetBalance> scsGetBalance(String dappAddress, String account);
 
-    Request<?, ScsGetBlock> scsGetBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter);
+    Request<?, ScsGetBlock> scsGetBlock(String microChainAddress,
+        DefaultBlockParameter defaultBlockParameter);
 
-    Request<?, ScsGetBlockList> scsGetBlockList(String address, BigInteger startBlock, BigInteger endBlock);
+    Request<?, ScsGetBlockList> scsGetBlockList(String address,
+        BigInteger startBlock, BigInteger endBlock);
 
     Request<?, ScsGetBlockNumber> scsGetBlockNumber(String dappAddress);
 
@@ -187,22 +206,25 @@ public interface Moac {
 
     Request<?,ScsGetReceiptByHash> scsGetReceiptByHash(String microAddress, String transactionHash);
 
-    Request<?, ScsGetReceiptByNonce> scsGetReceiptByNonce(String microAddress, String checkedAddress, Integer nonce);
+    Request<?, ScsGetReceiptByNonce> scsGetReceiptByNonce(String microAddress,
+        String checkedAddress, Integer nonce);
 
     Request<?, ScsGetTransactionByHash> scsGetTransactionByHash(String address, String txhash);
 
-    Request<?, ScsGetTransactionByNonce> scsGetTransactionByNonce(String address, String checkedAddress, Integer nonce);
+    Request<?, ScsGetTransactionByNonce> scsGetTransactionByNonce(String address,
+        String checkedAddress, Integer nonce);
 
-    Request<?, ScsGetExchangeByAddress> scsGetExchangeByAddress(String address, String checkAddress, BigInteger depositRecords,
-                                                             BigInteger depositRecordsNumber, BigInteger depositingRecords,
-                                                             BigInteger depositingRecordsNumber, BigInteger withdrawRecords,
-                                                             BigInteger withdrawRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber);
+    Request<?, ScsGetExchangeByAddress> scsGetExchangeByAddress(String address, String checkAddress,
+        BigInteger depositRecords,BigInteger depositRecordsNumber, BigInteger depositingRecords,
+        BigInteger depositingRecordsNumber,BigInteger withdrawRecords,
+        BigInteger withdrawRecordsNumber, BigInteger withdrawingRecords,
+        BigInteger withdrawingRecordsNumber);
 
     Request<?, ScsGetExchangeInfo> scsGetExchangeInfo(String address, BigInteger depositingRecords,
-                                                   BigInteger depositingRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber);
+        BigInteger depositingRecordsNumber, BigInteger withdrawingRecords,
+        BigInteger withdrawingRecordsNumber);
 
     Request<?, ScsGetTransactionReceipt> scsGetTransactionReceipt(String dappAddress, String txhash);
 
-    Request<?,ScsGetTxpool>scsGetTxpool(String address); //
-
+    Request<?, ScsGetTxpool> scsGetTxpool(String address); //
 }

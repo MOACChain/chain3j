@@ -6,14 +6,12 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.chain3j.abi.datatypes.Bool;
-import org.chain3j.protocol.ObjectMapperFactory;
-import org.chain3j.protocol.core.Response;
-import org.chain3j.utils.Numeric;
-
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
+import org.chain3j.protocol.ObjectMapperFactory;
+import org.chain3j.protocol.core.Response;
+import org.chain3j.utils.Numeric;
 
 public class ScsGetBlock extends Response<ScsGetBlock.Block> {
     @Override
@@ -26,7 +24,7 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
         return getResult();
     }
 
-    public static class Block{
+    public static class Block {
         private String extraData;
         private String hash;
         private String miner;
@@ -42,7 +40,7 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
             return extraData;
         }
 
-        public BigInteger getExtraData(){
+        public BigInteger getExtraData() {
             return Numeric.decodeQuantity(extraData);
         }
 
@@ -62,7 +60,7 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
             return number;
         }
 
-        public BigInteger getNumber(){
+        public BigInteger getNumber() {
             return Numeric.decodeQuantity(number);
         }
 
@@ -133,7 +131,7 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
 
         public Block(String extraData, String hash, String number, String parentHash,
                      String receiptsRoot, String stateRoot, String timestamp,
-                     List<String> transactions, String transactionsRoot){
+                     List<String> transactions, String transactionsRoot) {
             this.extraData = extraData;
             this.hash = hash;
             this.number = number;
@@ -146,11 +144,11 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
         }
 
         @Override
-        public boolean equals(Object o){
-            if (this == o){
+        public boolean equals(Object o) {
+            if (this == o) {
                 return true;
             }
-            if (!(o instanceof Block)){
+            if (!(o instanceof Block)) {
                 return false;
             }
 
@@ -158,47 +156,47 @@ public class ScsGetBlock extends Response<ScsGetBlock.Block> {
 
             if (getExtraDataRaw() != null
                     ? !getExtraDataRaw().equals(block.getExtraDataRaw())
-                    : block.getExtraDataRaw() != null){
+                    : block.getExtraDataRaw() != null) {
                 return false;
             }
             if (getHash() != null
                     ? !getHash().equals(block.getHash())
-                    : block.getHash() != null){
+                    : block.getHash() != null) {
                 return false;
             }
             if (getMiner() != null
                     ? !getMiner().equals(block.getMiner())
-                    : block.getMiner() != null){
+                    : block.getMiner() != null) {
                 return false;
             }
             if (getNumberRaw() != null
                     ? !getNumberRaw().equals(block.getNumberRaw())
-                    : block.getNumberRaw() != null){
+                    : block.getNumberRaw() != null) {
                 return false;
             }
             if (getParentHash() != null
                     ? !getParentHash().equals(block.getParentHash())
-                    : block.getParentHash() != null){
+                    : block.getParentHash() != null) {
                 return false;
             }
             if (getReceiptsRoot() != null
                     ? !getReceiptsRoot().equals(block.getReceiptsRoot())
-                    : block.getReceiptsRoot() != null){
+                    : block.getReceiptsRoot() != null) {
                 return false;
             }
             if (getStateRoot() != null
                     ? !getStateRoot().equals(block.getStateRoot())
-                    : block.getStateRoot() != null){
+                    : block.getStateRoot() != null) {
                 return false;
             }
             if (getTimestamp() != null
                     ? !getTimestamp().equals(block.getTimestamp())
-                    : block.getTimestamp() != null){
+                    : block.getTimestamp() != null) {
                 return false;
             }
             if (getTransactionsRoot() != null
                     ? !getTransactionsRoot().equals(block.getTransactionsRoot())
-                    : block.getTransactionsRoot() != null){
+                    : block.getTransactionsRoot() != null) {
                 return false;
             }
 

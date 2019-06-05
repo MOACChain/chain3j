@@ -6,28 +6,25 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.chain3j.protocol.ObjectMapperFactory;
-import org.chain3j.protocol.core.Response;
-import org.chain3j.protocol.core.methods.response.McBlock;
-import org.chain3j.utils.Numeric;
-
 import java.io.IOException;
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
+import org.chain3j.protocol.ObjectMapperFactory;
+import org.chain3j.protocol.core.Response;
+import org.chain3j.utils.Numeric;
 
 public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
     @Override
     @JsonDeserialize(using = ScsGetBlockList.ResponseDeserialiser.class)
-    public void setResult(BlockList result){
+    public void setResult(BlockList result) {
         super.setResult(result);
     }
 
-    public BlockList getBlockList(){
+    public BlockList getBlockList() {
         return getResult();
     }
 
-    public static class BlockList{
+    public static class BlockList {
         private List<ScsGetBlock.Block> blockList;
         private String endBlk;
         private String startBlk;
@@ -45,7 +42,7 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
             return endBlk;
         }
 
-        public BigInteger getEndBlk(){
+        public BigInteger getEndBlk() {
             return Numeric.decodeQuantity(endBlk);
         }
 
@@ -57,7 +54,7 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
             return startBlk;
         }
 
-        public BigInteger getStartBlk(){
+        public BigInteger getStartBlk() {
             return Numeric.decodeQuantity(startBlk);
         }
 
@@ -76,7 +73,7 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
         public BlockList(){}
 
         public BlockList(List<ScsGetBlock.Block> blockList, String startBlk, String endBlk,
-                         String microchainAddress){
+                         String microchainAddress) {
             this.blockList = blockList;
             this.startBlk = startBlk;
             this.endBlk = endBlk;
@@ -84,11 +81,11 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
         }
 
         @Override
-        public boolean equals(Object o){
-            if (this == o){
+        public boolean equals(Object o) {
+            if (this == o) {
                 return true;
             }
-            if (!(o instanceof BlockList)){
+            if (!(o instanceof BlockList)) {
                 return false;
             }
 
@@ -96,30 +93,24 @@ public class ScsGetBlockList extends Response<ScsGetBlockList.BlockList> {
 
             if (getEndBlkRaw() != null
                     ? !getEndBlkRaw().equals(blockList.getEndBlkRaw())
-                    : blockList.getEndBlkRaw() != null){
+                    : blockList.getEndBlkRaw() != null) {
                 return false;
             }
             if (getStartBlkRaw() != null
                     ? !getStartBlkRaw().equals(blockList.getStartBlkRaw())
-                    : blockList.getStartBlk() != null){
+                    : blockList.getStartBlk() != null) {
                 return false;
             }
             if (getMicrochainAddress() != null
                     ? !getMicrochainAddress().equals(blockList.getMicrochainAddress())
-                    : blockList.getMicrochainAddress() != null){
+                    : blockList.getMicrochainAddress() != null) {
                 return false;
             }
 
-            return getBlockList() != null ? getBlockList().equals(blockList.getBlockList()) : blockList.getBlockList() != null;
+            return getBlockList() != null ? getBlockList().equals(blockList.getBlockList())
+                : blockList.getBlockList() != null;
         }
-
     }
-
-//    public interface BlockResult<T> {
-//        T get();
-//    }
-
-
 
     public static class ResponseDeserialiser extends JsonDeserializer<ScsGetBlockList.BlockList> {
 

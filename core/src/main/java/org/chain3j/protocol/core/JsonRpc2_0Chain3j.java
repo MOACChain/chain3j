@@ -8,10 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
-
-import org.chain3j.protocol.scs.methods.response.*;
-import rx.Observable;
-
 import org.chain3j.protocol.Chain3j;
 import org.chain3j.protocol.Chain3jService;
 import org.chain3j.protocol.core.methods.request.Transaction;
@@ -29,7 +25,6 @@ import org.chain3j.protocol.core.methods.response.McGetBalance;
 import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByHash;
 import org.chain3j.protocol.core.methods.response.McGetBlockTransactionCountByNumber;
 import org.chain3j.protocol.core.methods.response.McGetCode;
-import org.chain3j.protocol.core.methods.response.McGetCompilers;
 import org.chain3j.protocol.core.methods.response.McGetStorageAt;
 import org.chain3j.protocol.core.methods.response.McGetTransactionCount;
 import org.chain3j.protocol.core.methods.response.McGetTransactionReceipt;
@@ -56,6 +51,30 @@ import org.chain3j.protocol.core.methods.response.VnodeScsService;
 import org.chain3j.protocol.core.methods.response.VnodeServiceCfg;
 import org.chain3j.protocol.core.methods.response.VnodeShowToPublic;
 import org.chain3j.protocol.rx.JsonRpc2_0Rx;
+import org.chain3j.protocol.scs.methods.response.ScsDirectCall;
+import org.chain3j.protocol.scs.methods.response.ScsGetBalance;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlock;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockList;
+import org.chain3j.protocol.scs.methods.response.ScsGetBlockNumber;
+import org.chain3j.protocol.scs.methods.response.ScsGetDappState;
+import org.chain3j.protocol.scs.methods.response.ScsGetExchangeByAddress;
+import org.chain3j.protocol.scs.methods.response.ScsGetExchangeInfo;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainInfo;
+import org.chain3j.protocol.scs.methods.response.ScsGetMicroChainList;
+import org.chain3j.protocol.scs.methods.response.ScsGetNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetReceiptByHash;
+import org.chain3j.protocol.scs.methods.response.ScsGetReceiptByNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetSCSId;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionByHash;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionByNonce;
+import org.chain3j.protocol.scs.methods.response.ScsGetTransactionReceipt;
+import org.chain3j.protocol.scs.methods.response.ScsGetTxpool;
+import org.chain3j.protocol.websocket.events.LogNotification;
+import org.chain3j.protocol.websocket.events.NewHeadsNotification;
+import org.chain3j.utils.Async;
+import org.chain3j.utils.Numeric;
+import rx.Observable;
+
 // import org.chain3j.protocol.core.methods.response.ShhAddToGroup;
 // import org.chain3j.protocol.core.methods.response.ShhHasIdentity;
 // import org.chain3j.protocol.core.methods.response.ShhMessages;
@@ -64,10 +83,6 @@ import org.chain3j.protocol.rx.JsonRpc2_0Rx;
 // import org.chain3j.protocol.core.methods.response.ShhNewIdentity;
 // import org.chain3j.protocol.core.methods.response.ShhUninstallFilter;
 // import org.chain3j.protocol.core.methods.response.ShhVersion;
-import org.chain3j.protocol.websocket.events.LogNotification;
-import org.chain3j.protocol.websocket.events.NewHeadsNotification;
-import org.chain3j.utils.Async;
-import org.chain3j.utils.Numeric;
 
 /**
  * JSON-RPC 2.0 factory implementation.
@@ -609,7 +624,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     // SCS related JSON RPC 2.0
     //=================================================================
     @Override
-    public Request<?, ScsDirectCall> scsDirectCall(Transaction transaction){
+    public Request<?, ScsDirectCall> scsDirectCall(Transaction transaction) {
         return new Request<>(
                 "scs_directCall",
                 Arrays.asList(transaction),
@@ -618,7 +633,8 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetBlock> scsGetBlock(String microChainAddress, DefaultBlockParameter defaultBlockParameter){
+    public Request<?, ScsGetBlock> scsGetBlock(String microChainAddress,
+        DefaultBlockParameter defaultBlockParameter) {
         return new Request<>(
                 "scs_getBlock",
                 Arrays.asList(microChainAddress, defaultBlockParameter.getValue()),
@@ -627,7 +643,8 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetBlockList> scsGetBlockList(String address, BigInteger startBlock, BigInteger endBlock){
+    public Request<?, ScsGetBlockList> scsGetBlockList(String address,
+        BigInteger startBlock, BigInteger endBlock) {
         return new Request<>(
                 "scs_getBlockList",
                 Arrays.asList(address,startBlock,endBlock),
@@ -655,7 +672,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?,ScsGetSCSId> scsGetSCSId(){
+    public Request<?,ScsGetSCSId> scsGetSCSId() {
         return new Request<>(
                 "scs_getSCSId",
                 Collections.emptyList(),
@@ -665,17 +682,19 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetReceiptByHash> scsGetReceiptByHash(String microAddress, String transactionHash){
+    public Request<?, ScsGetReceiptByHash> scsGetReceiptByHash(String microAddress,
+        String transactionHash) {
         return new Request<>(
-                "scs_getReceiptByHash",
-                Arrays.asList(microAddress,transactionHash),
-                chain3jService,
-                ScsGetReceiptByHash.class
+            "scs_getReceiptByHash",
+            Arrays.asList(microAddress, transactionHash),
+            chain3jService,
+            ScsGetReceiptByHash.class
         );
-    }//文档有更新
+    }
 
     @Override
-    public Request<?, ScsGetReceiptByNonce> scsGetReceiptByNonce(String microAddress, String transactionHah, Integer nonce){
+    public Request<?, ScsGetReceiptByNonce> scsGetReceiptByNonce(String microAddress,
+        String transactionHah, Integer nonce) {
         return new Request<>(
                 "scs_getReceiptByNonce",
                 Arrays.asList(microAddress,transactionHah,nonce),
@@ -685,7 +704,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetTransactionByHash> scsGetTransactionByHash(String address, String txhash){
+    public Request<?, ScsGetTransactionByHash> scsGetTransactionByHash(String address, String txhash) {
         return new Request<>(
                 "scs_getTransactionByHash",
                 Arrays.asList(address, txhash),
@@ -695,7 +714,8 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetTransactionByNonce> scsGetTransactionByNonce(String address, String checkedAddress, Integer nonce){
+    public Request<?, ScsGetTransactionByNonce> scsGetTransactionByNonce(String address,
+        String checkedAddress, Integer nonce) {
         return new Request<>(
                 "scs_getTransactionByNonce",
                 Arrays.asList(address, checkedAddress, nonce),
@@ -705,14 +725,16 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?, ScsGetExchangeByAddress> scsGetExchangeByAddress(String address, String checkAddress, BigInteger depositRecords,
-                                                                    BigInteger depositRecordsNumber, BigInteger depositingRecords,
-                                                                    BigInteger depositingRecordsNumber, BigInteger withdrawRecords,
-                                                                    BigInteger withdrawRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber){
+    public Request<?, ScsGetExchangeByAddress> scsGetExchangeByAddress(String address, String checkAddress,
+        BigInteger depositRecords, BigInteger depositRecordsNumber, BigInteger depositingRecords,
+        BigInteger depositingRecordsNumber, BigInteger withdrawRecords, BigInteger withdrawRecordsNumber,
+        BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber) {
         return new Request<>(
                 "scs_getExchangeByAddress",
-                Arrays.asList(address,checkAddress,depositRecords,depositRecordsNumber,depositingRecords,depositingRecordsNumber,
-                        withdrawRecords,withdrawRecordsNumber,withdrawingRecords,withdrawingRecordsNumber),
+                Arrays.asList(address,checkAddress,depositRecords,depositRecordsNumber,
+                    depositingRecords,depositingRecordsNumber,
+                        withdrawRecords,withdrawRecordsNumber,
+                    withdrawingRecords,withdrawingRecordsNumber),
                 chain3jService,
                 ScsGetExchangeByAddress.class
         );
@@ -720,7 +742,8 @@ public class JsonRpc2_0Chain3j implements Chain3j {
 
     @Override
     public Request<?, ScsGetExchangeInfo> scsGetExchangeInfo(String address, BigInteger depositingRecords,
-                                                          BigInteger depositingRecordsNumber, BigInteger withdrawingRecords, BigInteger withdrawingRecordsNumber){
+        BigInteger depositingRecordsNumber, BigInteger withdrawingRecords,
+        BigInteger withdrawingRecordsNumber) {
         return new Request<>(
                 "scs_getExchangeInfo",
                 Arrays.asList(address,depositingRecords,depositingRecordsNumber,withdrawingRecords,withdrawingRecordsNumber),
@@ -730,7 +753,7 @@ public class JsonRpc2_0Chain3j implements Chain3j {
     }
 
     @Override
-    public Request<?,ScsGetTxpool>scsGetTxpool(String address){
+    public Request<?,ScsGetTxpool> scsGetTxpool(String address) {
         return new Request<>(
                 "scs_getTxpool",
                 Arrays.asList(address),

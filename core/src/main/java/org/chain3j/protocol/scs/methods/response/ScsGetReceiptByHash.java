@@ -6,26 +6,23 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.chain3j.protocol.ObjectMapperFactory;
-import org.chain3j.protocol.core.Response;
-import org.chain3j.protocol.core.methods.response.McBlock;
-import org.chain3j.tx.Contract;
-
 import java.io.IOException;
 import java.util.List;
+import org.chain3j.protocol.ObjectMapperFactory;
+import org.chain3j.protocol.core.Response;
 
 public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.ReceiptByHash> {
     @Override
     @JsonDeserialize(using = ScsGetReceiptByHash.ResponseDeserialiser.class)
-    public void setResult(ReceiptByHash result){
+    public void setResult(ReceiptByHash result) {
         super.setResult(result);
     }
 
-    public ReceiptByHash getReceiptByHash(){
+    public ReceiptByHash getReceiptByHash() {
         return getResult();
     }
 
-    public static class ReceiptByHash{
+    public static class ReceiptByHash {
         private List<Logs> logs;
         private String logsBloom;
         private String status;
@@ -81,8 +78,7 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.ReceiptBy
             this.failed = failed;
         }
 
-        public ReceiptByHash(){
-
+        public ReceiptByHash() {
         }
 
         public ReceiptByHash(List<Logs> logs, String logsBloom, String status, String transactionHash,
@@ -113,7 +109,8 @@ public class ScsGetReceiptByHash  extends Response<ScsGetReceiptByHash.ReceiptBy
 //            }
 //
 //            return getTransactionHash() != null
-//                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
+//                    ? getTransactionHash().equals(result.getTransactionHash())
+//            : result.getTransactionHash() != null;
 //        }
     }
 

@@ -6,24 +6,23 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.chain3j.protocol.ObjectMapperFactory;
-import org.chain3j.protocol.core.Response;
-
 import java.io.IOException;
 import java.util.List;
+import org.chain3j.protocol.ObjectMapperFactory;
+import org.chain3j.protocol.core.Response;
 
 public class ScsGetTransactionByNonce extends Response<ScsGetTransactionByNonce.TransactionByNonce> {
     @Override
     @JsonDeserialize(using = ScsGetTransactionByHash.ResponseDeserialiser.class)
-    public void setResult(TransactionByNonce result){
+    public void setResult(TransactionByNonce result) {
         super.setResult(result);
     }
 
-    public TransactionByNonce getResult(){
+    public TransactionByNonce getResult() {
         return getResult();
     }
 
-    public static class TransactionByNonce{
+    public static class TransactionByNonce {
         public List<Logs> getLogs() {
             return logsList;
         }
@@ -91,8 +90,9 @@ public class ScsGetTransactionByNonce extends Response<ScsGetTransactionByNonce.
 
         }
 
-        public TransactionByNonce(List<Logs> logsList, String logsBloom, String status, String transactionHash,
-                                  String contractAddress, boolean failed){
+        public TransactionByNonce(List<Logs> logsList, String logsBloom,
+                                  String status, String transactionHash,
+                                  String contractAddress, boolean failed) {
             this.logsList = logsList;
             this.logsBloom = logsBloom;
             this.status = status;
@@ -124,11 +124,13 @@ public class ScsGetTransactionByNonce extends Response<ScsGetTransactionByNonce.
 //            }
 //
 //            return getTransactionHash() != null
-//                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
+//                    ? getTransactionHash().equals(result.getTransactionHash())
+//                : result.getTransactionHash() != null;
 //        }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetTransactionByNonce.TransactionByNonce> {
+    public static class ResponseDeserialiser
+            extends JsonDeserializer<ScsGetTransactionByNonce.TransactionByNonce> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 

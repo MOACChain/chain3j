@@ -6,13 +6,12 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.chain3j.protocol.ObjectMapperFactory;
-import org.chain3j.protocol.core.Response;
-import org.chain3j.utils.Numeric;
-
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
+import org.chain3j.protocol.ObjectMapperFactory;
+import org.chain3j.protocol.core.Response;
+import org.chain3j.utils.Numeric;
 
 public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
     @Override
@@ -25,7 +24,7 @@ public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
         return getResult();
     }
 
-    public static class Exchange{
+    public static class Exchange {
         private int depositingRecordCount;
         private List<ExchangeDetail.DepositingRecord> depositingRecords;
         private String withdrawingRecordCount;
@@ -33,11 +32,13 @@ public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
         private String microchain;
         private String scsid;
 
-        public Exchange(){}
+        public Exchange() {
+
+        }
 
         public Exchange(int depositingRecordCount, List<ExchangeDetail.DepositingRecord> depositingRecords,
-                        String withdrawingRecordCount, List<ExchangeDetail.WithdrawingRecord> withdrawingRecords,
-                        String microchain, String scsid){
+                        String withdrawingRecordCount,
+            List<ExchangeDetail.WithdrawingRecord> withdrawingRecords, String microchain, String scsid) {
             this.depositingRecordCount = depositingRecordCount;
             this.depositingRecords = depositingRecords;
             this.withdrawingRecordCount = withdrawingRecordCount;
@@ -46,11 +47,7 @@ public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
             this.scsid = scsid;
         }
 
-//        public String getDepositingRecordCountRaw() {
-//            return depositingRecordCount;
-//        }
-
-        public int getDepositingRecordCount(){
+        public int getDepositingRecordCount() {
             return depositingRecordCount;
         }
 
@@ -70,7 +67,7 @@ public class ScsGetExchangeInfo extends Response<ScsGetExchangeInfo.Exchange> {
             return withdrawingRecordCount;
         }
 
-        public BigInteger getWithdrwawingRecordCount(){
+        public BigInteger getWithdrwawingRecordCount() {
             return Numeric.decodeQuantity(withdrawingRecordCount);
         }
 

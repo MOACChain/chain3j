@@ -1,10 +1,8 @@
 package org.chain3j.protocol.scs.methods.response;
 
-import org.chain3j.abi.datatypes.Bool;
-import org.chain3j.utils.Numeric;
-
 import java.math.BigInteger;
 import java.util.List;
+import org.chain3j.utils.Numeric;
 
 public class Logs {
     private String address;
@@ -21,7 +19,7 @@ public class Logs {
 
     public Logs(String address, List<String> topics, String data, String blockNumber,
                 String transactionHash, String transactionIndex, String blockHash,
-                String logIndex, Boolean removed){
+                String logIndex, Boolean removed) {
         this.address = address;
         this.topics = topics;
         this.data = data;
@@ -61,7 +59,7 @@ public class Logs {
         return blockNumber;
     }
 
-    public BigInteger getBlockNumber(){
+    public BigInteger getBlockNumber() {
         return Numeric.decodeQuantity(blockNumber);
     }
 
@@ -81,7 +79,7 @@ public class Logs {
         return transactionIndex;
     }
 
-    public BigInteger getTransactionIndex(){
+    public BigInteger getTransactionIndex() {
         return Numeric.decodeQuantity(transactionIndex);
     }
 
@@ -101,7 +99,7 @@ public class Logs {
         return logIndex;
     }
 
-    public BigInteger getlogIndex(){
+    public BigInteger getlogIndex() {
         return Numeric.decodeQuantity(logIndex);
     }
 
@@ -118,11 +116,11 @@ public class Logs {
     }
 
     @Override
-    public boolean equals(Object o){
-        if (this == o){
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (!(o instanceof Logs)){
+        if (!(o instanceof Logs)) {
             return false;
         }
 
@@ -130,37 +128,37 @@ public class Logs {
 
         if (getAddress() != null
                 ? !getAddress().equals(logs.getAddress())
-                : logs.getAddress() != null){
+                : logs.getAddress() != null) {
             return false;
         }
         if (getData() != null
                 ? !getData().equals(logs.getData())
-                : logs.getData() != null){
+                : logs.getData() != null) {
             return false;
         }
         if (getBlockNumberRaw() != null
                 ? !getBlockNumberRaw().equals(logs.getBlockNumberRaw())
-                : logs.getBlockNumberRaw() != null){
+                : logs.getBlockNumberRaw() != null) {
             return false;
         }
         if (getTransactionHash() != null
                 ? !getTransactionHash().equals(logs.getTransactionHash())
-                : logs.getTransactionHash() != null){
+                : logs.getTransactionHash() != null) {
             return false;
         }
         if (getTransactionIndexRaw() != null
                 ? !getTransactionIndexRaw().equals(logs.getTransactionIndexRaw())
-                : logs.getTransactionIndexRaw() != null){
+                : logs.getTransactionIndexRaw() != null) {
             return false;
         }
         if (getBlockHash() != null
                 ? !getBlockHash().equals(logs.getBlockHash())
-                : logs.getBlockHash() != null){
+                : logs.getBlockHash() != null) {
             return false;
         }
         if (getLogIndexRaw() != null
                 ? !getLogIndexRaw().equals(logs.getLogIndexRaw())
-                : logs.getLogIndexRaw() != null){
+                : logs.getLogIndexRaw() != null) {
             return false;
         }
 

@@ -6,11 +6,10 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.chain3j.protocol.ObjectMapperFactory;
-import org.chain3j.protocol.core.Response;
-
 import java.io.IOException;
 import java.util.List;
+import org.chain3j.protocol.ObjectMapperFactory;
+import org.chain3j.protocol.core.Response;
 
 public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.ReceiptByNonce> {
     @Override
@@ -130,7 +129,7 @@ public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.ReceiptB
 //        }
     }
 
-    public static class ResponseDeserialiser 
+    public static class ResponseDeserialiser
         extends JsonDeserializer<ScsGetReceiptByNonce.ReceiptByNonce> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
