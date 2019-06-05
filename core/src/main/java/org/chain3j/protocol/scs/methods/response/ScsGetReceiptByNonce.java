@@ -15,15 +15,15 @@ import java.util.List;
 public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.ReceiptByNonce> {
     @Override
     @JsonDeserialize(using = ScsGetReceiptByNonce.ResponseDeserialiser.class)
-    public void setResult(ReceiptByNonce result){
+    public void setResult(ReceiptByNonce result) {
         super.setResult(result);
     }
 
-    public ReceiptByNonce getResult(){
+    public ReceiptByNonce getResult() {
         return getResult();
     }
 
-    public static class ReceiptByNonce{
+    public static class ReceiptByNonce {
         public List<Logs> getLogs() {
             return logsList;
         }
@@ -91,8 +91,9 @@ public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.ReceiptB
 
         }
 
-        public ReceiptByNonce(List<Logs> logsList, String logsBloom, String status, String transactionHash,
-                              String contractAddress, boolean failed){
+        public ReceiptByNonce(List<Logs> logsList, String logsBloom, 
+                              String status, String transactionHash,
+                              String contractAddress, boolean failed) {
             this.logsList = logsList;
             this.logsBloom = logsBloom;
             this.status = status;
@@ -124,11 +125,13 @@ public class ScsGetReceiptByNonce extends Response<ScsGetReceiptByNonce.ReceiptB
 //            }
 //
 //            return getTransactionHash() != null
-//                    ? getTransactionHash().equals(result.getTransactionHash()) : result.getTransactionHash() != null;
+//                    ? getTransactionHash().equals(result.getTransactionHash()) 
+//                : result.getTransactionHash() != null;
 //        }
     }
 
-    public static class ResponseDeserialiser extends JsonDeserializer<ScsGetReceiptByNonce.ReceiptByNonce> {
+    public static class ResponseDeserialiser 
+        extends JsonDeserializer<ScsGetReceiptByNonce.ReceiptByNonce> {
 
         private ObjectReader objectReader = ObjectMapperFactory.getObjectReader();
 
