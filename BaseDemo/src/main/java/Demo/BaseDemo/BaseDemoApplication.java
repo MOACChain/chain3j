@@ -31,53 +31,54 @@ public class BaseDemoApplication {
         new BaseDemoApplication().run();
     }
 
-    private void run() throws Exception {
+     private void run() throws Exception {
 
         // We start by creating a new web3j instance to connect to remote nodes on the network.
         // Note: if using chain3j Android, use Chain3jFactory.build(...
 
         //Chain3j chain3j = Chain3j.build(new HttpService(
-        //        "http://gateway.moac.io/testnet"));  // FIXME: Enter your http connection here;
+        //        ""));  // FIXME: Enter your http connection here;
         Chain3j chain3j = Chain3j.build(new HttpService(
                 "http://127.0.0.1:8545"));  // Use local MOAC server;
 
         //log.info("Connected to Moac client version: "
         //        + chain3j.chain3ClientVersion().send().getChain3ClientVersion());
 
-//        System.out.println("Out Connected to MOAC client version: "
-//                + chain3j.chain3ClientVersion().send().getChain3ClientVersion());
+        System.out.println("Out Connected to MOAC client version: "
+                + chain3j.chain3ClientVersion().send().getChain3ClientVersion());
 
-        System.out.println("test: "+chain3j.getBlockNumber("0x83741DEBD1c857bEDE8352E66806F47aD17A8e6F").send().getBlockNumberRaw());
-        //Load the wallet info from a keystore file
-//        Credentials credentials = LoadCredentialsFromKeystoreFile("test123");
-//        String src = credentials.getAddress();
-//        System.out.println("Load address: " + src);
+        CompletableFuture<Chain3ClientVersion> future = chain3j.chain3ClientVersion().sendAsync();
+        System.out.println("test"+future.toString());
+
+//        //Load the wallet info from a keystore file
+        Credentials credentials = LoadCredentialsFromKeystoreFile("test123");
+        String src = credentials.getAddress();
+        System.out.println("Load address: " + src);
 //
 //
-//        // Get the TX count from network and build the TX
-//        BigInteger srcNonce = chain3j.mcGetTransactionCount(src, DefaultBlockParameter.valueOf("latest")).send().getTransactionCount();
-//        System.out.println("MOAC testnet account TX count: "
-//                + srcNonce.toString());
-//        System.out.println("MOAC testnet account balance: "
-//                + chain3j.mcGetBalance(src, DefaultBlockParameter.valueOf("latest")).send().getBalance());
-//
+        // Get the TX count from network and build the TX
+        BigInteger srcNonce = chain3j.mcGetTransactionCount(src, DefaultBlockParameter.valueOf("latest")).send().getTransactionCount();
+        System.out.println("MOAC devnet account TX count: "
+                + srcNonce.toString());
+        System.out.println("MOAC devnet account balance: "
+                + chain3j.mcGetBalance(src, DefaultBlockParameter.valueOf("latest")).send().getBalance());
+
 //
 //        // Build the Raw TX
-//        BigInteger sendValue = BigInteger.valueOf(10000L);
-//        String des = "0xbad2089a141f4df43343fe0a3e3b672a955bbb6c";
-//        RawTransaction rawTx  = createTX(srcNonce, des, sendValue);
-//
-//        // Sign the TX with Credential
-//        byte[] signedTX = TransactionEncoder.signTxEIP155(rawTx, 100, credentials);
-//        String signedRawTx = Numeric.toHexString(signedTX);
-//
-//        System.out.println("Signed RawTX: "+signedRawTx);
-//
-//        // Send the TX to the network and wait for the results
-//        System.out.println("MOAC TX send: " + chain3j.mcSendRawTransaction(signedRawTx).send());
+        BigInteger sendValue = BigInteger.valueOf(1000000000000L);
+        String des = "0x3B0587E3db2Cf09a53D68837023B612016079d10";
+        RawTransaction rawTx  = createTX(srcNonce, des, sendValue);
+
+        // Sign the TX with Credential
+        byte[] signedTX = TransactionEncoder.signTxEIP155(rawTx, 100, credentials);
+        String signedRawTx = Numeric.toHexString(signedTX);
+
+        System.out.println("Signed RawTX: "+signedRawTx);
+
+        // Send the TX to the network and wait for the results
+        System.out.println("MOAC TX send: " + chain3j.mcSendRawTransaction(signedRawTx).send().getTransactionHash());
 
     }
-
     public Credentials LoadCredentialsFromKeystoreFile(String password) throws Exception {
         return WalletUtils.loadCredentials(
                 password, "E:\\work\\MOAC\\Moaccore\\win-dev\\win\\vnode\\dev\\keystore"
